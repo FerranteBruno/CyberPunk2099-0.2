@@ -2,6 +2,7 @@
 #include "NPC.h"
 #include "jugador.h"
 #include "Armas.h"
+#include "TileEngine.h"
 /*#ifndef INGAME_H_INCLUDED
 #define INGAME_H_INCLUDED*/
 //#include "allegro5/allegro.h"

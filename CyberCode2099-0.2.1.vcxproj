@@ -166,12 +166,14 @@
     <ClCompile Include="jugador.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TileEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armas.h" />
     <ClInclude Include="jugador.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="inGame.h" />
+    <ClInclude Include="TileEngine.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

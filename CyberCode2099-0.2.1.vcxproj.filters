@@ -30,6 +30,9 @@
     <ClCompile Include="Armas.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="TileEngine.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inGame.h">
@@ -42,6 +45,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Armas.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="TileEngine.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

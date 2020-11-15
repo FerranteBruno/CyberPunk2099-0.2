@@ -1,16 +1,18 @@
 #include "TileEngine.h"
 #include <iostream>
 
-float** tileEngine::loadMap()
+int** tileEngine::loadMap()
 {
 
 	FILE* p;
 
 	fopen_s(&p,"IMG/capoide.csv", "r");
 
-	map = (float**)malloc((filas) * sizeof(float*));
-	for (int i = 0; i < filas; i++) {
-		map[i] = (float*)malloc((columnas) * sizeof(float));
+
+
+	map = (int**)malloc((columnas) * sizeof(int*));
+	for (int j = 0; j < columnas; j++) {
+		map[j] = (int*)malloc((filas) * sizeof(int));
 	}
 
 	for (int i = 0; i < columnas; i++) {
@@ -24,7 +26,7 @@ float** tileEngine::loadMap()
 	return map;
 }
 
-void tileEngine::dibujarMapa(float **map)
+void tileEngine::dibujarMapa(int**map)
 {
 	int i=0, j=0;
 	float sy = 0;
@@ -32,12 +34,14 @@ void tileEngine::dibujarMapa(float **map)
 	
 
 	for (i = 0; i < columnas; i++) {
-		std::cout << map[i][j];
+		//std::cout << map[i][j];
 		sx = map[i][j];
 		
 		for (j = 0; j < filas; j++) {
 			sy = map[i][j];
+			//std::cout << map[i][j];
 		}
 	}
-	al_draw_bitmap_region(fondo, 0, 0, tilewidth, tileheight, sy, sx, NULL);
+	al_draw_bitmap_region(fondo, sx, sy, tilewidth, tileheight, sx + width, sy + height, NULL);
+	
 }

@@ -361,8 +361,8 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     while (!a) {
         actualiza_juego(jugador);
         al_clear_to_color(vacio);
-        //pinta_fondo();
-        pruebita.dibujarMapa(pruebita.loadMap());
+        pinta_fondo();
+        //pruebita.dibujarMapa(pruebita.loadMap());
         pinta_npc(guardia, 0, 0);
         al_clear_to_color(vacio);
         pinta_jugador(jugador, sourceX, dir);
@@ -378,8 +378,8 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
             //aca iría el teclado en caso de explosión de código
             //jugador.teclado(arma1, keyState, event_queue, events, done, sourceX, sourceY, dir, draw, active, jugador.getSpeed(), timer, frameTimer);
             if (draw) {
-                pruebita.dibujarMapa(pruebita.loadMap());
-                //pinta_fondo();
+                //pruebita.dibujarMapa(pruebita.loadMap());
+                pinta_fondo();
                 if (!jugador.ha_muerto()) {
                     jugador.teclado(/*arma1,*/ keyState, event_queue, events, done, sourceX, sourceY, dir, draw, active, jugador.getSpeed(), timer, frameTimer);
                     pinta_jugador(jugador, sourceX, sourceY);
@@ -395,7 +395,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                 //pinta_jugador(jugador, sourceX, sourceY);
                 dmg_npc(jugador,guardia);
                 dmg_jugador(jugador, guardia);
-                pruebita.loadMap();
+                //pruebita.loadMap();
                 //cout << guardia.getVidaAct() << endl;
                 
                 if (colision(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, dir, jugador.getSpeed()) && !(guardia.ha_muerto() ) ){

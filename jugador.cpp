@@ -73,7 +73,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 this->x -= moveSpeed;
                 dir = 1;
                 al_play_sample(camina2, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
-            }
+            }        
             else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0) {
                 ataca = 1;
                 //cout << ataca;
@@ -91,7 +91,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
             else {
                 active = false;
             }
-            if (events.timer.source == frameTimer && ataca == 0) {
+            if (events.timer.source == frameTimer /*&& ataca == 0*/) {
                 if (active)sourceX += al_get_bitmap_width(this->getBitmap()) / 3;
                 //sourceX += al_get_bitmap_width(arma1.getBitmap()) / 6;
                 else sourceX = 32;

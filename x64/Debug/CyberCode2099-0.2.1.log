@@ -1,3 +1,2 @@
-﻿  TileEngine.cpp
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\TileEngine.cpp(20,16): warning C4477: 'fscanf_s' : la cadena de formato '%d' requiere un argumento de tipo 'int *', pero el argumento variádico 1 tiene el tipo 'float *'
+﻿  jugador.cpp
   CyberCode2099-0.2.1.vcxproj -> C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe

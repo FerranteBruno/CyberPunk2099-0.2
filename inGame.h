@@ -21,6 +21,7 @@ class inGame {
         ALLEGRO_BITMAP* menu6 = al_load_bitmap("IMG/menu6.bmp");
         ALLEGRO_BITMAP* cursor = al_load_bitmap("IMG/cursor.bmp");
         ALLEGRO_COLOR vacio = al_map_rgb(0, 0, 0);
+        ALLEGRO_SAMPLE* sufreDaño;
     public:
         void GAME();
         int encima, debajo, izquierda, derecha;
@@ -41,5 +42,9 @@ class inGame {
         bool cerca(float x, float y, float npc_x, float npc_y, float width, float height, float dir, float moveSpeed);
         void dmg_npc(jugador& jugador, NPC& guardia);
         void dmg_jugador(jugador& jugador, NPC& guardia);
+        bool miraHaciaArriba(jugador &jugador, NPC& guardia);
+        bool miraHaciaAbajo(jugador& jugador, NPC& guardia);
+        bool miraHaciaIzquierda(jugador& jugador, NPC& guardia);
+        bool miraHaciaDerecha(jugador& jugador, NPC& guardia);
         ~inGame();
 };

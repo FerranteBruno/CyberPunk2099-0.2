@@ -102,7 +102,7 @@ NPC::NPC(int _vida)
 {
     vida = _vida;
     vidaAct = vida;
-    moveSpeed = 2;
+    moveSpeed = 1;
     //cout << "esta es la vida: " << vida << endl;
     //cout << "esta es la vida actual: " << vidaAct << endl;
 }

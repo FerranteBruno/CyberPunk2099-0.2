@@ -45,20 +45,98 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
 
     al_wait_for_event(event_queue, &events);
     al_get_keyboard_state(&keyState);
+
     if (events.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
         done = true;
     }
     else if (events.type == ALLEGRO_EVENT_TIMER) {
-        
+            
+
             active = true;
-            if (al_key_down(&keyState, ALLEGRO_KEY_S)) {
+            //ataque y mov hacia abajo
+            if (al_key_down(&keyState, ALLEGRO_KEY_S) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0)) {
+                ataca = 1;
                 this->y += moveSpeed;
                 dir = 0;
+                ddir = dir;
+                al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+            }
+
+            else if (al_key_down(&keyState, ALLEGRO_KEY_S) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 1)) {
+                
+                
+                ataca = 2;
+                al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+                
+                //cout << ataca;
+            }
+            
+            //ataque y mov arriba
+            else if (al_key_down(&keyState, ALLEGRO_KEY_W) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0)) {
+                ataca = 1;
+                this->y -= moveSpeed;
+                dir = 3;
+                ddir = dir;
+                al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+            }
+
+            else if (al_key_down(&keyState, ALLEGRO_KEY_W) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 1)) {
+                
+                
+                ataca = 2;
+                al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+               
+                //cout << ataca;
+            }
+
+            //ataque y mov derecha
+            else if (al_key_down(&keyState, ALLEGRO_KEY_D) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0)) {
+                ataca = 1;
+                this->x += moveSpeed;
+                dir = 2;
+                ddir = dir;
+                al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+            }
+
+            else if (al_key_down(&keyState, ALLEGRO_KEY_D) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 1)) {
+                
+                
+                ataca = 2;
+                al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+                
+                //cout << ataca;
+            }
+
+            //ataque y mov izq
+            else if (al_key_down(&keyState, ALLEGRO_KEY_A) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0)) {
+                ataca = 1;
+                this->x -= moveSpeed;
+                dir = 1;
+                ddir = dir;
+                al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+            }
+
+            else if (al_key_down(&keyState, ALLEGRO_KEY_A) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 1)) {
+                
+                
+                ataca = 2;
+                al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+                
+                //cout << ataca;
+            }
+
+
+
+            else if (al_key_down(&keyState, ALLEGRO_KEY_S)) {
+                this->y += moveSpeed;
+                dir = 0;
+                ddir = dir;
                 al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
             }
             else if (al_key_down(&keyState, ALLEGRO_KEY_W)) {
                 this->y -= moveSpeed;
                 dir = 3;
+                ddir = dir;
                 al_play_sample(camina2, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
             }
             else if (al_key_down(&keyState, ALLEGRO_KEY_SPACE)) {
@@ -67,11 +145,13 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
             else if (al_key_down(&keyState, ALLEGRO_KEY_D)) {
                 this->x += moveSpeed;
                 dir = 2;
+                ddir = dir;
                 al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
             }
             else if (al_key_down(&keyState, ALLEGRO_KEY_A)) {
                 this->x -= moveSpeed;
                 dir = 1;
+                ddir = dir;
                 al_play_sample(camina2, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
             }        
             else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0) {
@@ -79,9 +159,12 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 //cout << ataca;
             }
             else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 1) {
+                
+                
                 ataca = 2;
                 al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
-                //cout << ataca;
+                
+                //cout << ataca
             }
             else if (ataca == 2) ataca = 0;
             else if (al_key_down(&keyState, ALLEGRO_KEY_ESCAPE))

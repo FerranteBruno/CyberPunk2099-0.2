@@ -152,7 +152,7 @@ bool inGame::colision(float x, float y, float npc_x, float npc_y, float width, f
 
 bool inGame::cerca(float x, float y, float npc_x, float npc_y, float width, float height, float dir, float moveSpeed) {
 
-    if ((x + width)+15 < npc_x || x > (npc_x + width)+15 || (y + height)+15 < npc_y || y > (npc_y + height)+15) {
+    if ((x + width)+2 < npc_x || x > (npc_x + width)+2 || (y + height)+2 < npc_y || y > (npc_y + height)+2) {
         return false;
     }
     else
@@ -165,14 +165,19 @@ bool inGame::cerca(float x, float y, float npc_x, float npc_y, float width, floa
 void inGame::dmg_npc(jugador& jugador, NPC& guardia)
 {
     if ((jugador.atacando() == true) && (cerca(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, jugador.getDir(), jugador.getSpeed())==true)
-        && (guardia.ha_muerto()==false))
+        && (guardia.ha_muerto()==false) /*&& (miraHacia(jugador, guardia) == true*/)
     {
-        int xn = 2 + rand() % 2;
-        //cout << "entre" << endl;
-        //jugador.no_ataca();
-        //sonido_espada_da();
-        guardia.sufre_daño(xn, guardia);    
-        //cout << "tiene :" << guardia.getVidaAct() << "de vida" << endl;
+        if ((miraHaciaAbajo(jugador, guardia) == true) || (miraHaciaArriba(jugador, guardia) == true) || (miraHaciaDerecha(jugador, guardia) == true) || (miraHaciaIzquierda(jugador, guardia) == true)) {
+            sufreDaño = al_load_sample("IMG/10.wav");
+            int xn = 2 + rand() % 2;
+            //cout << "entre" << endl;
+            //jugador.no_ataca();
+            //sonido_espada_da();
+            al_play_sample(sufreDaño, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+            guardia.sufre_daño(xn, guardia);
+            //cout << "tiene :" << guardia.getVidaAct() << "de vida" << endl;
+           //al_play_sample
+        }
 
     }
 }
@@ -182,21 +187,48 @@ void inGame::dmg_jugador(jugador &jugador, NPC& guardia) {
     if ((guardia.atacando() == true) && (cerca(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, jugador.getDir(), jugador.getSpeed()) == true)
         && (jugador.ha_muerto() == false) && (guardia.ha_muerto() == false))
     {
-        int xn = 2 + rand() % 2;
-        //cout << "entre" << endl;
-        //jugador.no_ataca();
-        //sonido_espada_da();
-        jugador.sufre_daño(xn, jugador);
-        cout << "ESTOY ACA" << jugador.getVida() << endl;
-        //cout << "tiene :" << jugador.getVida() << "de vida" << endl;
+
+            int xn = 2 + rand() % 2;
+            //cout << "entre" << endl;
+            //jugador.no_ataca();
+            //sonido_espada_da();
+            jugador.sufre_daño(xn, jugador);
+
+            cout << "ESTOY ACA" << jugador.getVida() << endl;
+            //cout << "tiene :" << jugador.getVida() << "de vida" << endl;
+        
 
     }
+}
+
+bool inGame::miraHaciaArriba(jugador &jugador, NPC &guardia){
+    
+        if ((jugador.getDir() == 0) && ((guardia.gety() +5) > jugador.gety())) return true;
+        else return false; 
+}
+
+bool inGame::miraHaciaAbajo(jugador& jugador, NPC& guardia) {
+
+    if ((jugador.getDir() == 3) && ((guardia.gety() -5) < jugador.gety())) return true;
+    else return false;
+}
+
+bool inGame::miraHaciaDerecha(jugador& jugador, NPC& guardia) {
+
+    if ((jugador.getDir() == 2) && (guardia.getx() > jugador.getx())) return true;
+    else return false;
+}
+
+bool inGame::miraHaciaIzquierda(jugador& jugador, NPC& guardia) {
+
+    if ((jugador.getDir() == 1) && (guardia.getx() < jugador.getx())) return true;
+    else return false;
 }
 
 void inGame::GAME(){
     
     const float FPS = 30;
-    const float frameFPS = 3;
+    const float frameFPS = 0.5;
 
     
 

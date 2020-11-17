@@ -169,7 +169,7 @@ void inGame::dmg_npc(jugador& jugador, NPC& guardia)
     {
         if ((miraHaciaAbajo(jugador, guardia) == true) || (miraHaciaArriba(jugador, guardia) == true) || (miraHaciaDerecha(jugador, guardia) == true) || (miraHaciaIzquierda(jugador, guardia) == true)) {
             sufreDaño = al_load_sample("IMG/10.wav");
-            int xn = 2 + rand() % 2;
+            int xn = 10 + rand() % 2;
             //cout << "entre" << endl;
             //jugador.no_ataca();
             //sonido_espada_da();
@@ -187,8 +187,8 @@ void inGame::dmg_jugador(jugador &jugador, NPC& guardia) {
     if ((guardia.atacando() == true) && (cerca(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, jugador.getDir(), jugador.getSpeed()) == true)
         && (jugador.ha_muerto() == false) && (guardia.ha_muerto() == false))
     {
-
-            int xn = 2 + rand() % 2;
+            
+            int xn = 1 + rand() % 2;
             //cout << "entre" << endl;
             //jugador.no_ataca();
             //sonido_espada_da();

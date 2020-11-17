@@ -96,11 +96,13 @@ void NPC::draw(int sx, int sy, int cont) {
     
     
     pinta2(sx,sy);
+    
 }
 
 NPC::NPC(int _vida)
 {
     vida = _vida;
+    vidaMax = _vida;
     vidaAct = vida;
     moveSpeed = 1;
     //cout << "esta es la vida: " << vida << endl;
@@ -121,10 +123,17 @@ void NPC::inicia()
 void NPC::pinta2(float sx, float sy) {
     al_convert_mask_to_alpha(npc, al_map_rgb(0, 0, 0));
     al_draw_bitmap_region(npc, sx, sy * (al_get_bitmap_height(npc)/4), al_get_bitmap_width(npc) / 8, al_get_bitmap_height(npc) / 4, x, y, NULL);
+    pintaVida();
 }
 
 bool NPC::atacando() {
     if (direccion == ATACANDO) {
         return true;
     }
+}
+
+void NPC::pintaVida() {
+
+    al_draw_filled_rectangle(x, y, x + ((vidaAct * 28) / vida), y + 4, al_map_rgb(0, 255, 0));
+
 }

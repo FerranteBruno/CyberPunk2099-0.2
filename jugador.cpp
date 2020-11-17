@@ -17,6 +17,7 @@ void jugador::inicia()
 void jugador::pinta(int sx, int sy) {
     al_convert_mask_to_alpha(p1, al_map_rgb(0, 0, 0));
     al_draw_bitmap_region(p1, sx, sy * 48, 32, 48, x, y, NULL);
+    pintaVida();
 
 
     /*
@@ -219,8 +220,15 @@ void jugador::sufre_daño(int dmg, jugador& jugador) {
 }
 
 jugador::jugador() {
-    vida = 1000;
+    vida = 200;
+    vidaMax = 200;
 }
 jugador::~jugador() {
 
+}
+
+void jugador::pintaVida() {
+       
+    al_draw_filled_rectangle(x,y,x+((vida*32)/vidaMax),y+4, al_map_rgb(0, 255, 0));
+    
 }

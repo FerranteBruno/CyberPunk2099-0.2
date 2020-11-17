@@ -2,6 +2,7 @@
 #include "allegro5/allegro.h"
 #include "allegro5/allegro_audio.h"
 #include "allegro5/allegro_acodec.h"
+#include "allegro5/allegro_primitives.h"
 //#include "Armas.h"
 
 
@@ -17,6 +18,7 @@ private:
     int animacion;*/
     int ataca=0;
     int vida;
+    int vidaMax;
     int mana;
     int aguante;
     int defBase;
@@ -29,11 +31,12 @@ public:
     void teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events,
     bool done, float &sourceX, float &sourceY, float&dir, bool draw, bool active, int moveSpeed, ALLEGRO_TIMER* Timer, ALLEGRO_TIMER* frameTimer);
     float getx() { return x; };
-    float gety() { return y; };
+    float gety() { return y; };    
     int getAtk() { return ataca; };
     float getSpeed() { return moveSpeed; };
     float getDir() { return ddir; };
     int getVida() { return vida; };
+    int getVidaMax() { return vidaMax; };
     void setAtk(int Atk) { ataca = Atk; };
     void setx(float _x) { x = _x; };
     void sety(float _y) { y = _y; };
@@ -45,6 +48,7 @@ public:
     void setpSpeed(float _moveSpeed) { moveSpeed += _moveSpeed; };
     void setmSpeed(float _moveSpeed) { moveSpeed -= _moveSpeed; };
     void setDir(float dir) { ddir = dir; };
+    void pintaVida();
     ALLEGRO_BITMAP* getBitmap() { return p1; };
     void posiciona(float _x, float _y);
     bool atacando() { return ataca > 1; };

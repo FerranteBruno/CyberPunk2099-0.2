@@ -1,6 +1,7 @@
 #pragma once
 #include "allegro5/allegro.h"
 #include "jugador.h"
+#include "allegro5/allegro_primitives.h"
 // Esta clase se encarga del manejo del jugador
 
 enum ESTADOS { DOWN, UP, LEFT, RIGHT, ATACANDO , QUIETO};
@@ -13,6 +14,7 @@ private:
     int ataca;
     int vida;
     int vidaAct;
+    int vidaMax;
     int def;
     bool muerto;
     float moveSpeed;
@@ -20,6 +22,7 @@ private:
     int direccion;
 public:
     float getDir() { return dir; };
+    void pintaVida();
     void cmd(jugador &jugador, bool cerca);
     void update();
     void draw(int sx, int sy, int);

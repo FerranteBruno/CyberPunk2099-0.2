@@ -139,7 +139,7 @@ void inGame::pinta_arma(Armas arma1, float sourceX, float sourceY, float x, floa
 }
 
 //acá vamos a declarar las colisiones
-bool inGame::colision(float x, float y, float npc_x, float npc_y, float width, float height, float dir, float moveSpeed) {
+bool inGame::colision(float x, float y, float npc_x, float npc_y, float width, float height) {
     
     if (x + width < npc_x || x > npc_x + width || y + height < npc_y || y > npc_y + height) {
         return false;
@@ -370,7 +370,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     Guardia B(200);
     Guardia C(200);
     Armas arma1;
-    tileEngine pruebita;
+    //tileEngine pruebita;
 
     NPC* vecNPC[] = { &A, &B, &C };
     
@@ -396,6 +396,10 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     float x = jugador.getx();
     float y = jugador.getx();
     arma1.inicia(x, y);
+
+    A.inicia(600, 500);
+    B.inicia(500, 600);
+    C.inicia(400, 200);
     
 
     bool a = false;
@@ -457,16 +461,25 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                         //cout << guardia.getVida() << endl;
                 }*/
                 
+
+                /*dmg_npc(jugador, A);
+                dmg_jugador(jugador, A);
+
+                dmg_npc(jugador, B);
+                dmg_jugador(jugador, B);
+
+                dmg_npc(jugador, C);
+                dmg_jugador(jugador, C);*/
+
                 for (InterfaceNPC* obj : vecNPC) {
                     
-                    InterfaceNPC& A = *obj;
-                    //obj->inicia();
-                    A.inicia();
+                    InterfaceNPC& rA = *obj;
+                    //obj->inicia(500,320);
+                   dmg_jugador(jugador, rA);
+                   dmg_npc(jugador, rA);
+                   
 
-                    dmg_npc(jugador, A);
-                    dmg_jugador(jugador, A);
-
-                    if (colision(jugador.getx(), jugador.gety(), A.getx(), A.gety(), 30, 46, dir, jugador.getSpeed()) && !(A.ha_muerto())) {
+                    if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
                         if (dir == 0) jugador.setmy(jugador.getSpeed());
                         else if (dir == 1) jugador.setpx(jugador.getSpeed());
                         else if (dir == 2) jugador.setmx(jugador.getSpeed());
@@ -474,13 +487,21 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                         //cout << guardia.getVida() << endl;
                     }
 
-                    if (!(A.ha_muerto())) {
+                    /*if (colision(rA.getx(), rA.gety(), rA.getx(), rA.gety(), 30, 46) && !(obj->ha_muerto())) {
+                        if (dir == 0) jugador.setmy(jugador.getSpeed());
+                        else if (dir == 1) jugador.setpx(jugador.getSpeed());
+                        else if (dir == 2) jugador.setmx(jugador.getSpeed());
+                        else if (dir == 3) jugador.setpy(jugador.getSpeed());
+                        //cout << guardia.getVida() << endl;
+                    }*/
+
+                    if (!(obj->ha_muerto())) {
                         if (cont == 8) cont = 0;
-                        A.cmd(jugador, cerca(jugador.getx(), jugador.gety(), A.getx(), A.gety(), 30, 46, dir, jugador.getSpeed()));
-                        A.update(npcTimer);
+                        obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()));
+                        obj->update(npcTimer);
                         //pinta_npc(guardia, 0, 0);
                         //cout << sy;
-                        A.draw(sx, sy, cont);
+                        obj->draw(sx, sy, cont);
                         cont++;
                         //dmg_npc(jugador, guardia);
                     }

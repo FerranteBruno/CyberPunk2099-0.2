@@ -10,24 +10,28 @@ Guardia::Guardia(int _vida)
     //cout << "esta es la vida actual: " << vidaAct << endl;
 }
 
-void Guardia::draw(int sx, int sy, int cont) {
 
 
-    if (direccion < 4) {
-        sy = direccion;
-        dir = sy;
-        sx += (al_get_bitmap_width(guardia) / 8) * cont;
+void Guardia::cmd(jugador& jugador, bool cerca)
+{
+    if (!cerca) {
+        if ((jugador.getx() - x) > 0) direccion = RIGHT;
+        if ((jugador.getx() - x) < 0) direccion = LEFT;
+        if ((jugador.gety() - y) > 0) direccion = DOWN;
+        if ((jugador.gety() - y) < 0) direccion = UP;
     }
     else {
-        //cout << "dir "<<  dir <<endl;
-        sy = dir;
+
+        //cout << "Estoy atacando " << endl;
+        direccion = ATACANDO;
+
     }
-    //cout << "sx " << sx << endl;
-
-
-    pinta2(sx, sy);
+    /*if (direccion == QUIETO) {
+        direccion = ATACANDO;
+    }*/
 
 }
+
 
 void Guardia::update(ALLEGRO_TIMER* npcTimer)
 {
@@ -67,41 +71,40 @@ void Guardia::update(ALLEGRO_TIMER* npcTimer)
     }
 }
 
-void Guardia::cmd(jugador& jugador, bool cerca)
-{
-    if (!cerca) {
-        if ((jugador.getx() - x) > 0) direccion = RIGHT;
-        if ((jugador.getx() - x) < 0) direccion = LEFT;
-        if ((jugador.gety() - y) > 0) direccion = DOWN;
-        if ((jugador.gety() - y) < 0) direccion = UP;
+void Guardia::draw(int sx, int sy, int cont) {
+
+
+    if (direccion < 4) {
+        sy = direccion;
+        dir = sy;
+        sx += (al_get_bitmap_width(guardia) / 8) * cont;
     }
     else {
-
-        //cout << "Estoy atacando " << endl;
-        direccion = ATACANDO;
-
+        //cout << "dir "<<  dir <<endl;
+        sy = dir;
     }
-    /*if (direccion == QUIETO) {
-        direccion = ATACANDO;
-    }*/
+    //cout << "sx " << sx << endl;
+
+
+    pinta2(sx, sy);
 
 }
 
-void Guardia::inicia()
+void Guardia::inicia(int _x, int _y)
 {
 
 
     guardia = al_load_bitmap("IMG/4083.bmp");
     camina = al_load_sample("IMG/10.wav");
     atak = al_load_sample("IMG/2.wav");
-    int rx = 0, ry = 0;
+    /*int rx = 0, ry = 0;
 
     srand(time(NULL));
 
     rx = 1 + rand() % 2;
-    ry = 1 + rand() % 2;
+    ry = 1 + rand() % 2;*/
 
-    posiciona(rx, ry);
+    posiciona(_x, _y);
 
     // inicializar vbles
     //direccion = 0;
@@ -109,6 +112,12 @@ void Guardia::inicia()
     /*this->x = 500;
     this->y = 500;*/
 }
+
+void Guardia::posiciona(float _x, float _y) {
+    x = _x;
+    y = _y;
+}
+
 
 void Guardia::pinta2(float sx, float sy) {
     al_convert_mask_to_alpha(guardia, al_map_rgb(0, 0, 0));

@@ -1,18 +1,4 @@
-﻿  Armas.cpp
-  Guardia.cpp
-  inGame.cpp
-C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\inGame.cpp(281,46): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\inGame.cpp(364,190): error C2601: 'inGame::juego_inicia': las definiciones de funciones locales no son válidas
-C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\inGame.cpp(292): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
-C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\inGame.cpp(510,16): error C2064: el término no se evalúa como una función con 1 argumentos
-C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\inGame.cpp(512,1): error C2144: error de sintaxis: 'void' debe estar precedido de ';'
-C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\inGame.cpp(512,114): error C2601: 'inGame::menu_opciones': las definiciones de funciones locales no son válidas
-C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\inGame.cpp(292): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
-C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\inGame.cpp(292): fatal error C1075: "{": no se encontró ningún token coincidente
-  InterfaceNPC.cpp
-  jugador.cpp
-  NPC.cpp
-  Source.cpp
-  TileEngine.cpp
-  Generando código...
-C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\NPC.cpp(155): warning C4715: 'NPC::atacando': no todas las rutas de acceso de control devuelven un valor
+﻿  inGame.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(281,46): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\jugador.h(56): warning C4715: 'jugador::ha_muerto': no todas las rutas de acceso de control devuelven un valor
+  CyberCode2099-0.2.1.vcxproj -> C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe

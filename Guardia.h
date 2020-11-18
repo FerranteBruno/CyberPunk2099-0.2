@@ -21,11 +21,14 @@ public:
     void draw(int sx, int sy, int cont);
     void update(ALLEGRO_TIMER* npcTimer);
     void cmd(jugador& jugador, bool cerca);
-    void inicia();
+    void inicia(int _x, int _y);
+    void posiciona(float _x, float _y);
     void pinta2(float sx, float sy);
     void pintaVida();
     bool ha_muerto() { return muerto; };
     void setDir(float _x) { direccion = _x; };
     void sufre_daño(int dmg, InterfaceNPC& guardia);
+    float getx() { return x; };
+    float gety() { return y; };
 };
 

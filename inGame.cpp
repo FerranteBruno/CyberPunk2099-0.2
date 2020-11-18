@@ -289,7 +289,7 @@ void inGame::GAME(){
     this->~inGame();
 }
 
-void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, bool &done, float x, float y) {
+void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, bool& done, float x, float y) {
 
     if (x > 970 && x < 1120 &&
         y>360 && y < 420) {
@@ -338,27 +338,29 @@ void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT even
                     menu_opciones(event_queue, events, done, x, y);
 
                 }
+            }
         }
-    }
 
-    else if (x > 970 && x < 1105 &&
-        y>624 && y < 688) {
-        al_clear_to_color(al_map_rgb(0, 0, 0));
-        al_draw_bitmap(menu6, 0, 0, NULL);
-        al_flip_display();
-        if (events.mouse.button & 1) {
+        else if (x > 970 && x < 1105 &&
+            y>624 && y < 688) {
+            al_clear_to_color(al_map_rgb(0, 0, 0));
+            al_draw_bitmap(menu6, 0, 0, NULL);
+            al_flip_display();
+            if (events.mouse.button & 1) {
 
-            //a = true;   //funcion jugar a desarrolar
-            done = true;
+                //a = true;   //funcion jugar a desarrolar
+                done = true;
+            }
         }
+
+        else {
+            al_clear_to_color(al_map_rgb(0, 0, 0));
+            al_draw_bitmap(menu1, 0, 0, NULL);
+            al_flip_display();
+        }
+
     }
 
-    else {
-        al_clear_to_color(al_map_rgb(0, 0, 0));
-        al_draw_bitmap(menu1, 0, 0, NULL);
-        al_flip_display();
-    }
-    
 }
 
 void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer) {
@@ -457,13 +459,14 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                 
                 for (InterfaceNPC* obj : vecNPC) {
                     
-                    //InterfaceNPC& A = *obj;
-                    obj->inicia();
+                    InterfaceNPC& A = *obj;
+                    //obj->inicia();
+                    A.inicia();
 
-                    dmg_npc(jugador, obj);
-                    dmg_jugador(jugador, obj);
+                    dmg_npc(jugador, A);
+                    dmg_jugador(jugador, A);
 
-                    if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()) && !(obj->ha_muerto())) {
+                    if (colision(jugador.getx(), jugador.gety(), A.getx(), A.gety(), 30, 46, dir, jugador.getSpeed()) && !(A.ha_muerto())) {
                         if (dir == 0) jugador.setmy(jugador.getSpeed());
                         else if (dir == 1) jugador.setpx(jugador.getSpeed());
                         else if (dir == 2) jugador.setmx(jugador.getSpeed());
@@ -471,13 +474,13 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                         //cout << guardia.getVida() << endl;
                     }
 
-                    if (!(obj->ha_muerto())) {
+                    if (!(A.ha_muerto())) {
                         if (cont == 8) cont = 0;
-                        obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()));
-                        obj->update(npcTimer);
+                        A.cmd(jugador, cerca(jugador.getx(), jugador.gety(), A.getx(), A.gety(), 30, 46, dir, jugador.getSpeed()));
+                        A.update(npcTimer);
                         //pinta_npc(guardia, 0, 0);
                         //cout << sy;
-                        obj->draw(sx, sy, cont);
+                        A.draw(sx, sy, cont);
                         cont++;
                         //dmg_npc(jugador, guardia);
                     }

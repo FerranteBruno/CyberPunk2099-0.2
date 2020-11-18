@@ -41,7 +41,7 @@ void NPC::cmd(jugador &jugador, bool cerca)
         if ((jugador.gety() - y) < 0) direccion = UP;
     }
     else {
-        cout << "Estoy atacando " << endl;
+        //cout << "Estoy atacando " << endl;
         direccion = ATACANDO;
     }
     /*if (direccion == QUIETO) {

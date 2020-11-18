@@ -43,10 +43,11 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
     bool done, float& sourceX, float& sourceY, float&dir, bool draw, bool active, int moveSpeed, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer) {
 
     /// enum Direction { DOWN, LEFT, RIGHT, UP };
-
+    
+    //cout << efesita;
     al_wait_for_event(event_queue, &events);
     al_get_keyboard_state(&keyState);
-
+    cout << "timer " << al_get_timer_count(timer) << endl;
     if (events.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
         done = true;
     }
@@ -114,6 +115,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 this->x -= moveSpeed;
                 dir = 1;
                 ddir = dir;
+                
                 al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
             }
 
@@ -155,13 +157,20 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 ddir = dir;
                 al_play_sample(camina2, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
             }        
-            else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0) {
+            else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0 && al_get_timer_count(timer) >5) {
                 ataca = 1;
+                //cout << "entre" << endl;
+                al_set_timer_count(timer, 0);
+                
+                
+                //cout << "hola";
                 //cout << ataca;
             }
-            else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 1) {
+            else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 1 && al_get_timer_count(timer) >5){
                 
+                al_set_timer_count(timer, 0);
                 
+                //cout << "hola";
                 ataca = 2;
                 al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
                 

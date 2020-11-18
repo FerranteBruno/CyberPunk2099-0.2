@@ -188,13 +188,13 @@ void inGame::dmg_jugador(jugador &jugador, NPC& guardia) {
         && (jugador.ha_muerto() == false) && (guardia.ha_muerto() == false))
     {
             
-            int xn = 1 + rand() % 2;
+             int xn = 0/*1 + rand() % 2*/;
             //cout << "entre" << endl;
             //jugador.no_ataca();
             //sonido_espada_da();
             jugador.sufre_daño(xn, jugador);
 
-            cout << "ESTOY ACA" << jugador.getVida() << endl;
+            //cout << "ESTOY ACA" << jugador.getVida() << endl;
             //cout << "tiene :" << jugador.getVida() << "de vida" << endl;
         
 
@@ -253,7 +253,7 @@ void inGame::GAME(){
 
     al_start_timer(timer);
     al_start_timer(frameTimer);
-
+    
     int x = 0, y = 0;
 
     bool done = false;
@@ -359,8 +359,9 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     NPC guardia(100);
     Armas arma1;
     tileEngine pruebita;
-        ;
-
+    
+    
+    
     al_unregister_event_source(event_queue, al_get_mouse_event_source());
    // ALLEGRO_BITMAP* p1 = jugador.getBitmap();
     //ALLEGRO_BITMAP* npc = guardia.getBitmap();
@@ -412,7 +413,11 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
             if (draw) {
                 //pruebita.dibujarMapa(pruebita.loadMap());
                 pinta_fondo();
+                //cout << al_get_timer_count(timer);
+                
                 if (!jugador.ha_muerto()) {
+                    
+                    
                     jugador.teclado(/*arma1,*/ keyState, event_queue, events, done, sourceX, sourceY, dir, draw, active, jugador.getSpeed(), timer, frameTimer);
                     pinta_jugador(jugador, sourceX, sourceY);
                     arma1.cmd(jugador, sourceX, sourceY);

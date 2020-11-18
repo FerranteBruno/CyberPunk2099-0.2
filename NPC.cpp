@@ -1,6 +1,7 @@
 #include "NPC.h"
 #include "inGame.h"
 #include <iostream>
+#include <time.h>
 using namespace std;
 void NPC::posiciona(float _x, float _y) {
     x = _x;
@@ -41,8 +42,10 @@ void NPC::cmd(jugador &jugador, bool cerca)
         if ((jugador.gety() - y) < 0) direccion = UP;
     }
     else {
-        //cout << "Estoy atacando " << endl;
-        direccion = ATACANDO;
+        
+            //cout << "Estoy atacando " << endl;
+            direccion = ATACANDO;
+            
     }
     /*if (direccion == QUIETO) {
         direccion = ATACANDO;
@@ -50,7 +53,7 @@ void NPC::cmd(jugador &jugador, bool cerca)
    
 }
 
-void NPC::update()
+void NPC::update(ALLEGRO_TIMER* npcTimer)
 {
     
     switch (direccion) {
@@ -73,9 +76,17 @@ void NPC::update()
     case QUIETO:
         y += 0;
         x += 0;
+        no_ataca();
         break;
     case ATACANDO:
-        ataca = 1;
+        if (al_get_timer_count(npcTimer) > 10) {
+            al_play_sample(atak, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+            ataca = 1;
+            al_set_timer_count(npcTimer, 0);
+        }
+        else {
+            ataca = 0;
+        }
         break;
     }
 }
@@ -99,11 +110,11 @@ void NPC::draw(int sx, int sy, int cont) {
     
 }
 
-NPC::NPC(int _vida)
+NPC::NPC()
 {
-    vida = _vida;
-    vidaMax = _vida;
-    vidaAct = vida;
+    vida = 100;
+    vidaMax = 100;
+    vidaAct = 100;
     moveSpeed = 1;
     //cout << "esta es la vida: " << vida << endl;
     //cout << "esta es la vida actual: " << vidaAct << endl;
@@ -111,12 +122,23 @@ NPC::NPC(int _vida)
 
 void NPC::inicia()
 {
+    
+
     npc = al_load_bitmap("IMG/4083.bmp");
+    camina = al_load_sample("IMG/10.wav");
+    atak = al_load_sample("IMG/2.wav");
+    int rx=0, ry=0;
+
+    rx = 1 + rand() % 1280;
+    ry = 1 + rand() % 720;
+
+    posiciona(rx, ry);
+
     // inicializar vbles
     //direccion = 0;
     //animacion = 0;
-    this->x = 500;
-    this->y = 500;
+    /*this->x = 500;
+    this->y = 500;*/
 }
 
 

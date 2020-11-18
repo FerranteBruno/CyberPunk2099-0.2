@@ -162,7 +162,7 @@ bool inGame::cerca(float x, float y, float npc_x, float npc_y, float width, floa
 }
 
 
-void inGame::dmg_npc(jugador& jugador, NPC& guardia)
+void inGame::dmg_npc(jugador& jugador, InterfaceNPC &guardia)
 {
     if ((jugador.atacando() == true) && (cerca(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, jugador.getDir(), jugador.getSpeed())==true)
         && (guardia.ha_muerto()==false) /*&& (miraHacia(jugador, guardia) == true*/)
@@ -182,44 +182,44 @@ void inGame::dmg_npc(jugador& jugador, NPC& guardia)
     }
 }
 
-void inGame::dmg_jugador(jugador &jugador, NPC& guardia) {
+void inGame::dmg_jugador(jugador &jugador, InterfaceNPC& guardia) {
 
     if ((guardia.atacando() == true) && (cerca(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, jugador.getDir(), jugador.getSpeed()) == true)
-        && (jugador.ha_muerto() == false) && (guardia.ha_muerto() == false))
+        && (jugador.ha_muerto() == false) && (guardia.ha_muerto() == false) && (guardia.getAtaca() == 1))
     {
             
-             int xn = 0/*1 + rand() % 2*/;
+            sufreDaño2 = al_load_sample("IMG/12.wav");
+            int xn = 1 + rand() % 2;
             //cout << "entre" << endl;
             //jugador.no_ataca();
             //sonido_espada_da();
             jugador.sufre_daño(xn, jugador);
-
+            al_play_sample(sufreDaño2, 1, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
             //cout << "ESTOY ACA" << jugador.getVida() << endl;
             //cout << "tiene :" << jugador.getVida() << "de vida" << endl;
-        
-
+            guardia.setDir(QUIETO);
     }
 }
 
-bool inGame::miraHaciaArriba(jugador &jugador, NPC &guardia){
+bool inGame::miraHaciaArriba(jugador &jugador, InterfaceNPC& guardia){
     
         if ((jugador.getDir() == 0) && ((guardia.gety() +5) > jugador.gety())) return true;
         else return false; 
 }
 
-bool inGame::miraHaciaAbajo(jugador& jugador, NPC& guardia) {
+bool inGame::miraHaciaAbajo(jugador& jugador, InterfaceNPC& guardia) {
 
     if ((jugador.getDir() == 3) && ((guardia.gety() -5) < jugador.gety())) return true;
     else return false;
 }
 
-bool inGame::miraHaciaDerecha(jugador& jugador, NPC& guardia) {
+bool inGame::miraHaciaDerecha(jugador& jugador, InterfaceNPC& guardia) {
 
     if ((jugador.getDir() == 2) && (guardia.getx() > jugador.getx())) return true;
     else return false;
 }
 
-bool inGame::miraHaciaIzquierda(jugador& jugador, NPC& guardia) {
+bool inGame::miraHaciaIzquierda(jugador& jugador, InterfaceNPC& guardia) {
 
     if ((jugador.getDir() == 1) && (guardia.getx() < jugador.getx())) return true;
     else return false;
@@ -238,6 +238,8 @@ void inGame::GAME(){
     //registramos los eventos de la wea
     ALLEGRO_TIMER* timer = al_create_timer(1.0 / FPS);
     ALLEGRO_TIMER* frameTimer = al_create_timer(1.0 / FPS);
+    ALLEGRO_TIMER* npcTimer = al_create_timer(1.0 / FPS);
+
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
     al_register_event_source(event_queue, al_get_timer_event_source(frameTimer));
     al_register_event_source(event_queue, al_get_mouse_event_source());
@@ -253,6 +255,7 @@ void inGame::GAME(){
 
     al_start_timer(timer);
     al_start_timer(frameTimer);
+    al_start_timer(npcTimer);
     
     int x = 0, y = 0;
 
@@ -281,7 +284,7 @@ void inGame::GAME(){
         menu_principal(event_queue, events, done, x, y);
     }
     
-    juego_inicia(keyState, event_queue, events, timer, frameTimer);
+    juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer);
     al_destroy_event_queue(event_queue);
     this->~inGame();
 }
@@ -354,11 +357,16 @@ void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT even
     
 }
 
-void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer) {
+void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer) {
     jugador jugador;
-    NPC guardia(100);
+    //NPC guardia;
+    Guardia A(100);
+    Guardia B(200);
+    Guardia C(200);
     Armas arma1;
     tileEngine pruebita;
+
+    NPC* vecNPC[] = { &A, &B, &C };
     
     
     
@@ -382,7 +390,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     float x = jugador.getx();
     float y = jugador.getx();
     arma1.inicia(x, y);
-    guardia.inicia();
+    
 
     bool a = false;
     bool draw = true, active = false;
@@ -394,9 +402,9 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     while (!a) {
         actualiza_juego(jugador);
         al_clear_to_color(vacio);
-        pinta_fondo();
+        //pinta_fondo();
         //pruebita.dibujarMapa(pruebita.loadMap());
-        pinta_npc(guardia, 0, 0);
+        //pinta_npc(guardia, 0, 0);
         al_clear_to_color(vacio);
         pinta_jugador(jugador, sourceX, dir);
         al_play_sample_instance(midi);
@@ -430,22 +438,55 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                     arma1.~Armas();
                 }
                 //pinta_jugador(jugador, sourceX, sourceY);
-                dmg_npc(jugador,guardia);
-                dmg_jugador(jugador, guardia);
+                
+                
                 //pruebita.loadMap();
                 //cout << guardia.getVidaAct() << endl;
                 
-                if (colision(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, dir, jugador.getSpeed()) && !(guardia.ha_muerto() ) ){
+                /*if (colision(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, dir, jugador.getSpeed()) && !(guardia.ha_muerto() ) ){
                     if (dir == 0) jugador.setmy(jugador.getSpeed());
                     else if (dir == 1) jugador.setpx(jugador.getSpeed());
                     else if (dir == 2) jugador.setmx(jugador.getSpeed());
                     else if (dir == 3) jugador.setpy(jugador.getSpeed());
                         //cout << guardia.getVida() << endl;
+                }*/
+                
+                for (InterfaceNPC* obj : vecNPC) {
+                    
+                    //InterfaceNPC& A = *obj;
+                    obj->inicia();
+
+                    dmg_npc(jugador, obj);
+                    dmg_jugador(jugador, obj);
+
+                    if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()) && !(obj->ha_muerto())) {
+                        if (dir == 0) jugador.setmy(jugador.getSpeed());
+                        else if (dir == 1) jugador.setpx(jugador.getSpeed());
+                        else if (dir == 2) jugador.setmx(jugador.getSpeed());
+                        else if (dir == 3) jugador.setpy(jugador.getSpeed());
+                        //cout << guardia.getVida() << endl;
+                    }
+
+                    if (!(obj->ha_muerto())) {
+                        if (cont == 8) cont = 0;
+                        obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()));
+                        obj->update(npcTimer);
+                        //pinta_npc(guardia, 0, 0);
+                        //cout << sy;
+                        obj->draw(sx, sy, cont);
+                        cont++;
+                        //dmg_npc(jugador, guardia);
+                    }
+                    else {
+                        //obj.~NPC();
+                    }
+
+                    
                 }
-                if (!(guardia.ha_muerto())) {
+                /*if (!(guardia.ha_muerto())) {
                     if (cont == 8) cont = 0;
                     guardia.cmd(jugador, cerca(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, dir, jugador.getSpeed()));
-                    guardia.update();
+                    guardia.update(npcTimer);
                     //pinta_npc(guardia, 0, 0);
                     //cout << sy;
                     guardia.draw(sx, sy, cont);
@@ -454,7 +495,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                 }
                 else {
                     guardia.~NPC();
-                }
+                }*/
                 //pinta_arma(arma1, sourceX, sourceY, jugador.getx(), jugador.gety());
                 al_flip_display();
             }

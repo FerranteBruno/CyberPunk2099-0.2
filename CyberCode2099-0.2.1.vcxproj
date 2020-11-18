@@ -162,7 +162,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Armas.cpp" />
+    <ClCompile Include="Guardia.cpp" />
     <ClCompile Include="inGame.cpp" />
+    <ClCompile Include="InterfaceNPC.cpp" />
     <ClCompile Include="jugador.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -170,6 +172,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armas.h" />
+    <ClInclude Include="Guardia.h" />
+    <ClInclude Include="InterfaceNPC.h" />
     <ClInclude Include="jugador.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="inGame.h" />

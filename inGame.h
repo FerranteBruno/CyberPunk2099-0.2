@@ -3,6 +3,7 @@
 #include "jugador.h"
 #include "Armas.h"
 #include "TileEngine.h"
+#include "Guardia.h"
 /*#ifndef INGAME_H_INCLUDED
 #define INGAME_H_INCLUDED*/
 //#include "allegro5/allegro.h"
@@ -22,6 +23,8 @@ class inGame {
         ALLEGRO_BITMAP* cursor = al_load_bitmap("IMG/cursor.bmp");
         ALLEGRO_COLOR vacio = al_map_rgb(0, 0, 0);
         ALLEGRO_SAMPLE* sufreDaño;
+        ALLEGRO_SAMPLE* sufreDaño2;
+
     public:
         void GAME();
         int encima, debajo, izquierda, derecha;
@@ -36,15 +39,15 @@ class inGame {
           //  bool done, int& sourceX, int& sourceY, int& dir, bool draw, bool active, int moveSpeed);
         //Metodos de gameplay
         void actualiza_juego(jugador jugador);
-        void juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer);
+        void juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer);
         void menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, bool &done, float x, float y);
         bool colision(float x, float y, float npc_x, float npc_y, float width, float height, float dir, float moveSpeed);
         bool cerca(float x, float y, float npc_x, float npc_y, float width, float height, float dir, float moveSpeed);
-        void dmg_npc(jugador& jugador, NPC& guardia);
-        void dmg_jugador(jugador& jugador, NPC& guardia);
-        bool miraHaciaArriba(jugador &jugador, NPC& guardia);
-        bool miraHaciaAbajo(jugador& jugador, NPC& guardia);
-        bool miraHaciaIzquierda(jugador& jugador, NPC& guardia);
-        bool miraHaciaDerecha(jugador& jugador, NPC& guardia);
+        void dmg_npc(jugador& jugador, InterfaceNPC &guardia);
+        void dmg_jugador(jugador& jugador, InterfaceNPC &guardia);
+        bool miraHaciaArriba(jugador &jugador, InterfaceNPC& guardia);
+        bool miraHaciaAbajo(jugador& jugador, InterfaceNPC& guardia);
+        bool miraHaciaIzquierda(jugador& jugador, InterfaceNPC& guardia );
+        bool miraHaciaDerecha(jugador& jugador, InterfaceNPC& guardia );
         ~inGame();
 };

@@ -487,13 +487,10 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                         //cout << guardia.getVida() << endl;
                     }
 
-                    /*if (colision(rA.getx(), rA.gety(), rA.getx(), rA.gety(), 30, 46) && !(obj->ha_muerto())) {
-                        if (dir == 0) jugador.setmy(jugador.getSpeed());
-                        else if (dir == 1) jugador.setpx(jugador.getSpeed());
-                        else if (dir == 2) jugador.setmx(jugador.getSpeed());
-                        else if (dir == 3) jugador.setpy(jugador.getSpeed());
+                    if (colision(rA.getx(), rA.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
+                        obj->setEstado(QUIETO);
                         //cout << guardia.getVida() << endl;
-                    }*/
+                    }
 
                     if (!(obj->ha_muerto())) {
                         if (cont == 8) cont = 0;

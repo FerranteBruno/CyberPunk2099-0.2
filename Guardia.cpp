@@ -147,3 +147,10 @@ void Guardia::sufre_daño(int dmg, InterfaceNPC& guardia)
     }
 }
 
+bool Guardia::atacando() {
+    if (direccion == ATACANDO) {
+        return true;
+    }
+}
+
+

@@ -39,6 +39,7 @@ public:
     void setx(float _x) { x = _x; };
     virtual void setDir(int _x) { direccion = _x; };
     void sety(float _y) { y = _y; };
+    void setEstado(int dire) { direccion = dire; };
     ALLEGRO_BITMAP* getBitmap() { return npc; };
     void posiciona(float _x, float _y);
     bool atacando() ;

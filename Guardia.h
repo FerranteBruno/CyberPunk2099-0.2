@@ -26,9 +26,12 @@ public:
     void pinta2(float sx, float sy);
     void pintaVida();
     bool ha_muerto() { return muerto; };
-    void setDir(float _x) { direccion = _x; };
     void sufre_daño(int dmg, InterfaceNPC& guardia);
+    bool atacando();
     float getx() { return x; };
     float gety() { return y; };
+    int getAtaca() { return ataca; };
+    void setDir(float _x) { direccion = _x; };
+    void setEstado(int dire) { direccion = dire; };
 };
 

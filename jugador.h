@@ -3,6 +3,8 @@
 #include "allegro5/allegro_audio.h"
 #include "allegro5/allegro_acodec.h"
 #include "allegro5/allegro_primitives.h"
+#include "allegro5/allegro_font.h"
+#include "allegro5/allegro_ttf.h"
 //#include "Armas.h"
 
 
@@ -13,6 +15,7 @@ private:
     ALLEGRO_SAMPLE* atak;
     ALLEGRO_SAMPLE* camina;
     ALLEGRO_SAMPLE* camina2;
+    ALLEGRO_FONT* lavida;
     float x, y;
     /*int direccion;
     int animacion;*/

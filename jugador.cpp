@@ -238,6 +238,13 @@ jugador::~jugador() {
 
 void jugador::pintaVida() {
        
+    lavida = al_load_font("IMG/BROADW.ttf", 18, ALLEGRO_ALIGN_CENTER);
+
+    al_draw_text(lavida, al_map_rgb(255, 0, 0), 640, 650, ALLEGRO_ALIGN_CENTER, "Vida actual");
+
     al_draw_filled_rectangle(x,y,x+((vida*32)/vidaMax),y+4, al_map_rgb(0, 255, 0));
+    al_draw_filled_rectangle(500,675, 425 + ((vida * 360) / vidaMax), 700, al_map_rgb(0, 255, 0));
+
+    al_destroy_font(lavida);
     
 }

@@ -239,6 +239,7 @@ void inGame::GAME(){
     ALLEGRO_TIMER* timer = al_create_timer(1.0 / FPS);
     ALLEGRO_TIMER* frameTimer = al_create_timer(1.0 / FPS);
     ALLEGRO_TIMER* npcTimer = al_create_timer(1.0 / FPS);
+    ALLEGRO_TIMER* rondasTimer = al_create_timer(1.0 / FPS);
 
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
     al_register_event_source(event_queue, al_get_timer_event_source(frameTimer));
@@ -284,9 +285,9 @@ void inGame::GAME(){
         menu_principal(event_queue, events, done, x, y);
     }
     
-    juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer);
+    juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer);
     al_destroy_event_queue(event_queue);
-    this->~inGame();
+    //this->~inGame();
 }
 
 void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, bool& done, float x, float y) {
@@ -363,7 +364,7 @@ void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT even
 
 }
 
-void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer) {
+void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer) {
     jugador jugador;
     //NPC guardia;
     Guardia A(100);
@@ -401,6 +402,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     B.inicia(500, 600);
     C.inicia(400, 200);
     
+    Rondas rondita;
 
     bool a = false;
     bool draw = true, active = false;
@@ -419,40 +421,44 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
         pinta_jugador(jugador, sourceX, dir);
         al_play_sample_instance(midi);
         //pinta_arma(arma1, sourceX, dir, jugador.getx(), jugador.gety());
-        
-        
+
+
         bool done = false;
+        bool estanVivos = true; // probando de momento
         while (!done)
         {
-            
+
             //teclado(jugador,x, y, arma1, keyState, event_queue, events, done, sourceX, sourceY, dir, draw, active, jugador.getSpeed());
             //aca iría el teclado en caso de explosión de código
             //jugador.teclado(arma1, keyState, event_queue, events, done, sourceX, sourceY, dir, draw, active, jugador.getSpeed(), timer, frameTimer);
             if (draw) {
                 //pruebita.dibujarMapa(pruebita.loadMap());
+
+
+
                 pinta_fondo();
                 //cout << al_get_timer_count(timer);
-                
+
                 if (!jugador.ha_muerto()) {
-                    
-                    
+
+
                     jugador.teclado(/*arma1,*/ keyState, event_queue, events, done, sourceX, sourceY, dir, draw, active, jugador.getSpeed(), timer, frameTimer);
                     pinta_jugador(jugador, sourceX, sourceY);
                     arma1.cmd(jugador, sourceX, sourceY);
                     arma1.update();
                     pinta_arma(arma1, sourceX, sourceY, jugador.getx(), jugador.gety());
-                    
+
                 }
                 if (jugador.ha_muerto()) {
                     jugador.~jugador();
                     arma1.~Armas();
                 }
                 //pinta_jugador(jugador, sourceX, sourceY);
-                
-                
+
+
                 //pruebita.loadMap();
                 //cout << guardia.getVidaAct() << endl;
-                
+
                 /*if (colision(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, dir, jugador.getSpeed()) && !(guardia.ha_muerto() ) ){
                     if (dir == 0) jugador.setmy(jugador.getSpeed());
                     else if (dir == 1) jugador.setpx(jugador.getSpeed());
@@ -460,7 +466,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                     else if (dir == 3) jugador.setpy(jugador.getSpeed());
                         //cout << guardia.getVida() << endl;
                 }*/
-                
+
 
                 /*dmg_npc(jugador, A);
                 dmg_jugador(jugador, A);
@@ -471,13 +477,17 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                 dmg_npc(jugador, C);
                 dmg_jugador(jugador, C);*/
 
+                checkRondas(rondasTimer, rondita, jugador, estanVivos);
+                updateRondas(rondasTimer, rondita);
+                drawRondas(rondasTimer, rondita, jugador, estanVivos);
+
                 for (InterfaceNPC* obj : vecNPC) {
-                    
+
                     InterfaceNPC& rA = *obj;
                     //obj->inicia(500,320);
-                   dmg_jugador(jugador, rA);
-                   dmg_npc(jugador, rA);
-                   
+                    dmg_jugador(jugador, rA);
+                    dmg_npc(jugador, rA);
+
 
                     if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
                         if (dir == 0) jugador.setmy(jugador.getSpeed());
@@ -504,10 +514,10 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                     }
                     else {
                         //obj.~NPC();
-                    }
 
-                    
+                    }
                 }
+
                 /*if (!(guardia.ha_muerto())) {
                     if (cont == 8) cont = 0;
                     guardia.cmd(jugador, cerca(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, dir, jugador.getSpeed()));
@@ -571,4 +581,23 @@ void inGame::menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT event
     }
 
 
+}
+
+void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos) 
+{
+    bool daaale = true;
+    if (!(jugador.ha_muerto())) {
+        rondita.setComienza(daaale);
+        rondita.cmd(timer, estanVivos, jugador);
+    }
+}
+
+void inGame::updateRondas(ALLEGRO_TIMER* timer, Rondas &rondita)
+{
+    rondita.update(timer);
+}
+
+void inGame::drawRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos)
+{
+    rondita.draw(jugador, estanVivos);
 }

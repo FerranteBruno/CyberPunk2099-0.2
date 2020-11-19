@@ -4,6 +4,8 @@
 #include "Armas.h"
 #include "TileEngine.h"
 #include "Guardia.h"
+#include "Rondas.h"
+
 /*#ifndef INGAME_H_INCLUDED
 #define INGAME_H_INCLUDED*/
 //#include "allegro5/allegro.h"
@@ -49,7 +51,7 @@ class inGame {
           //  bool done, int& sourceX, int& sourceY, int& dir, bool draw, bool active, int moveSpeed);
         //Metodos de gameplay
         void actualiza_juego(jugador jugador);
-        void juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer);
+        void juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer);
         void menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, bool &done, float x, float y);
         bool colision(float x, float y, float npc_x, float npc_y, float width, float height);
         bool cerca(float x, float y, float npc_x, float npc_y, float width, float height, float dir, float moveSpeed);
@@ -60,5 +62,8 @@ class inGame {
         bool miraHaciaIzquierda(jugador& jugador, InterfaceNPC& guardia );
         bool miraHaciaDerecha(jugador& jugador, InterfaceNPC& guardia );
         void menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, bool& done, float x, float y);
+        void checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador& jugador, bool estanVivos);
+        void updateRondas(ALLEGRO_TIMER* timer, Rondas &rondita);
+        void drawRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos);
         ~inGame();
 };

@@ -1,2 +1,3 @@
-﻿  puntuacion.cpp
-  CyberCode2099-0.2.1.vcxproj -> C:\Users\Marce\OneDrive\Documents\GitHub\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe
+﻿  Rondas.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\jugador.h(59): warning C4715: 'jugador::ha_muerto': no todas las rutas de acceso de control devuelven un valor
+  CyberCode2099-0.2.1.vcxproj -> C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe

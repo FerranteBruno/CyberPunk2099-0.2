@@ -47,15 +47,17 @@ void Rondas::update(ALLEGRO_TIMER* timer)
 
 		al_start_timer(timer);
 
-		if (al_get_timer_count(timer) == 60) {
+		if (al_get_timer_count(timer) == 30) {
 			sec++;
+		
+			al_set_timer_count(timer, 0);
 		}
 
 		if (sec == 60) {
 			min++;
 		}
 
-		if (min == 60 && sec == 30) {
+		if (min == 1 && sec == 0) {
 			controlDeRondas = FINALIZA;
 		}
 

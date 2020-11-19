@@ -167,6 +167,7 @@
     <ClCompile Include="InterfaceNPC.cpp" />
     <ClCompile Include="jugador.cpp" />
     <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="Rondas.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="TileEngine.cpp" />
   </ItemGroup>
@@ -177,6 +178,7 @@
     <ClInclude Include="jugador.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="inGame.h" />
+    <ClInclude Include="Rondas.h" />
     <ClInclude Include="TileEngine.h" />
   </ItemGroup>
   <ItemGroup>

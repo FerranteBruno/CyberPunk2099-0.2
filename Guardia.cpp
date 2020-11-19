@@ -152,5 +152,3 @@ bool Guardia::atacando() {
         return true;
     }
 }
-
-

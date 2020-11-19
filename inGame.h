@@ -65,5 +65,7 @@ class inGame {
         void checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador& jugador, bool estanVivos);
         void updateRondas(ALLEGRO_TIMER* timer, Rondas &rondita);
         void drawRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos);
+        bool Daño(jugador& jugador);
+        int suma_puntos(bool daño);
         ~inGame();
 };

@@ -601,3 +601,20 @@ void inGame::drawRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador,
 {
     rondita.draw(jugador, estanVivos);
 }
+bool inGame::Daño(jugador& jugador) {
+
+    if (jugador.atacando() == true) return true;
+    else return false;
+}
+
+int inGame::suma_puntos(bool daño) {
+    int puntos1 = 0;
+    if (daño == true) {
+
+        puntos1 += 100;
+    }
+
+
+
+    return puntos1;
+}

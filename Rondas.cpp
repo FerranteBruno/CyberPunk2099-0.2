@@ -4,28 +4,42 @@
 
 Rondas::Rondas()
 {
+	fuente = al_load_font("IMG/BROADW.ttf", 16, NULL);
+	cont = 0;
+	rondas = 1;
+	controlDeRondas = ESPERA;
+	comienza = false;
+	finaliza = false;
+	pausado = false;
+	min = 0;
+	sec = 0;
+	_min = 0;
+	_seg = 0;
 }
 
 Rondas::~Rondas()
 {
 }
 
-void Rondas::cmd(ALLEGRO_TIMER* timer, bool estanVivos, jugador jugador)
+void Rondas::cmd(ALLEGRO_TIMER* timer, bool &estanVivos, jugador jugador)
 {
 	if (!(jugador.ha_muerto()) && estanVivos == true && comienza == false) {
 		controlDeRondas = ESPERA;
 	}
 
 	if (!(jugador.ha_muerto()) && pausado == true) {
-		controlDeRondas = COMIENZA;
+		controlDeRondas = PAUSA;
+		comienza = false;
 	}
 
 	if (!(jugador.ha_muerto()) && estanVivos == true && comienza == true) {
 		controlDeRondas = COMIENZA;
+		pausado = false;
 	}
 
 	if (!jugador.ha_muerto() && estanVivos == true && finaliza == true) {
 		controlDeRondas = FINALIZA;
+		comienza = false;
 	}
 }
 
@@ -74,17 +88,23 @@ void Rondas::update(ALLEGRO_TIMER* timer)
 
 void Rondas::draw(jugador &jugador, bool estanVivos)
 {	
+	if (controlDeRondas == ESPERA) {
+		al_draw_text(fuente, al_map_rgb(255, 0, 0), 640, 60, ALLEGRO_ALIGN_CENTER, "Presione F1 para comenzar la ronda");
+	}
+
+
 	if (controlDeRondas == COMIENZA /*&& !(jugador.ha_muerto())*/) {
 
-		fuente = al_load_font("IMG/BROADW.ttf", 16, NULL);
+		//fuente = al_load_font("IMG/BROADW.ttf", 16, NULL);
 		
-		min;
-		sec;
-
+		/*min;
+		sec;*/
+		al_draw_text(fuente, al_map_rgb(200, 200, 0), 640, 40, ALLEGRO_ALIGN_CENTER, "Ronda numero");
+		al_draw_textf(fuente, al_map_rgb(200, 200, 0), 640, 60, ALLEGRO_ALIGN_CENTER, "%d", rondas);
 		al_draw_textf(fuente, al_map_rgb(255,0,0), 625, 20, ALLEGRO_ALIGN_CENTER, "%d",min);
 		al_draw_text(fuente, al_map_rgb(255, 0, 0), 640, 20, ALLEGRO_ALIGN_CENTER, _dopunto);
 		al_draw_textf(fuente, al_map_rgb(255, 0, 0), 655, 20, ALLEGRO_ALIGN_CENTER, "%d" , sec);
 	}
 
-	al_destroy_font(fuente);
+	///al_destroy_font(fuente);
 }

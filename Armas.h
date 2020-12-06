@@ -4,7 +4,7 @@
 
 enum ESTADOS_ARMAS { DOWN1, UP1, LEFT1, RIGHT1, ATACANDO1, QUIETO1 };
 
-class Armas:private jugador
+class Armas
 {
 	private:
 		ALLEGRO_BITMAP* armas;

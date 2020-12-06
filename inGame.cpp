@@ -504,7 +504,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
 
                     if (!(obj->ha_muerto())) {
                         if (cont == 8) cont = 0;
-                        obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()));
+                        obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
                         obj->update(npcTimer);
                         //pinta_npc(guardia, 0, 0);
                         //cout << sy;
@@ -517,21 +517,6 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
 
                     }
                 }
-
-                /*if (!(guardia.ha_muerto())) {
-                    if (cont == 8) cont = 0;
-                    guardia.cmd(jugador, cerca(jugador.getx(), jugador.gety(), guardia.getx(), guardia.gety(), 30, 46, dir, jugador.getSpeed()));
-                    guardia.update(npcTimer);
-                    //pinta_npc(guardia, 0, 0);
-                    //cout << sy;
-                    guardia.draw(sx, sy, cont);
-                    cont++;
-                    //dmg_npc(jugador, guardia);
-                }
-                else {
-                    guardia.~NPC();
-                }*/
-                //pinta_arma(arma1, sourceX, sourceY, jugador.getx(), jugador.gety());
                 al_flip_display();
             }
         }
@@ -584,11 +569,13 @@ void inGame::menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT event
 }
 
 void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos) 
-{
-    bool daaale = true;
-    if (!(jugador.ha_muerto())) {
-        rondita.setComienza(daaale);
-        rondita.cmd(timer, estanVivos, jugador);
+{   
+    if (jugador.getEmpezarRonda() == true) {
+        bool daaale = true;
+        if (!(jugador.ha_muerto())) {
+            rondita.setComienza(daaale);
+            rondita.cmd(timer, estanVivos, jugador);
+        }
     }
 }
 

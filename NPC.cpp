@@ -33,7 +33,7 @@ NPC::~NPC()
 
 
 
-void NPC::cmd(jugador &jugador, bool cerca)
+void NPC::cmd(jugador &jugador, bool cerca, bool start)
 {
     if (!cerca) {
         if ((jugador.getx() - x) > 0) direccion = RIGHT;

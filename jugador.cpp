@@ -13,6 +13,7 @@ void jugador::inicia()
     //animacion = 0;
     x = 620;
     y = 362;
+    empezarRonda = false;
 }
 void jugador::pinta(int sx, int sy) {
     al_convert_mask_to_alpha(p1, al_map_rgb(0, 0, 0));
@@ -128,6 +129,11 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 //cout << ataca;
             }
 
+            // para empezar las rondas
+            else if (al_key_down(&keyState, ALLEGRO_KEY_F1)) {
+                empezarRonda = true;
+            }
+
 
 
             else if (al_key_down(&keyState, ALLEGRO_KEY_S)) {
@@ -177,10 +183,12 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 //cout << ataca
             }
             else if (ataca == 2) ataca = 0;
+
             else if (al_key_down(&keyState, ALLEGRO_KEY_ESCAPE))
             {
                 done = true;
             }
+
             else {
                 active = false;
             }

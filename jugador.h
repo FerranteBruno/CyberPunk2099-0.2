@@ -28,6 +28,7 @@ private:
     float moveSpeed;
     float ddir;
     bool muerto=false;
+    bool empezarRonda = false;
 public:
     void inicia();
     void pinta(int, int);
@@ -40,6 +41,8 @@ public:
     float getDir() { return ddir; };
     int getVida() { return vida; };
     int getVidaMax() { return vidaMax; };
+    bool getEmpezarRonda() { return empezarRonda; };
+    void setEmpezarRonda(bool _rondaEmpieza) { empezarRonda = _rondaEmpieza; };
     void setAtk(int Atk) { ataca = Atk; };
     void setx(float _x) { x = _x; };
     void sety(float _y) { y = _y; };

@@ -12,19 +12,24 @@ Guardia::Guardia(int _vida)
 
 
 
-void Guardia::cmd(jugador& jugador, bool cerca)
+void Guardia::cmd(jugador& jugador, bool cerca, bool start)
 {
-    if (!cerca) {
-        if ((jugador.getx() - x) > 0) direccion = RIGHT;
-        if ((jugador.getx() - x) < 0) direccion = LEFT;
-        if ((jugador.gety() - y) > 0) direccion = DOWN;
-        if ((jugador.gety() - y) < 0) direccion = UP;
+    if (start == true) {
+        if (!cerca) {
+            if ((jugador.getx() - x) > 0) direccion = RIGHT;
+            if ((jugador.getx() - x) < 0) direccion = LEFT;
+            if ((jugador.gety() - y) > 0) direccion = DOWN;
+            if ((jugador.gety() - y) < 0) direccion = UP;
+        }
+        else {
+
+            //cout << "Estoy atacando " << endl;
+            direccion = ATACANDO;
+
+        }
     }
     else {
-
-        //cout << "Estoy atacando " << endl;
-        direccion = ATACANDO;
-
+        direccion = QUIETO;
     }
     /*if (direccion == QUIETO) {
         direccion = ATACANDO;

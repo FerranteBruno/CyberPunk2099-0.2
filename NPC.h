@@ -25,7 +25,7 @@ public:
     ALLEGRO_SAMPLE* atak;
     float getDir() { return dir; };
     void pintaVida();
-    virtual void cmd(jugador &jugador, bool cerca );
+    virtual void cmd(jugador &jugador, bool cerca, bool start);
     virtual void update(ALLEGRO_TIMER* npcTimer);
     virtual void draw(int sx, int sy, int);
     NPC();

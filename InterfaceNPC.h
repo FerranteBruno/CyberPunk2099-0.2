@@ -5,7 +5,7 @@
 class InterfaceNPC
 {
 public:
-	virtual void cmd(jugador& jugador, bool cerca) = 0;
+	virtual void cmd(jugador& jugador, bool cerca, bool start) = 0;
 	virtual void draw(int sx, int sy, int) = 0;
 	virtual void update(ALLEGRO_TIMER* npcTimer) = 0;
 	virtual bool ha_muerto() = 0;

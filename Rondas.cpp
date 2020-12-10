@@ -27,7 +27,7 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 	comienza = daaale;
 	if (rondas == 1) {
 		///RONDA 1:
-		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == false) {
+		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == false && finaliza == false) {
 			controlDeRondas = ESPERA;
 		}
 
@@ -39,9 +39,8 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 			controlDeRondas = COMIENZA;
 		}
 
-		if (!jugador.ha_muerto() && estanVivos == false && finaliza == true) {
+		if (!jugador.ha_muerto() && estanVivos == false && finaliza == true && comienza == false) {
 			controlDeRondas = FINALIZA;
-			comienza = false;
 			rondas++;
 		}
 	}
@@ -49,7 +48,7 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 	///RONDA 2:
 	else if (rondas == 2) {
 
-		if (!(jugador.ha_muerto()) && estanVivos2 == true && comienza == false) {
+		if (!(jugador.ha_muerto()) && estanVivos2 == true && comienza == false && finaliza == false) {
 			controlDeRondas = ESPERA;
 		}
 
@@ -61,7 +60,7 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 			controlDeRondas = COMIENZA;
 		}
 
-		if (!jugador.ha_muerto() && estanVivos2 == false && finaliza == true) {
+		if (!jugador.ha_muerto() && estanVivos2 == false && finaliza == true && comienza == false) {
 			controlDeRondas = FINALIZA;
 			
 			rondas++;
@@ -71,7 +70,7 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 	///RONDA 3:
 	else if (rondas == 3) {
 
-		if (!(jugador.ha_muerto()) && estanVivos3 == true && comienza == false) {
+		if (!(jugador.ha_muerto()) && estanVivos3 == true && comienza == false && finaliza == false) {
 			controlDeRondas = ESPERA;
 		}
 
@@ -83,7 +82,7 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 			controlDeRondas = COMIENZA;
 		}
 
-		if (!jugador.ha_muerto() && estanVivos3 == false && finaliza == true) {
+		if (!jugador.ha_muerto() && estanVivos3 == false && finaliza == true && comienza == false) {
 			controlDeRondas = FINALIZA;
 			rondas++;
 		}

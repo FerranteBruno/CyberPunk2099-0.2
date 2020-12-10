@@ -736,10 +736,10 @@ void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador
     bool daaale = false;
 
     if (jugador.getEmpezarRonda() == true) daaale = true;
-    else if (rondita.getNumRonda() == 2 && rondita.getFinaliza() == false) {
+    else if (rondita.getNumRonda() == 2 || rondita.getNumRonda() == 3 && rondita.getFinaliza() == true) {
 
         daaale = false;
-        jugador.setEmpezarRonda(false);
+        jugador.setEmpezarRonda(daaale);
     }
 
     rondita.cmd(timer, jugador, estanVivos, estanVivos2, estanVivos3, daaale);

@@ -36,6 +36,7 @@ public:
     int getAtaca() { return ataca; };
     float getx() { return x; };
     float gety() { return y; };
+    bool getMuerto() { return muerto; };
     void setx(float _x) { x = _x; };
     virtual void setDir(int _x) { direccion = _x; };
     void sety(float _y) { y = _y; };

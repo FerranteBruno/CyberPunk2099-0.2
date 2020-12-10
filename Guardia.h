@@ -31,6 +31,7 @@ public:
     float getx() { return x; };
     float gety() { return y; };
     int getAtaca() { return ataca; };
+    bool getMuerto() { return muerto; };
     void setDir(float _x) { direccion = _x; };
     void setEstado(int dire) { direccion = dire; };
 };

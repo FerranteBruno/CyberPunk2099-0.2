@@ -130,8 +130,13 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
             }
 
             // para empezar las rondas
-            else if (al_key_down(&keyState, ALLEGRO_KEY_F1)) {
+            else if (al_key_down(&keyState, ALLEGRO_KEY_F1) && empezarRonda == false) {
                 empezarRonda = true;
+
+            }
+
+            else if (al_key_down(&keyState, ALLEGRO_KEY_F2) && empezarRonda == true) {
+                empezarRonda = false;
             }
 
 

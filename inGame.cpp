@@ -513,13 +513,12 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                             bool fin = true;
                             bool finfin = false;
                             rondita.setFinaliza(fin);
-                            rondita.setComienza(finfin);
+                            //rondita.setComienza(finfin);
                         }
                     }
                 }
                 
                 if (rondita.getNumRonda() == 2) {
-                    bool start = true;
                     //rondita.setFinaliza(false);
                     //rondita.setComienza(start);
                     for (InterfaceNPC* obj : vecNPC2) {
@@ -533,13 +532,12 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                             bool fin = true;
                             bool finfin = false;
                             rondita.setFinaliza(fin);
-                            rondita.setComienza(finfin);
+                            //rondita.setComienza(finfin);
                         }
                     }
                 }
 
                 if (rondita.getNumRonda() == 3) {
-                    bool start = true;
                     //rondita.setFinaliza(false);
                     //rondita.setComienza(start);
                     for (InterfaceNPC* obj : vecNPC3) {
@@ -553,7 +551,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                             bool fin = true;
                             bool finfin = false;
                             rondita.setFinaliza(fin);
-                            rondita.setComienza(finfin);
+                           // rondita.setComienza(finfin);
                         }
                     }
                 }
@@ -603,8 +601,6 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                             }
                         }
                     }
-
-
 
                     else if (rondita.getNumRonda() == 2) {
                         for (InterfaceNPC* obj : vecNPC2) {
@@ -737,29 +733,31 @@ void inGame::menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT event
 void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos, bool estanVivos2, bool estanVivos3)
 {   
 
-    bool daaale;
+    bool daaale = false;
 
     if (jugador.getEmpezarRonda() == true) daaale = true;
-    else daaale = false;
-        
+    else if (rondita.getNumRonda() == 2 && rondita.getFinaliza() == false) {
+
+        daaale = false;
+        jugador.setEmpezarRonda(false);
+    }
+
+    rondita.cmd(timer, jugador, estanVivos, estanVivos2, estanVivos3, daaale);
 
         //if (rondita.getNumRonda() == 2 && daaale == true) rondita.setFinaliza(false);
 
-        if (!(jugador.ha_muerto()) && rondita.getNumRonda() == 1) {
+       // if (!(jugador.ha_muerto()) && rondita.getNumRonda() == 1) {
             //rondita.setComienza(daaale);
-            rondita.cmd(timer, jugador, estanVivos, estanVivos2, estanVivos3, daaale);
-            daaale = false;
-        }
+            //rondita.cmd(timer, jugador, estanVivos, estanVivos2, estanVivos3, daaale);
+        /*}
         else if (!(jugador.ha_muerto()) && rondita.getNumRonda() == 2) {
             //rondita.setComienza(daaale);
             rondita.cmd(timer,  jugador, estanVivos, estanVivos2, estanVivos3, daaale);
-            daaale = false;
         }
         else if (!(jugador.ha_muerto()) && rondita.getNumRonda() == 3) {
             //rondita.setComienza(daaale);
             rondita.cmd(timer, jugador, estanVivos, estanVivos2, estanVivos3, daaale);
-            daaale = false;
-        }
+        }*/
     
 }
 

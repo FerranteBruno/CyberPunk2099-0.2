@@ -25,43 +25,68 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 {
 
 	comienza = daaale;
+	if (rondas == 1) {
+		///RONDA 1:
+		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == false) {
+			controlDeRondas = ESPERA;
+		}
 
-	///RONDA 1:
-	if (!(jugador.ha_muerto()) && estanVivos == true && comienza == false) {
-		controlDeRondas = ESPERA;
-	}
+		if (!(jugador.ha_muerto()) && pausado == true) {
+			controlDeRondas = PAUSA;
+		}
 
-	if (!(jugador.ha_muerto()) && pausado == true) {
-		controlDeRondas = PAUSA;
-	}
+		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == true) {
+			controlDeRondas = COMIENZA;
+		}
 
-	if (!(jugador.ha_muerto()) && estanVivos == true && comienza == true) {
-		controlDeRondas = COMIENZA;
-	}
-
-	if (!jugador.ha_muerto() && estanVivos == false && finaliza == true) {
-		controlDeRondas = FINALIZA;
-		finaliza = daaale;
-		rondas++;
+		if (!jugador.ha_muerto() && estanVivos == false && finaliza == true) {
+			controlDeRondas = FINALIZA;
+			comienza = false;
+			rondas++;
+		}
 	}
 
 	///RONDA 2:
+	else if (rondas == 2) {
 
-	if (!(jugador.ha_muerto()) && estanVivos2 == true && comienza == false && rondas == 2) {
-		controlDeRondas = ESPERA;
+		if (!(jugador.ha_muerto()) && estanVivos2 == true && comienza == false) {
+			controlDeRondas = ESPERA;
+		}
+
+		if (!(jugador.ha_muerto()) && pausado == true ) {
+			controlDeRondas = PAUSA;
+		}
+
+		if (!(jugador.ha_muerto()) && estanVivos2 == true && comienza == true) {
+			controlDeRondas = COMIENZA;
+		}
+
+		if (!jugador.ha_muerto() && estanVivos2 == false && finaliza == true) {
+			controlDeRondas = FINALIZA;
+			
+			rondas++;
+		}
 	}
 
-	if (!(jugador.ha_muerto()) && pausado == true && rondas == 2) {
-		controlDeRondas = PAUSA;
-	}
+	///RONDA 3:
+	else if (rondas == 3) {
 
-	if (!(jugador.ha_muerto()) && estanVivos2 == true && rondas == 2 && comienza == true) {
-		controlDeRondas = COMIENZA;
-	}
+		if (!(jugador.ha_muerto()) && estanVivos3 == true && comienza == false) {
+			controlDeRondas = ESPERA;
+		}
 
-	if (!jugador.ha_muerto() && estanVivos2 == false && finaliza == true && rondas == 2) {
-		controlDeRondas = FINALIZA;
-		rondas++;
+		if (!(jugador.ha_muerto()) && pausado == true && rondas == 3) {
+			controlDeRondas = PAUSA;
+		}
+
+		if (!(jugador.ha_muerto()) && estanVivos3 == true && comienza == true) {
+			controlDeRondas = COMIENZA;
+		}
+
+		if (!jugador.ha_muerto() && estanVivos3 == false && finaliza == true) {
+			controlDeRondas = FINALIZA;
+			rondas++;
+		}
 	}
 }
 

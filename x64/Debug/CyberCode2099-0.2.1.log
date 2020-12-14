@@ -1,2 +1,6 @@
-﻿  jugador.cpp
+﻿  inGame.cpp
+F:\Luciano\Github\Proyecto\CyberPunk2099-0.2\inGame.cpp(282,46): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+  puntuacion.cpp
+  Generando código...
+F:\Luciano\Github\Proyecto\CyberPunk2099-0.2\jugador.h(66): warning C4715: 'jugador::ha_muerto': no todas las rutas de acceso de control devuelven un valor
   CyberCode2099-0.2.1.vcxproj -> F:\Luciano\Github\Proyecto\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe

@@ -48,7 +48,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
     //cout << efesita;
     al_wait_for_event(event_queue, &events);
     al_get_keyboard_state(&keyState);
-    cout << "timer " << al_get_timer_count(timer) << endl;
+    
     if (events.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
         done = true;
     }
@@ -57,7 +57,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
 
             active = true;
             //ataque y mov hacia abajo
-           /* if (al_key_down(&keyState, ALLEGRO_KEY_S) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0)) {
+            if (al_key_down(&keyState, ALLEGRO_KEY_S) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0)) {
                 ataca = 1;
                 this->y += moveSpeed;
                 dir = 0;
@@ -127,7 +127,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
                 
                 
-            }*/
+            }
 
             // para empezar las rondas
             if (al_key_down(&keyState, ALLEGRO_KEY_F1) && empezarRonda == false) {
@@ -136,6 +136,9 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
             }
 
             else if (al_key_down(&keyState, ALLEGRO_KEY_F2) && empezarRonda == true) {
+                empezarRonda = false;
+            }
+            else if (al_key_down(&keyState, ALLEGRO_KEY_P) && empezarRonda == true) {
                 empezarRonda = false;
             }
 

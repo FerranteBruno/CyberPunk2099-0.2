@@ -429,7 +429,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
 
     bool a = false;
     bool draw = true, active = false;
-   
+    bool empezo = false;
     jugador.setSpeed(3);
     float sourceX = 32, sourceY = 0, dir = sourceY, dirA = sourceY;
     float sx = 0, sy = 0;
@@ -556,13 +556,20 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                     }
                 }*/
 
-                    checkRondas(rondasTimer, rondita, jugador, estanVivos, estanVivos2, estanVivos3);
+                    checkRondas(rondasTimer, rondita, jugador, estanVivos);
                     updateRondas(rondasTimer, rondita);
-                    drawRondas(rondasTimer, rondita, jugador, estanVivos, estanVivos2, estanVivos3);
-
+                    drawRondas(rondasTimer, rondita, jugador, estanVivos);
+                    
                     // ronda numero 1
-
-
+                    if (jugador.getEmpezarRonda()) {
+                        empezo = true;
+                    }
+                    if (empezo == true && jugador.getEmpezarRonda() == false) {
+                        rondita.setPausado(true);
+                    }
+                    if (empezo == true && jugador.getEmpezarRonda() == true) {
+                        rondita.setPausado(false);
+                    }
                     if (rondita.getNumRonda() == 1) {
                         for (InterfaceNPC* obj : vecNPC1) {
 
@@ -603,7 +610,10 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 }
                                 //obj.~NPC();
                                 if (cont1 == 3) {
+                                    estanVivos=false;
+                                    
                                     rondita.setNumRonda(2);
+                                    
                                     cont1 = 0;
                             }
                             }
@@ -649,7 +659,9 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                     jugador.sumaEXP();
                                 }
                                 if (cont1 == 3) {
+                                    estanVivos = false;
                                     rondita.setNumRonda(3);
+                                    rondita.setFinaliza(true);
                                     cont1 = 0;
                                 }
                                     //obj.~NPC();
@@ -697,6 +709,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                     jugador.sumaEXP();
                                 }
                                 if (cont1 == 3) {
+                                    estanVivos = false;
                                     rondita.setFinaliza(true);
                                     cont1 = 0;
                                 }
@@ -755,7 +768,7 @@ void inGame::menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT event
 
 }
 
-void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos, bool estanVivos2, bool estanVivos3)
+void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos)
 {   
 
     bool daaale = false;
@@ -767,7 +780,7 @@ void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador
         jugador.setEmpezarRonda(daaale);
     }
 
-    rondita.cmd(timer, jugador, estanVivos, estanVivos2, estanVivos3, daaale);
+    rondita.cmd(timer, jugador, estanVivos, daaale);
 
         //if (rondita.getNumRonda() == 2 && daaale == true) rondita.setFinaliza(false);
 
@@ -791,7 +804,7 @@ void inGame::updateRondas(ALLEGRO_TIMER* timer, Rondas &rondita)
     rondita.update(timer);
 }
 
-void inGame::drawRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos, bool estanVivos2, bool estanVivos3)
+void inGame::drawRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos)
 {
     rondita.draw(jugador, estanVivos);
 }

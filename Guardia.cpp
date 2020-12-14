@@ -6,6 +6,7 @@ Guardia::Guardia(int _vida)
     vidaMax = _vida;
     vidaAct = vida;
     moveSpeed = 1;
+    murio = 0;
     //cout << "esta es la vida: " << vida << endl;
     //cout << "esta es la vida actual: " << vidaAct << endl;
 }

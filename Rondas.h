@@ -36,5 +36,6 @@ public:
 	bool getFinaliza() { return finaliza; };
 	bool getPausado() { return pausado; };
 	int getNumRonda() { return rondas; };
+	void setNumRonda(int x) { rondas = x; }
 
 };

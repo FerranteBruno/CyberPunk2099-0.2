@@ -16,6 +16,7 @@ private:
     ALLEGRO_SAMPLE* camina;
     ALLEGRO_SAMPLE* camina2;
     ALLEGRO_FONT* lavida;
+    ALLEGRO_FONT* laexp;
     float x, y;
     /*int direccion;
     int animacion;*/
@@ -29,6 +30,7 @@ private:
     float ddir;
     bool muerto=false;
     bool empezarRonda = false;
+    int exp, expMax;
 public:
     void inicia();
     void pinta(int, int);
@@ -55,6 +57,8 @@ public:
     void setmSpeed(float _moveSpeed) { moveSpeed -= _moveSpeed; };
     void setDir(float dir) { ddir = dir; };
     void pintaVida();
+    void pintaEXP();
+    void sumaEXP();
     ALLEGRO_BITMAP* getBitmap() { return p1; };
     void posiciona(float _x, float _y);
     bool atacando() { return ataca > 1; };

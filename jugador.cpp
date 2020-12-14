@@ -19,7 +19,7 @@ void jugador::pinta(int sx, int sy) {
     al_convert_mask_to_alpha(p1, al_map_rgb(0, 0, 0));
     al_draw_bitmap_region(p1, sx, sy * 48, 32, 48, x, y, NULL);
     pintaVida();
-
+    pintaEXP();
 
     /*
         //TODO: me falta hacer todo para que ataque
@@ -57,7 +57,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
 
             active = true;
             //ataque y mov hacia abajo
-            if (al_key_down(&keyState, ALLEGRO_KEY_S) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0)) {
+           /* if (al_key_down(&keyState, ALLEGRO_KEY_S) && (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0)) {
                 ataca = 1;
                 this->y += moveSpeed;
                 dir = 0;
@@ -71,7 +71,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 ataca = 2;
                 al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
                 
-                //cout << ataca;
+                
             }
             
             //ataque y mov arriba
@@ -126,11 +126,11 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 ataca = 2;
                 al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
                 
-                //cout << ataca;
-            }
+                
+            }*/
 
             // para empezar las rondas
-            else if (al_key_down(&keyState, ALLEGRO_KEY_F1) && empezarRonda == false) {
+            if (al_key_down(&keyState, ALLEGRO_KEY_F1) && empezarRonda == false) {
                 empezarRonda = true;
 
             }
@@ -140,72 +140,71 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
             }
 
 
+            if (empezarRonda == true) {
+                if (al_key_down(&keyState, ALLEGRO_KEY_S)) {
+                    this->y += moveSpeed;
+                    dir = 0;
+                    ddir = dir;
+                    al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+                }
+                else if (al_key_down(&keyState, ALLEGRO_KEY_W)) {
+                    this->y -= moveSpeed;
+                    dir = 3;
+                    ddir = dir;
+                    al_play_sample(camina2, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+                }
+                else if (al_key_down(&keyState, ALLEGRO_KEY_SPACE)) {
+                    moveSpeed = 5;
+                }
+                else if (al_key_down(&keyState, ALLEGRO_KEY_D)) {
+                    this->x += moveSpeed;
+                    dir = 2;
+                    ddir = dir;
+                    al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+                }
+                else if (al_key_down(&keyState, ALLEGRO_KEY_A)) {
+                    this->x -= moveSpeed;
+                    dir = 1;
+                    ddir = dir;
+                    al_play_sample(camina2, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+                }
+                else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0 && al_get_timer_count(timer) > 5) {
+                    ataca = 1;
 
-            else if (al_key_down(&keyState, ALLEGRO_KEY_S)) {
-                this->y += moveSpeed;
-                dir = 0;
-                ddir = dir;
-                al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
-            }
-            else if (al_key_down(&keyState, ALLEGRO_KEY_W)) {
-                this->y -= moveSpeed;
-                dir = 3;
-                ddir = dir;
-                al_play_sample(camina2, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
-            }
-            else if (al_key_down(&keyState, ALLEGRO_KEY_SPACE)) {
-                moveSpeed = 5;
-            }
-            else if (al_key_down(&keyState, ALLEGRO_KEY_D)) {
-                this->x += moveSpeed;
-                dir = 2;
-                ddir = dir;
-                al_play_sample(camina, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
-            }
-            else if (al_key_down(&keyState, ALLEGRO_KEY_A)) {
-                this->x -= moveSpeed;
-                dir = 1;
-                ddir = dir;
-                al_play_sample(camina2, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
-            }        
-            else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 0 && al_get_timer_count(timer) >5) {
-                ataca = 1;
-                //cout << "entre" << endl;
-                al_set_timer_count(timer, 0);
-                
-                
-                //cout << "hola";
-                //cout << ataca;
-            }
-            else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 1 && al_get_timer_count(timer) >5){
-                
-                al_set_timer_count(timer, 0);
-                
-                //cout << "hola";
-                ataca = 2;
-                al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
-                
-                //cout << ataca
-            }
-            else if (ataca == 2) ataca = 0;
+                    al_set_timer_count(timer, 0);
 
-            else if (al_key_down(&keyState, ALLEGRO_KEY_ESCAPE))
-            {
-                done = true;
-            }
 
-            else {
-                active = false;
-            }
-            if (events.timer.source == frameTimer /*&& ataca == 0*/) {
-                if (active)sourceX += al_get_bitmap_width(this->getBitmap()) / 3;
-                //sourceX += al_get_bitmap_width(arma1.getBitmap()) / 6;
-                else sourceX = 32;
-                if (sourceX >= al_get_bitmap_width(this->getBitmap())) sourceX = 0;
-                sourceY = dir;
-                /*if (sourceX = 0 && atacando) {
-                    
-                }*/
+                }
+                else if (al_key_down(&keyState, ALLEGRO_KEY_R) && ataca == 1 && al_get_timer_count(timer) > 5) {
+
+                    al_set_timer_count(timer, 0);
+
+
+                    ataca = 2;
+                    al_play_sample(atak, 0.5, 0, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
+
+
+                }
+                else if (ataca == 2) ataca = 0;
+
+                else if (al_key_down(&keyState, ALLEGRO_KEY_ESCAPE))
+                {
+                    done = true;
+                }
+
+                else {
+                    active = false;
+                }
+                if (events.timer.source == frameTimer /*&& ataca == 0*/) {
+                    if (active)sourceX += al_get_bitmap_width(this->getBitmap()) / 3;
+                    //sourceX += al_get_bitmap_width(arma1.getBitmap()) / 6;
+                    else sourceX = 32;
+                    if (sourceX >= al_get_bitmap_width(this->getBitmap())) sourceX = 0;
+                    sourceY = dir;
+                    /*if (sourceX = 0 && atacando) {
+
+                    }*/
+                }
             }
         draw = true;
         if (draw) {
@@ -244,9 +243,22 @@ void jugador::sufre_daño(int dmg, jugador& jugador) {
 jugador::jugador() {
     vida = 200;
     vidaMax = 200;
+    exp = 0;
+    expMax = 500;
 }
 jugador::~jugador() {
 
+}
+
+void jugador::sumaEXP() {
+int aux=0;
+    aux = expMax - exp;
+    exp += 150;
+    
+    if (exp > 500) {
+        
+        exp = 150-aux;
+    }
 }
 
 void jugador::pintaVida() {
@@ -260,4 +272,18 @@ void jugador::pintaVida() {
 
     al_destroy_font(lavida);
     
+}
+void jugador::pintaEXP() {
+
+    laexp = al_load_font("IMG/BROADW.ttf", 12, ALLEGRO_ALIGN_CENTER);
+
+    al_draw_text(laexp, al_map_rgb(0, 170, 228), 5, 5, ALLEGRO_ALIGN_LEFT, "Experiencia");
+
+    al_draw_filled_rectangle(5, 20, 5 + ((exp * 78) / expMax), 20 + 4, al_map_rgb(255, 255, 255));
+    al_draw_filled_rectangle(5, 20, 5 + ((exp * 78) / expMax), 20 + 4, al_map_rgb(255, 255, 255));
+    al_draw_rectangle(5.5, 20.5, 83.5, 24.5, al_map_rgb(0, 0, 0),1);
+    
+
+    al_destroy_font(laexp);
+
 }

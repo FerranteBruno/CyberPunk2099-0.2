@@ -19,5 +19,7 @@ public:
 	virtual void sufre_daño(int dmg, InterfaceNPC& guardia) = 0;
 	virtual void posiciona(float _x, float _y) = 0;
 	virtual void setEstado(int dire) = 0;
+	virtual void nose() = 0;
+	virtual int getMuerte() = 0;
 };
 

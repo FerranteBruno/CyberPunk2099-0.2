@@ -429,11 +429,11 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
 
     bool a = false;
     bool draw = true, active = false;
-
+   
     jugador.setSpeed(3);
     float sourceX = 32, sourceY = 0, dir = sourceY, dirA = sourceY;
     float sx = 0, sy = 0;
-    int cont = 0;
+    int cont = 0, cont1=0;
     while (!a) {
         actualiza_juego(jugador);
         al_clear_to_color(vacio);
@@ -502,7 +502,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                 dmg_npc(jugador, C);
                 dmg_jugador(jugador, C);*/
 
-                if (rondita.getNumRonda() == 1) {
+                /*if (rondita.getNumRonda() == 1) {
                     for (InterfaceNPC* obj : vecNPC1) {
                         if (obj->ha_muerto() == false && rondita.getFinaliza() == false && rondita.getNumRonda() == 1) estanVivos = true;
                         else {
@@ -554,7 +554,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                            // rondita.setComienza(finfin);
                         }
                     }
-                }
+                }*/
 
                     checkRondas(rondasTimer, rondita, jugador, estanVivos, estanVivos2, estanVivos3);
                     updateRondas(rondasTimer, rondita);
@@ -596,8 +596,16 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 //dmg_npc(jugador, guardia);
                             }
                             else {
+                                obj->nose();
+                                if (obj->getMuerte() == 1) {
+                                    jugador.sumaEXP();
+                                    cont1++;
+                                }
                                 //obj.~NPC();
-
+                                if (cont1 == 3) {
+                                    rondita.setNumRonda(2);
+                                    cont1 = 0;
+                            }
                             }
                         }
                     }
@@ -635,7 +643,16 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 //dmg_npc(jugador, guardia);
                             }
                             else {
-                                //obj.~NPC();
+                                obj->nose();
+                                if (obj->getMuerte() == 1) {
+                                    cont1++;
+                                    jugador.sumaEXP();
+                                }
+                                if (cont1 == 3) {
+                                    rondita.setNumRonda(3);
+                                    cont1 = 0;
+                                }
+                                    //obj.~NPC();
 
                             }
                         }
@@ -674,7 +691,15 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 //dmg_npc(jugador, guardia);
                             }
                             else {
-                                //obj.~NPC();
+                                obj->nose();
+                                if (obj->getMuerte() == 1) {
+                                    cont1++;
+                                    jugador.sumaEXP();
+                                }
+                                if (cont1 == 3) {
+                                    rondita.setFinaliza(true);
+                                    cont1 = 0;
+                                }
 
                             }
                         }

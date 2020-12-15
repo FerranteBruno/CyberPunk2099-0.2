@@ -14,6 +14,7 @@ void jugador::inicia()
     x = 620;
     y = 362;
     empezarRonda = false;
+    pausador = false;
 }
 void jugador::pinta(int sx, int sy) {
     al_convert_mask_to_alpha(p1, al_map_rgb(0, 0, 0));
@@ -138,12 +139,12 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
             else if (al_key_down(&keyState, ALLEGRO_KEY_F2) && empezarRonda == true) {
                 empezarRonda = false;
             }
-            else if (al_key_down(&keyState, ALLEGRO_KEY_P) && empezarRonda == true) {
-                empezarRonda = false;
+            else if (al_key_down(&keyState, ALLEGRO_KEY_P)) {
+                pausador = true;
             }
 
 
-            if (empezarRonda == true) {
+            //if (empezarRonda == true) {
                 if (al_key_down(&keyState, ALLEGRO_KEY_S)) {
                     this->y += moveSpeed;
                     dir = 0;
@@ -208,7 +209,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
 
                     }*/
                 }
-            }
+            //}
         draw = true;
         if (draw) {
             this->setx(x);

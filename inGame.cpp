@@ -556,12 +556,12 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                     }
                 }*/
 
-                    checkRondas(rondasTimer, rondita, jugador, estanVivos);
+                    checkRondas(rondasTimer, rondita, jugador, estanVivos, estanVivos2, estanVivos3);
                     updateRondas(rondasTimer, rondita);
                     drawRondas(rondasTimer, rondita, jugador, estanVivos);
                     
                     // ronda numero 1
-                    if (jugador.getEmpezarRonda()) {
+                    /*if (jugador.getEmpezarRonda()) {
                         empezo = true;
                     }
                     if (empezo == true && jugador.getEmpezarRonda() == false) {
@@ -569,8 +569,8 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                     }
                     if (empezo == true && jugador.getEmpezarRonda() == true) {
                         rondita.setPausado(false);
-                    }
-                    if (rondita.getNumRonda() == 1) {
+                    }*/
+                    if (rondita.getNumRonda() == 1 && rondita.getComienza() == true && rondita.getFinaliza() == false) {
                         for (InterfaceNPC* obj : vecNPC1) {
 
                             InterfaceNPC& rA = *obj;
@@ -612,7 +612,13 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 if (cont1 == 3) {
                                     estanVivos=false;
                                     
-                                    rondita.setNumRonda(2);
+                                    rondita.setFinaliza(!(estanVivos));
+                                    rondita.setComienza(estanVivos);
+
+                                    if (rondita.getComienza() == false && rondita.getFinaliza() == true) {
+                                        jugador.setEmpezarRonda(false);
+                                        //rondita.setNumRonda(2);
+                                    }
                                     
                                     cont1 = 0;
                             }
@@ -620,7 +626,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                         }
                     }
 
-                    else if (rondita.getNumRonda() == 2) {
+                    else if (rondita.getNumRonda() == 2 && rondita.getComienza() == true && rondita.getFinaliza() == false) {
                         for (InterfaceNPC* obj : vecNPC2) {
 
                             InterfaceNPC& rA = *obj;
@@ -659,9 +665,16 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                     jugador.sumaEXP();
                                 }
                                 if (cont1 == 3) {
-                                    estanVivos = false;
-                                    rondita.setNumRonda(3);
+                                    estanVivos2 = false;
+                                    
                                     rondita.setFinaliza(true);
+                                    rondita.setComienza(false);
+                                    if (rondita.getComienza() == false && rondita.getFinaliza() == true) {
+                                        jugador.setEmpezarRonda(false);
+                                        ///rondita.setNumRonda(3);
+                                    }
+                                    
+
                                     cont1 = 0;
                                 }
                                     //obj.~NPC();
@@ -670,7 +683,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                         }
                     }
 
-                    else if (rondita.getNumRonda() == 3) {
+                    else if (rondita.getNumRonda() == 3 && rondita.getComienza() == true && rondita.getFinaliza() == false) {
                         for (InterfaceNPC* obj : vecNPC3) {
 
                             InterfaceNPC& rA = *obj;
@@ -709,8 +722,9 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                     jugador.sumaEXP();
                                 }
                                 if (cont1 == 3) {
-                                    estanVivos = false;
+                                    estanVivos3 = false;
                                     rondita.setFinaliza(true);
+                                    rondita.setComienza(false);
                                     cont1 = 0;
                                 }
 
@@ -768,19 +782,22 @@ void inGame::menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT event
 
 }
 
-void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos)
+void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos, bool estanVivos2, bool estanVivos3)
 {   
 
-    bool daaale = false;
+    bool daaale;
 
-    if (jugador.getEmpezarRonda() == true) daaale = true;
-    else if (rondita.getNumRonda() == 2 || rondita.getNumRonda() == 3 && rondita.getFinaliza() == true) {
+    if (jugador.getEmpezarRonda() == false) daaale = false;
+
+    else if (jugador.getEmpezarRonda() == true) daaale = true;
+
+    /*else if (rondita.getNumRonda() == 2 || rondita.getNumRonda() == 3 && rondita.getFinaliza() == true) {
 
         daaale = false;
         jugador.setEmpezarRonda(daaale);
-    }
+    }*/
 
-    rondita.cmd(timer, jugador, estanVivos, daaale);
+    rondita.cmd(timer, jugador, estanVivos, estanVivos2, estanVivos3, daaale);
 
         //if (rondita.getNumRonda() == 2 && daaale == true) rondita.setFinaliza(false);
 

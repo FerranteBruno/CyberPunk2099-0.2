@@ -21,38 +21,43 @@ Rondas::~Rondas()
 {
 }
 
-void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool daaale)
+void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& estanVivos2, bool& estanVivos3, bool& daaale)
 {
 
-	comienza = daaale;
+	comienza = jugador.getEmpezarRonda();
+	pausado = jugador.getPausador();
 	if (rondas == 1) {
 		///RONDA 1:
 		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == false && finaliza == false && pausado==false) {
-			controlDeRondas = ESPERA;
-			
+			controlDeRondas = ESPERA;			
 		}
 
 		if (!(jugador.ha_muerto()) && pausado == true) {
-			controlDeRondas = PAUSA;
-			
+			finaliza = false;
+			comienza = false;
+			jugador.setEmpezarRonda(false);
+			controlDeRondas = PAUSA;			
 		}
 
-		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == true && pausado==false) {
+		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == true && pausado==false && finaliza == false) {
+			finaliza = false;
 			controlDeRondas = COMIENZA;
 			
 		}
 
 		if (!jugador.ha_muerto() && estanVivos == false && finaliza == true && comienza == false) {
+			rondas++;
+			finaliza = false;
 			controlDeRondas = FINALIZA;
 			std::cout << "hola";
-			rondas++;
+			///rondas++;
 		}
 	}
 
 	///RONDA 2:
 	else if (rondas == 2) {
 
-		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == false && finaliza == false && pausado == false) {
+		if (!(jugador.ha_muerto()) && estanVivos2 == true && comienza == true && pausado == false && finaliza == false) {
 			controlDeRondas = ESPERA;
 
 		}
@@ -62,22 +67,25 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool d
 
 		}
 
-		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == true && pausado == false) {
+		if (!(jugador.ha_muerto()) && estanVivos2 == true && comienza == true && pausado == false) {
+			finaliza = false;
 			controlDeRondas = COMIENZA;
 
 		}
 
-		if (!jugador.ha_muerto() && estanVivos == false && finaliza == true && comienza == false) {
+		if (!jugador.ha_muerto() && estanVivos2 == false && estanVivos == false && finaliza == true && comienza == false) {
+			rondas++;
+			finaliza = false;
 			controlDeRondas = FINALIZA;
 			std::cout << "hola";
-			rondas++;
+			///rondas++;
 		}
 	}
 
 	///RONDA 3:
 	else if (rondas == 3) {
 
-		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == false && finaliza == false && pausado == false) {
+		if (!(jugador.ha_muerto()) && estanVivos3 == true && comienza == true && pausado == false && finaliza == false) {
 			controlDeRondas = ESPERA;
 
 		}
@@ -87,15 +95,18 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool d
 
 		}
 
-		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == true && pausado == false) {
+		if (!(jugador.ha_muerto()) && estanVivos3 == true && comienza == true && pausado == false) {
+			comienza = true;
+			finaliza = false;
 			controlDeRondas = COMIENZA;
 
 		}
 
-		if (!jugador.ha_muerto() && estanVivos == false && finaliza == true && comienza == false) {
-			controlDeRondas = FINALIZA;
-
+		if (!jugador.ha_muerto() && estanVivos2 == false && estanVivos == false && estanVivos3 == false && finaliza == true && comienza == false) {
 			rondas++;
+			finaliza = false;
+			controlDeRondas = FINALIZA;
+			std::cout << "hola";
 		}
 	}
 }
@@ -118,24 +129,25 @@ void Rondas::update(ALLEGRO_TIMER* timer)
 
 		al_start_timer(timer);
 
-		if (al_get_timer_count(timer) == 30) {
-			sec++;
-		
-			al_set_timer_count(timer, 0);
-		}
+			if (al_get_timer_count(timer) == 30) {
+				sec++;
 
-		if (sec == 60) {
-			min++;
-		}
+				al_set_timer_count(timer, 0);
+			}
 
-		if (min == 1 && sec == 0) {
-			controlDeRondas = FINALIZA;
-		}
+			if (sec == 60) {
+				min++;
+			}
 
+			if (min == 1 && sec == 0) {
+				controlDeRondas = FINALIZA;
+			}
 		break;
 
 	case FINALIZA:
-		al_rest(10);
+		sec = 0;
+		min = 0;
+		//al_rest(10);
 		//al_stop_timer(timer);
 
 		break;

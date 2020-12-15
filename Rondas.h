@@ -26,7 +26,7 @@ private:
 public:
 	Rondas();
 	~Rondas();
-	void cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool daaale);
+	void cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& estanVivos2, bool& estanVivos3, bool& daaale);
 	void update(ALLEGRO_TIMER* timer);
 	void draw(jugador &jugador , bool estanVivos);
 	void setComienza(bool _comienza) { comienza = _comienza; };

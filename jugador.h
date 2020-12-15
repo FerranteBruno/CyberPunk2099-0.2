@@ -31,6 +31,7 @@ private:
     bool muerto=false;
     bool empezarRonda = false;
     int exp, expMax;
+    bool pausador;
 public:
     void inicia();
     void pinta(int, int);
@@ -43,6 +44,7 @@ public:
     float getDir() { return ddir; };
     int getVida() { return vida; };
     int getVidaMax() { return vidaMax; };
+    bool getPausador() { return pausador; };
     bool getEmpezarRonda() { return empezarRonda; };
     void setEmpezarRonda(bool _rondaEmpieza) { empezarRonda = _rondaEmpieza; };
     void setAtk(int Atk) { ataca = Atk; };

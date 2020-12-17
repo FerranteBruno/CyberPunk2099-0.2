@@ -1,3 +1,6 @@
-﻿  Rondas.cpp
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\jugador.h(75): warning C4715: 'jugador::ha_muerto': no todas las rutas de acceso de control devuelven un valor
-  CyberCode2099-0.2.1.vcxproj -> C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe
+﻿  inGame.cpp
+F:\Luciano\Github\Proyecto\CyberPunk2099-0.2\inGame.cpp(284,46): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+F:\Luciano\Github\Proyecto\CyberPunk2099-0.2\inGame.cpp(489,41): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+F:\Luciano\Github\Proyecto\CyberPunk2099-0.2\inGame.cpp(499,41): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+F:\Luciano\Github\Proyecto\CyberPunk2099-0.2\jugador.h(75): warning C4715: 'jugador::ha_muerto': no todas las rutas de acceso de control devuelven un valor
+  CyberCode2099-0.2.1.vcxproj -> F:\Luciano\Github\Proyecto\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe

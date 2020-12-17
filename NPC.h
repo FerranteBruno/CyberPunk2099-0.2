@@ -36,6 +36,7 @@ public:
     int getVida() { return vida; };
     int getVidaAct() { return vidaAct; };
     int getAtaca() { return ataca; };
+    
     float getx() { return x; };
     float gety() { return y; };
     bool getMuerto() { return muerto; };

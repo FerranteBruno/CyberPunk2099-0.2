@@ -436,7 +436,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     float sourceX = 32, sourceY = 0, dir = sourceY, dirA = sourceY;
     float sx = 0, sy = 0;
     int cont = 0, cont1=0;
-
+    int posX=0, posY=0;
     while (!a) {
         actualiza_juego(jugador);
         al_clear_to_color(vacio);
@@ -538,17 +538,24 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 //cout << guardia.getVida() << endl;
                             }
 
-                            if (colision(rA.getx(), rA.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
-                                obj->setEstado(QUIETO);
-                                //cout << guardia.getVida() << endl;
-                            }
+                            
 
                             if (!(obj->ha_muerto())) {
                                 if (cont == 8) cont = 0;
-                                obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
+                                if (colision(obj->getx(), obj->gety(), posX, posY, 30, 46)) {
+
+                                    obj->posiciona(obj->getx() - 1, obj->gety() - 1);
+
+                                }
+                                else {
+                                    obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
+                                }
+                                /*if (obj->getDir() == RIGHT)obj->setDir(RIGHT);
+                                if (obj->getDir() == LEFT)obj->setDir(LEFT);
+                                if (obj->getDir() == DOWN)obj->setDir(DOWN);
+                                if (obj->getDir() == UP)obj->setDir(UP);*/
                                 obj->update(npcTimer);
-                                //pinta_npc(guardia, 0, 0);
-                                //cout << sy;
+                                
                                 obj->draw(sx, sy, cont);
                                 cont++;
                             }
@@ -571,6 +578,8 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                     cont1 = 0;
                             }
                             }
+                            posX = obj->getx();
+                            posY = obj->gety();
                         }
                     }
 

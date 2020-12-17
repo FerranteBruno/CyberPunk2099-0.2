@@ -23,6 +23,7 @@ public:
 	virtual void setNose0() = 0;
 	virtual int getMuerte() = 0;
 	virtual int getDmg() = 0;
+	virtual float getDir() = 0;
 	virtual void setReviveNPC(bool revivio) = 0;
 };
 

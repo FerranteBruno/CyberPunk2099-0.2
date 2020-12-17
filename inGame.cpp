@@ -133,11 +133,6 @@ void inGame::pinta_npc(NPC& guardia, float x, float y) {
     guardia.pinta2(x, y);
 }
 
-void inGame::pinta_esqueleto(Esqueleto& esqueleto, float x, float y)
-{
-    esqueleto.pinta2(x, y);
-}
-
 void inGame::pinta_arma(Armas arma1, float sourceX, float sourceY, float x, float y) {
     arma1.pinta(sourceX, sourceY, x, y);
     //arma1.draw(sourcex, sourcey, x,y);
@@ -206,10 +201,6 @@ void inGame::dmg_jugador(jugador &jugador, InterfaceNPC& guardia) {
             //cout << "tiene :" << jugador.getVida() << "de vida" << endl;
             guardia.setDir(QUIETO);
     }
-}
-
-void inGame::dmg_esqueleto(jugador& jugador, InterfaceNPC& guardia)
-{
 }
 
 bool inGame::miraHaciaArriba(jugador &jugador, InterfaceNPC& guardia){
@@ -377,7 +368,6 @@ void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT even
 
 void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer) {
     jugador jugador;
-    
     //NPC guardia;
     Guardia A(100);
     Guardia B(200);
@@ -390,9 +380,6 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     Guardia I(165);
     Guardia J(190);
     Guardia K(600);
-    Esqueleto L(1000);
-    Centinela O(1000);
-    Centinela P(1000);
 
     Armas arma1;
     //tileEngine pruebita;
@@ -400,10 +387,9 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     ///vector ronda 1
     NPC* vecNPC1[] = { &A, &B, &C };
     //vector ronda 2
-    NPC* vecNPC2[] = { &F, &G, &H,&L };
-  // NPC* vecEsq[] = {&L,&O,&P};
+    NPC* vecNPC2[] = { &F, &G, &H };
     //vector ronda 3
-    NPC* vecNPC3[] = { &I, &J, &K ,&O,&P};
+    NPC* vecNPC3[] = { &I, &J, &K };
 
 
 
@@ -440,9 +426,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     I.inicia(350, 200);
     J.inicia(320, 200);
     K.inicia(280, 200);
-    L.inicia(500,250);
-    O.inicia(250, 500);
-    P.inicia(400,550);
+
     Rondas rondita;
 
     bool a = false;
@@ -642,7 +626,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                     cont1++;
                                     jugador.sumaEXP();
                                 }
-                                if (cont1 == 4) {
+                                if (cont1 == 3) {
                                     estanVivos2 = false;
                                     
                                     rondita.setFinaliza(true);

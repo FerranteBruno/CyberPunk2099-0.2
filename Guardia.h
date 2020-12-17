@@ -3,7 +3,7 @@
 class Guardia :
     public NPC
 {
-protected:
+private:
     ALLEGRO_BITMAP* guardia;
     ESTADOS _estados;
     float x, y;

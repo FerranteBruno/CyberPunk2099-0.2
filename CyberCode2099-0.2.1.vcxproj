@@ -162,8 +162,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Armas.cpp" />
-    <ClCompile Include="Centinela.cpp" />
-    <ClCompile Include="Esqueleto.cpp" />
     <ClCompile Include="Guardia.cpp" />
     <ClCompile Include="inGame.cpp" />
     <ClCompile Include="InterfaceNPC.cpp" />
@@ -175,8 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armas.h" />
-    <ClInclude Include="Centinela.h" />
-    <ClInclude Include="Esqueleto.h" />
     <ClInclude Include="Guardia.h" />
     <ClInclude Include="InterfaceNPC.h" />
     <ClInclude Include="jugador.h" />

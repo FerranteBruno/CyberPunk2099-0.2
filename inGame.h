@@ -3,10 +3,8 @@
 #include "jugador.h"
 #include "Armas.h"
 #include "TileEngine.h"
-#include"Esqueleto.h"
 #include "Guardia.h"
 #include "Rondas.h"
-#include"Centinela.h"
 
 /*#ifndef INGAME_H_INCLUDED
 #define INGAME_H_INCLUDED*/
@@ -16,7 +14,7 @@
 
 class inGame {
     private:
-        
+        //ALLEGRO_BITMAP* fondo;
         ALLEGRO_BITMAP* loading = al_load_bitmap("IMG/intro.bmp");
         ALLEGRO_BITMAP* menu1 = al_load_bitmap("IMG/menu1.bmp");
         ALLEGRO_BITMAP* menu2 = al_load_bitmap("IMG/menu2.bmp");
@@ -48,7 +46,6 @@ class inGame {
         void pinta_fondo();
         void pinta_jugador(jugador jugador, float x, float y);
         void pinta_npc(NPC &guardia, float x, float y);
-        void pinta_esqueleto(Esqueleto &esqueleto,float x,float y);
         void pinta_arma(Armas arma1, float sourceX, float sourceY, float x, float y);
         //void teclado(jugador jugador,int x, int y, Armas arma1, ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events,
           //  bool done, int& sourceX, int& sourceY, int& dir, bool draw, bool active, int moveSpeed);
@@ -60,7 +57,6 @@ class inGame {
         bool cerca(float x, float y, float npc_x, float npc_y, float width, float height, float dir, float moveSpeed);
         void dmg_npc(jugador& jugador, InterfaceNPC &guardia);
         void dmg_jugador(jugador& jugador, InterfaceNPC &guardia);
-        void dmg_esqueleto(jugador& jugador, InterfaceNPC& guardia);
         bool miraHaciaArriba(jugador &jugador, InterfaceNPC& guardia);
         bool miraHaciaAbajo(jugador& jugador, InterfaceNPC& guardia);
         bool miraHaciaIzquierda(jugador& jugador, InterfaceNPC& guardia );

@@ -170,7 +170,6 @@
     <ClCompile Include="puntuacion.cpp" />
     <ClCompile Include="Rondas.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="TileEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armas.h" />
@@ -181,7 +180,6 @@
     <ClInclude Include="inGame.h" />
     <ClInclude Include="puntuacion.h" />
     <ClInclude Include="Rondas.h" />
-    <ClInclude Include="TileEngine.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

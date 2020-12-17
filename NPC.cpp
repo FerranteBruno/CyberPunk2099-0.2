@@ -159,3 +159,9 @@ void NPC::pintaVida() {
     al_draw_filled_rectangle(x, y, x + ((vidaAct * 28) / vida), y + 4, al_map_rgb(0, 255, 0));
 
 }
+
+void NPC::setReviveNPC(bool revivio)
+{
+    muerto = !revivio;
+    vida = vidaMax;
+}

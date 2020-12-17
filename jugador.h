@@ -5,6 +5,7 @@
 #include "allegro5/allegro_primitives.h"
 #include "allegro5/allegro_font.h"
 #include "allegro5/allegro_ttf.h"
+#include "FloatRectColi.h"
 //#include "Armas.h"
 
 
@@ -33,6 +34,10 @@ private:
     int exp, expMax;
     bool pausador;
 public:
+    //test colision
+    /*float x, y;
+    FloatRectColi* rect;*/
+
     void inicia();
     void pinta(int, int);
     void teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events,
@@ -47,6 +52,8 @@ public:
     bool getPausador() { return pausador; };
     bool getEmpezarRonda() { return empezarRonda; };
     void setEmpezarRonda(bool _rondaEmpieza) { empezarRonda = _rondaEmpieza; };
+    void setRevivir(bool revivio);
+    void setCurar();
     void setAtk(int Atk) { ataca = Atk; };
     void setx(float _x) { x = _x; };
     void sety(float _y) { y = _y; };

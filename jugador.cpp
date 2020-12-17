@@ -8,6 +8,8 @@ void jugador::inicia()
     atak = al_load_sample("IMG/2.wav");
     camina = al_load_sample("IMG/camina/23.ogg");
     camina2 = al_load_sample("IMG/camina/24.ogg");
+    laexp = al_load_font("IMG/BROADW.ttf", 12, ALLEGRO_ALIGN_CENTER);
+    lavida = al_load_font("IMG/BROADW.ttf", 18, ALLEGRO_ALIGN_CENTER);
     // inicializar vbles
     //direccion = 0;
     //animacion = 0;
@@ -193,7 +195,7 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
 
                 else if (al_key_down(&keyState, ALLEGRO_KEY_ESCAPE))
                 {
-                    done = true;
+                    done = false;
                 }
 
                 else {
@@ -223,6 +225,17 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
         }
     }
         //return;
+}
+
+void jugador::setRevivir(bool revivio)
+{
+    muerto = !revivio;
+    vida = vidaMax;
+}
+
+void jugador::setCurar()
+{
+    vida = vidaMax;
 }
 
 void jugador::posiciona(float _x, float _y) {
@@ -267,19 +280,20 @@ int aux=0;
 
 void jugador::pintaVida() {
        
-    lavida = al_load_font("IMG/BROADW.ttf", 18, ALLEGRO_ALIGN_CENTER);
+    //lavida = al_load_font("IMG/BROADW.ttf", 18, ALLEGRO_ALIGN_CENTER);
 
     al_draw_text(lavida, al_map_rgb(255, 0, 0), 640, 650, ALLEGRO_ALIGN_CENTER, "Vida actual");
 
     al_draw_filled_rectangle(x,y,x+((vida*32)/vidaMax),y+4, al_map_rgb(0, 255, 0));
     al_draw_filled_rectangle(500,675, 425 + ((vida * 360) / vidaMax), 700, al_map_rgb(0, 255, 0));
 
-    al_destroy_font(lavida);
+    //al_destroy_font(lavida);
     
 }
+
 void jugador::pintaEXP() {
 
-    laexp = al_load_font("IMG/BROADW.ttf", 12, ALLEGRO_ALIGN_CENTER);
+    //laexp = al_load_font("IMG/BROADW.ttf", 12, ALLEGRO_ALIGN_CENTER);
 
     al_draw_text(laexp, al_map_rgb(0, 170, 228), 5, 5, ALLEGRO_ALIGN_LEFT, "Experiencia");
 
@@ -288,6 +302,6 @@ void jugador::pintaEXP() {
     al_draw_rectangle(5.5, 20.5, 83.5, 24.5, al_map_rgb(0, 0, 0),1);
     
 
-    al_destroy_font(laexp);
+    //al_destroy_font(laexp);
 
 }

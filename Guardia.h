@@ -17,6 +17,7 @@ private:
     float dir;
     int direccion;
     int murio;
+    int dmg;
 public:
     Guardia(int _vida);
     void draw(int sx, int sy, int cont);
@@ -35,7 +36,10 @@ public:
     bool getMuerto() { return muerto; };
     void setDir(float _x) { direccion = _x; };
     void setEstado(int dire) { direccion = dire; };
+    void setReviveNPC(bool revivio);
+    void setNose0() { murio = 0; };
     void nose() { murio++; }
     int getMuerte() { return murio; }
+    int getDmg() { return dmg; }
 };
 

@@ -4,7 +4,7 @@
 #include "allegro5/allegro_ttf.h"
 #include "jugador.h"
 
-enum ESTADORONDAS{ESPERA, PAUSA, COMIENZA, FINALIZA};
+enum ESTADORONDAS{ESPERA, PAUSA, COMIENZA, FINALIZA, PERDER};
 
 class Rondas
 {
@@ -20,6 +20,7 @@ private:
 	bool comienza;
 	bool finaliza;
 	bool pausado;
+	bool perdio;
 	int sec;
 	int min;
 	ESTADORONDAS estaditto;
@@ -27,7 +28,7 @@ public:
 	Rondas();
 	~Rondas();
 	void cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& estanVivos2, bool& estanVivos3, bool& daaale);
-	void update(ALLEGRO_TIMER* timer);
+	void update(ALLEGRO_TIMER* timer, jugador& jugador);
 	void draw(jugador &jugador , bool estanVivos);
 	void setComienza(bool _comienza) { comienza = _comienza; };
 	void setFinaliza(bool _finaliza) { finaliza = _finaliza; };
@@ -35,6 +36,7 @@ public:
 	bool getComienza() { return comienza; };
 	bool getFinaliza() { return finaliza; };
 	bool getPausado() { return pausado; };
+	bool getPerdio() { return perdio; };
 	int getNumRonda() { return rondas; };
 	void setNumRonda(int x) { rondas = x; }
 

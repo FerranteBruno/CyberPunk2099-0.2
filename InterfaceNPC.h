@@ -20,6 +20,9 @@ public:
 	virtual void posiciona(float _x, float _y) = 0;
 	virtual void setEstado(int dire) = 0;
 	virtual void nose() = 0;
+	virtual void setNose0() = 0;
 	virtual int getMuerte() = 0;
+	virtual int getDmg() = 0;
+	virtual void setReviveNPC(bool revivio) = 0;
 };
 

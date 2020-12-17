@@ -26,7 +26,9 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 
 	comienza = jugador.getEmpezarRonda();
 	pausado = jugador.getPausador();
+
 	if (rondas == 1) {
+
 		///RONDA 1:
 		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == false && finaliza == false && pausado==false) {
 			controlDeRondas = ESPERA;			
@@ -42,7 +44,13 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 		if (!(jugador.ha_muerto()) && estanVivos == true && comienza == true && pausado==false && finaliza == false) {
 			finaliza = false;
 			controlDeRondas = COMIENZA;
-			
+		}
+		//Estado para empezar luego de perder el juego
+		if (jugador.ha_muerto() && estanVivos == true && comienza == true && pausado == false && finaliza == false && perdio == true) {
+			finaliza = false;
+			perdio = false;
+			comienza = true;
+			controlDeRondas = COMIENZA;
 		}
 
 		if (!jugador.ha_muerto() && estanVivos == false && finaliza == true && comienza == false) {
@@ -50,7 +58,11 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 			finaliza = false;
 			controlDeRondas = FINALIZA;
 			std::cout << "hola";
-			///rondas++;
+		}
+
+		if (jugador.ha_muerto() && estanVivos == true && finaliza == true && comienza == false) {
+			controlDeRondas = PERDER;
+			std::cout << "hola2";
 		}
 	}
 
@@ -73,12 +85,24 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 
 		}
 
+		//Estado para empezar luego de perder el juego
+		if (jugador.ha_muerto() && estanVivos2 == true && comienza == true && pausado == false && finaliza == false && perdio == true) {
+			perdio = false;
+			finaliza = false;
+			comienza = true;
+			controlDeRondas = COMIENZA;
+		}
+
 		if (!jugador.ha_muerto() && estanVivos2 == false && estanVivos == false && finaliza == true && comienza == false) {
 			rondas++;
 			finaliza = false;
 			controlDeRondas = FINALIZA;
 			std::cout << "hola";
-			///rondas++;
+		}
+
+		if (jugador.ha_muerto() && estanVivos2 == true && finaliza == true && comienza == false) {
+			controlDeRondas = PERDER;
+			std::cout << "hola2";
 		}
 	}
 
@@ -99,19 +123,31 @@ void Rondas::cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& 
 			comienza = true;
 			finaliza = false;
 			controlDeRondas = COMIENZA;
-
 		}
 
-		if (!jugador.ha_muerto() && estanVivos2 == false && estanVivos == false && estanVivos3 == false && finaliza == true && comienza == false) {
+		//Estado para empezar luego de perder el juego
+		if (jugador.ha_muerto() && estanVivos3 == true && comienza == true && pausado == false && finaliza == false && perdio == true) {
+			finaliza = false;
+			perdio = false;
+			comienza = true;
+			controlDeRondas = COMIENZA;
+		}
+
+		if (!jugador.ha_muerto() && estanVivos3 == false && estanVivos == false && estanVivos3 == false && finaliza == true && comienza == false) {
 			rondas++;
 			finaliza = false;
 			controlDeRondas = FINALIZA;
 			std::cout << "hola";
 		}
+
+		if (jugador.ha_muerto() && estanVivos3 == true && finaliza == true && comienza == false) {
+			controlDeRondas = PERDER;
+			std::cout << "hola2";
+		}
 	}
 }
 
-void Rondas::update(ALLEGRO_TIMER* timer)
+void Rondas::update(ALLEGRO_TIMER* timer, jugador& jugador)
 {
 	switch (controlDeRondas) {
 
@@ -128,6 +164,8 @@ void Rondas::update(ALLEGRO_TIMER* timer)
 	case COMIENZA:
 
 		al_start_timer(timer);
+		perdio = false;
+		finaliza = false;
 
 			if (al_get_timer_count(timer) == 30) {
 				sec++;
@@ -137,18 +175,38 @@ void Rondas::update(ALLEGRO_TIMER* timer)
 
 			if (sec == 60) {
 				min++;
+				sec = 0;
 			}
 
 			if (min == 1 && sec == 0) {
-				controlDeRondas = FINALIZA;
+				comienza = false;
+				finaliza = true;
+				controlDeRondas = PERDER;
 			}
+
+
+
 		break;
 
 	case FINALIZA:
+		jugador.setEmpezarRonda(false);
+		al_set_timer_count(timer, 0);
 		sec = 0;
 		min = 0;
 		//al_rest(10);
 		//al_stop_timer(timer);
+
+		break;
+
+	case PERDER:
+		jugador.setEmpezarRonda(false);
+		finaliza = false;
+		perdio = true;
+		comienza = false;
+		rondas = 1;
+		al_set_timer_count(timer, 0);
+		sec = 0;
+		min = 0;
 
 		break;
 
@@ -178,8 +236,16 @@ void Rondas::draw(jugador &jugador, bool estanVivos)
 		al_draw_textf(fuente, al_map_rgb(255, 0, 0), 655, 20, ALLEGRO_ALIGN_CENTER, "%d" , sec);
 	}
 
-	else if (controlDeRondas == FINALIZA) {
+	else if (controlDeRondas == FINALIZA && rondas <= 3) {
 		al_draw_text(fuente, al_map_rgb(255, 0, 0), 640, 60, ALLEGRO_ALIGN_CENTER, "Has completado la ronda! Para continuar presione F1, F2 para detener la ronda");
+	}
+
+	else if (controlDeRondas == FINALIZA && rondas == 4) {
+		al_draw_text(fuente, al_map_rgb(255, 0, 0), 640, 60, ALLEGRO_ALIGN_CENTER, "Has completado el juego!");
+	}
+
+	else if (controlDeRondas == PERDER) {
+		al_draw_text(fuente, al_map_rgb(255, 0, 0), 640, 60, ALLEGRO_ALIGN_CENTER, "Has muerto, para empezar de nuevo apreta F1");
 	}
 
 	///al_destroy_font(fuente);

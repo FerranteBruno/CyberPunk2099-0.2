@@ -63,7 +63,7 @@ class inGame {
         bool miraHaciaDerecha(jugador& jugador, InterfaceNPC& guardia );
         void menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, bool& done, float x, float y);
         void checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador& jugador, bool estanVivos, bool estanVivos2, bool estanVivos3);
-        void updateRondas(ALLEGRO_TIMER* timer, Rondas &rondita);
+        void updateRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador);
         void drawRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos);
         bool Daño(jugador& jugador);
         int suma_puntos(bool daño);

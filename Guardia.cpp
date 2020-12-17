@@ -7,15 +7,15 @@ Guardia::Guardia(int _vida)
     vidaAct = vida;
     moveSpeed = 1;
     murio = 0;
+    dmg = 1;
     //cout << "esta es la vida: " << vida << endl;
     //cout << "esta es la vida actual: " << vidaAct << endl;
 }
 
 
-
 void Guardia::cmd(jugador& jugador, bool cerca, bool start)
 {
-    if (start == true) {
+    if (start == true && !(jugador.ha_muerto())) {
         if (!cerca) {
             if ((jugador.getx() - x) > 0) direccion = RIGHT;
             if ((jugador.getx() - x) < 0) direccion = LEFT;
@@ -157,4 +157,10 @@ bool Guardia::atacando() {
     if (direccion == ATACANDO) {
         return true;
     }
+}
+
+void Guardia::setReviveNPC(bool revivio)
+{
+    muerto = !revivio;
+    vidaAct = vidaMax;
 }

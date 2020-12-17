@@ -7,7 +7,7 @@
 enum ESTADOS { DOWN, UP, LEFT, RIGHT, ATACANDO , QUIETO};
 
 class NPC : public InterfaceNPC {
-private:
+protected:
     ALLEGRO_BITMAP* npc;
     ESTADOS _estados;
     float x, y;

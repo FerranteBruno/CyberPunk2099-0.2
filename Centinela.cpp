@@ -86,7 +86,7 @@ void Centinela::draw(int sx, int sy, int cont) {
     if (direccion < 4) {
         sy = direccion;
         dir = sy;
-        sx += (al_get_bitmap_width(centinela) / 8) * cont;
+        sx += (al_get_bitmap_width(centinela) / 9) * cont;
     }
     else {
         //cout << "dir "<<  dir <<endl;
@@ -119,7 +119,7 @@ void Centinela::posiciona(float _x, float _y) {
 
 void Centinela::pinta2(float sx, float sy) {
     al_convert_mask_to_alpha(centinela, al_map_rgb(0, 0, 0));
-    al_draw_bitmap_region(centinela, sx, sy * (al_get_bitmap_height(centinela) / 4), al_get_bitmap_width(centinela) / 8, al_get_bitmap_height(centinela) / 4, x, y, NULL);
+    al_draw_bitmap_region(centinela, sx, sy * (al_get_bitmap_height(centinela) / 4), al_get_bitmap_width(centinela) / 9, al_get_bitmap_height(centinela) / 4, x, y, NULL);
     pintaVida();
 }
 

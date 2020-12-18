@@ -8,7 +8,7 @@ class Centinela :
 protected:
     ALLEGRO_BITMAP* centinela;
     ESTADOS _estados;
-    float x, y;
+    //float x, y;
     int ataca;
     int vida;
     int vidaAct;
@@ -20,6 +20,8 @@ protected:
     int direccion;
     int murio;
     int dmg;
+    int ancho = 32;
+    int alto = 64;
 public:
     Centinela(int _vida);
     void draw(int sx, int sy, int cont);

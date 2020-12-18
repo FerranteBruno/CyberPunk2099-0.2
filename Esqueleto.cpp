@@ -11,7 +11,7 @@ Esqueleto::Esqueleto(int _vida)
     moveSpeed = 2;
     murio = 0;
     dmg = 1;
-  
+    muerto = false;
 }
 
 
@@ -86,7 +86,7 @@ void Esqueleto::draw(int sx, int sy, int cont) {
     if (direccion < 4) {
         sy = direccion;
         dir = sy;
-        sx += (al_get_bitmap_width(esqueleto) / 8) * cont;
+        sx += (al_get_bitmap_width(esqueleto) / 9) * cont;
     }
     else {
         //cout << "dir "<<  dir <<endl;
@@ -119,7 +119,7 @@ void Esqueleto::posiciona(float _x, float _y) {
 
 void Esqueleto::pinta2(float sx, float sy) {
     al_convert_mask_to_alpha(esqueleto, al_map_rgb(0, 0, 0));
-    al_draw_bitmap_region(esqueleto, sx, sy * (al_get_bitmap_height(esqueleto) / 4), al_get_bitmap_width(esqueleto) / 8, al_get_bitmap_height(esqueleto) / 4, x, y, NULL);
+    al_draw_bitmap_region(esqueleto, sx, sy * (al_get_bitmap_height(esqueleto) / 4), al_get_bitmap_width(esqueleto) / 9, al_get_bitmap_height(esqueleto) / 4, x, y, NULL);
     pintaVida();
 }
 

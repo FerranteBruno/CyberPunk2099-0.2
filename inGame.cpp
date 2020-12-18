@@ -401,7 +401,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     NPC* vecNPC1[] = { &A, &B, &C };
     //vector ronda 2
     NPC* vecNPC2[] = { &F, &G, &H,&L };
-  // NPC* vecEsq[] = {&L,&O,&P};
+    //NPC* vecEsq[] = {&L,&O,&P};
     //vector ronda 3
     NPC* vecNPC3[] = { &I, &J, &K ,&O,&P};
 
@@ -554,18 +554,18 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 //cout << guardia.getVida() << endl;
                             }
 
-                            
+                            if (colision(obj->getx(), obj->gety(), posX, posY, 30, 46)) {
+
+                                obj->posiciona(obj->getx() - 1, obj->gety() - 1);
+
+                            }
 
                             if (!(obj->ha_muerto())) {
                                 if (cont == 8) cont = 0;
-                                if (colision(obj->getx(), obj->gety(), posX, posY, 30, 46)) {
-
-                                    obj->posiciona(obj->getx() - 1, obj->gety() - 1);
-
-                                }
-                                else {
+                               
+                                 
                                     obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
-                                }
+                                
                                 /*if (obj->getDir() == RIGHT)obj->setDir(RIGHT);
                                 if (obj->getDir() == LEFT)obj->setDir(LEFT);
                                 if (obj->getDir() == DOWN)obj->setDir(DOWN);
@@ -622,10 +622,14 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 //cout << guardia.getVida() << endl;
                             }
 
-                            if (colision(rA.getx(), rA.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
-                                obj->setEstado(QUIETO);
-                                //cout << guardia.getVida() << endl;
+                            if (colision(obj->getx(), obj->gety(), posX, posY, 30, 46)) {
+
+                                obj->posiciona(obj->getx() - 1, obj->gety() - 1);
+
                             }
+
+
+
 
                             if (!(obj->ha_muerto())) {
                                 if (cont == 8) cont = 0;
@@ -653,6 +657,8 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                     cont1 = 0;
                                 }
                             }
+                            posX = obj->getx();
+                            posY = obj->gety();
                         }
                     }
 
@@ -678,9 +684,10 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 //cout << guardia.getVida() << endl;
                             }
 
-                            if (colision(rA.getx(), rA.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
-                                obj->setEstado(QUIETO);
-                                //cout << guardia.getVida() << endl;
+                            if (colision(obj->getx(), obj->gety(), posX, posY, 30, 46)) {
+
+                                obj->posiciona(obj->getx() - 1, obj->gety() - 1);
+
                             }
 
                             if (!(obj->ha_muerto())) {
@@ -698,7 +705,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                     cont1++;
                                     jugador.sumaEXP();
                                 }
-                                if (cont1 == 3) {
+                                if (cont1 == 5) {
                                     estanVivos3 = false;
                                     rondita.setFinaliza(true);
                                     rondita.setComienza(false);
@@ -707,6 +714,8 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                     cont1 = 0;
                                 }
                             }
+                            posX = obj->getx();
+                            posY = obj->gety();
                         }
                     }
                     al_flip_display();

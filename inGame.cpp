@@ -179,7 +179,7 @@ bool inGame::colision(float x, float y, float npc_x, float npc_y, float width, f
 
 bool inGame::rect(jugador& jugador,FRect* npcRect, NPC& elnpc) {
 
-    if (jugador.rect->Intersects(npcRect)) {
+    if (jugador.rect->Intersects(npcRect) && (!elnpc.ha_muerto())) {
         if (jugador.rect->Bottom >= npcRect->Top && jugador.prevRect->Bottom <= npcRect->Top)
         {
             jugador.y = elnpc.gety() - 32;
@@ -199,7 +199,7 @@ bool inGame::rect(jugador& jugador,FRect* npcRect, NPC& elnpc) {
 
 bool inGame::guardRect(Guardia& npc, FRect* npcRect, NPC& elnpc) {
 
-    if (npc.npcRect->Intersects(npcRect)) {
+    if (npc.npcRect->Intersects(npcRect) && (!elnpc.ha_muerto())) {
         if (npc.npcRect->Bottom >= npcRect->Top && npc.prevNpcRect->Bottom <= npcRect->Top)
         {
             npc.y = elnpc.gety() - 33;
@@ -219,7 +219,7 @@ bool inGame::guardRect(Guardia& npc, FRect* npcRect, NPC& elnpc) {
 
 bool inGame::centiRect(Centinela& npc, FRect* npcRect, NPC& elnpc) {
 
-    if (npc.npcRect->Intersects(npcRect)) {
+    if (npc.npcRect->Intersects(npcRect) && (!elnpc.ha_muerto())) {
         if (npc.npcRect->Bottom >= npcRect->Top && npc.prevNpcRect->Bottom <= npcRect->Top)
         {
             npc.y = elnpc.gety() - 33;
@@ -239,7 +239,7 @@ bool inGame::centiRect(Centinela& npc, FRect* npcRect, NPC& elnpc) {
 
 bool inGame::esqueRect(Esqueleto& npc, FRect* npcRect, NPC& elnpc) {
 
-    if (npc.npcRect->Intersects(npcRect)) {
+    if (npc.npcRect->Intersects(npcRect) && (!elnpc.ha_muerto())) {
         if (npc.npcRect->Bottom >= npcRect->Top && npc.prevNpcRect->Bottom <= npcRect->Top)
         {
             npc.y = elnpc.gety() - 33;
@@ -658,16 +658,16 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 if (obj->getDir() == LEFT)obj->setDir(LEFT);
                                 if (obj->getDir() == DOWN)obj->setDir(DOWN);
                                 if (obj->getDir() == UP)obj->setDir(UP);*/
+
+
                                 obj->update(npcTimer);
-                                if (!A.ha_muerto()) {
-                                    rect(jugador, A.npcRect, A);
-                                }
-                                if (!B.ha_muerto()) {
-                                    rect(jugador, B.npcRect, B);
-                                }
-                                if (!C.ha_muerto()) {
-                                    rect(jugador, C.npcRect, C);
-                                }
+
+                                //rect jugador
+                                rect(jugador, A.npcRect, A);
+                                rect(jugador, B.npcRect, B);
+                                rect(jugador, C.npcRect, C);
+
+                                ///rect npc
                                 guardRect(A, B.npcRect, B);
                                 guardRect(A, C.npcRect, C);
                                 guardRect(B, A.npcRect, A);
@@ -723,18 +723,14 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
                                 obj->update(npcTimer);
                                 
-                                if (!F.ha_muerto()) {
-                                    rect(jugador, F.npcRect, F);
-                                }
-                                if (!G.ha_muerto()) {
-                                    rect(jugador, G.npcRect, G);
-                                }
-                                if (!H.ha_muerto()) {
-                                    rect(jugador, H.npcRect, H);
-                                }
-                                if (!L.ha_muerto()) {
-                                    rect(jugador, L.npcRect, L);
-                                }
+                                //rect jugador
+                                rect(jugador, F.npcRect, F);                                                              
+                                rect(jugador, G.npcRect, G);                             
+                                rect(jugador, H.npcRect, H);                
+                                rect(jugador, L.npcRect, L);
+                                
+
+                                ///rect npc
                                 guardRect(F, G.npcRect, G);
                                 guardRect(F, H.npcRect, H);
                                 guardRect(F, L.npcRect, L);
@@ -809,22 +805,14 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
                                 obj->update(npcTimer);
 
-                                if (!I.ha_muerto()) {
-                                    rect(jugador, I.npcRect, I);
-                                }
-                                if (!J.ha_muerto()) {
-                                    rect(jugador, J.npcRect, J);
-                                }
-                                if (!K.ha_muerto()) {
-                                    rect(jugador, K.npcRect, K);
-                                }
-                                if (!O.ha_muerto()) {
-                                    rect(jugador, O.npcRect, O);
-                                }
-                                if (!P.ha_muerto()) {
-                                    rect(jugador, P.npcRect, P);
-                                }
+                                //rect jugador
+                                rect(jugador, I.npcRect, I);
+                                rect(jugador, J.npcRect, J);
+                                rect(jugador, K.npcRect, K);
+                                rect(jugador, O.npcRect, O);
+                                rect(jugador, P.npcRect, P);
 
+                                ///rect npc
                                 guardRect(I, J.npcRect, J);
                                 guardRect(I, K.npcRect, K);
                                 guardRect(I, O.npcRect, O);

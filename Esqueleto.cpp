@@ -46,6 +46,7 @@ void Esqueleto::update(ALLEGRO_TIMER* npcTimer)
 {
     pY = y;
     pX = x;
+
     switch (direccion) {
     case RIGHT:
         x += moveSpeed;
@@ -83,8 +84,10 @@ void Esqueleto::update(ALLEGRO_TIMER* npcTimer)
     delete npcRect;
     delete prevNpcRect;
 
+
     npcRect = new FRect(x, y, 32, 32);
     prevNpcRect = new FRect(pX, pY, 32, 32);
+    
 }
 
 void Esqueleto::draw(int sx, int sy, int cont) {
@@ -114,9 +117,10 @@ void Esqueleto::inicia(int _x, int _y)
     
 
     posiciona(_x, _y);
+    
     npcRect = new FRect(x, y, 32, 32);
     prevNpcRect = new FRect(pX, pY, 32, 32);
-
+    
     
 }
 

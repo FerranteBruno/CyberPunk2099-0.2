@@ -6,7 +6,7 @@ class Guardia :
 protected:
     ALLEGRO_BITMAP* guardia;
     ESTADOS _estados;
-    float x, y;
+    
     int ataca;
     int vida;
     int vidaAct;
@@ -18,7 +18,11 @@ protected:
     int direccion;
     int murio;
     int dmg;
+    /*float x, y;
+    float pX, pY;*/
 public:
+    float x, y;
+    float pX, pY;
     Guardia(int _vida);
     void draw(int sx, int sy, int cont);
     void update(ALLEGRO_TIMER* npcTimer);
@@ -41,5 +45,7 @@ public:
     void nose() { murio++; }
     int getMuerte() { return murio; }
     int getDmg() { return dmg; }
+    FRect *npcRect;
+    FRect* prevNpcRect;
 };
 

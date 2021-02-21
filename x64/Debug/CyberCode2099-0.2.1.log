@@ -1,4 +1,18 @@
-﻿  Guardia.cpp
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\Guardia.cpp(160): warning C4715: 'Guardia::atacando': no todas las rutas de acceso de control devuelven un valor
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\jugador.h(75): warning C4715: 'jugador::ha_muerto': no todas las rutas de acceso de control devuelven un valor
+﻿  Centinela.cpp
+  Esqueleto.cpp
+  NPC.cpp
+  Source.cpp
+  inGame.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(395,46): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(607,41): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(617,41): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+  jugador.cpp
+  puntuacion.cpp
+  Generando código...
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\jugador.h(77): warning C4715: 'jugador::ha_muerto': no todas las rutas de acceso de control devuelven un valor
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\NPC.cpp(164): warning C4715: 'NPC::atacando': no todas las rutas de acceso de control devuelven un valor
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\Esqueleto.cpp(161): warning C4715: 'Esqueleto::atacando': no todas las rutas de acceso de control devuelven un valor
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\jugador.h(77): warning C4715: 'jugador::ha_muerto': no todas las rutas de acceso de control devuelven un valor
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\Centinela.cpp(164): warning C4715: 'Centinela::atacando': no todas las rutas de acceso de control devuelven un valor
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\jugador.h(77): warning C4715: 'jugador::ha_muerto': no todas las rutas de acceso de control devuelven un valor
   CyberCode2099-0.2.1.vcxproj -> C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe

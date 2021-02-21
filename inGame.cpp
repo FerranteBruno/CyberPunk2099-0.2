@@ -153,6 +153,108 @@ bool inGame::colision(float x, float y, float npc_x, float npc_y, float width, f
     {
     return true;
     }
+    
+
+}
+
+/*bool inGame::Rect(jugador& jugador, FRect* elnpc) {
+
+    if (jugador.rect->Intersects(elnpc.npcRect)) {
+        if (jugador.rect->Bottom >= elnpc.npcRect->Top && jugador.prevRect->Bottom <= elnpc.npcRect->Top)
+        {
+            jugador.y = elnpc.gety() - 32;
+        }
+        else if (jugador.rect->Bottom <= elnpc.npcRect->Top && jugador.prevRect->Bottom >= elnpc.npcRect->Top) {
+            jugador.y = elnpc.gety();
+        }
+        else if (jugador.rect->Right >= elnpc.npcRect->Left && jugador.prevRect->Right <= elnpc.npcRect->Left) {
+            jugador.x = elnpc.getx() - 32;
+        }
+        else if (jugador.rect->Right <= elnpc.npcRect->Left && jugador.prevRect->Right >= elnpc.npcRect->Left) {
+            jugador.x = elnpc.getx();
+        }
+    }
+    return true;
+}*/
+
+bool inGame::rect(jugador& jugador,FRect* npcRect, NPC& elnpc) {
+
+    if (jugador.rect->Intersects(npcRect)) {
+        if (jugador.rect->Bottom >= npcRect->Top && jugador.prevRect->Bottom <= npcRect->Top)
+        {
+            jugador.y = elnpc.gety() - 32;
+        }
+        else if (jugador.rect->Top <= npcRect->Bottom && jugador.prevRect->Top >= npcRect->Bottom) {
+            jugador.y = elnpc.gety() +32;
+        }
+        else if (jugador.rect->Right >= npcRect->Left && jugador.prevRect->Right <= npcRect->Left) {
+            jugador.x = elnpc.getx()- 32;
+        }
+        else if (jugador.rect->Left <= npcRect->Right && jugador.prevRect->Left >= npcRect->Right) {
+            jugador.x = elnpc.getx() + 32;
+        }
+    }
+    return true;
+}
+
+bool inGame::guardRect(Guardia& npc, FRect* npcRect, NPC& elnpc) {
+
+    if (npc.npcRect->Intersects(npcRect)) {
+        if (npc.npcRect->Bottom >= npcRect->Top && npc.prevNpcRect->Bottom <= npcRect->Top)
+        {
+            npc.y = elnpc.gety() - 33;
+        }
+        else if (npc.npcRect->Top <= npcRect->Bottom && npc.prevNpcRect->Top >= npcRect->Bottom) {
+            npc.y = elnpc.gety() + 33;
+        }
+        else if (npc.npcRect->Right >= npcRect->Left && npc.prevNpcRect->Right <= npcRect->Left) {
+            npc.x = elnpc.getx() - 33;
+        }
+        else if (npc.npcRect->Left <= npcRect->Right && npc.prevNpcRect->Left >= npcRect->Right) {
+            npc.x = elnpc.getx() + 33;
+        }
+    }
+    return true;
+}
+
+bool inGame::centiRect(Centinela& npc, FRect* npcRect, NPC& elnpc) {
+
+    if (npc.npcRect->Intersects(npcRect)) {
+        if (npc.npcRect->Bottom >= npcRect->Top && npc.prevNpcRect->Bottom <= npcRect->Top)
+        {
+            npc.y = elnpc.gety() - 33;
+        }
+        else if (npc.npcRect->Top <= npcRect->Bottom && npc.prevNpcRect->Top >= npcRect->Bottom) {
+            npc.y = elnpc.gety() + 33;
+        }
+        else if (npc.npcRect->Right >= npcRect->Left && npc.prevNpcRect->Right <= npcRect->Left) {
+            npc.x = elnpc.getx() - 33;
+        }
+        else if (npc.npcRect->Left <= npcRect->Right && npc.prevNpcRect->Left >= npcRect->Right) {
+            npc.x = elnpc.getx() + 33;
+        }
+    }
+    return true;
+}
+
+bool inGame::esqueRect(Esqueleto& npc, FRect* npcRect, NPC& elnpc) {
+
+    if (npc.npcRect->Intersects(npcRect)) {
+        if (npc.npcRect->Bottom >= npcRect->Top && npc.prevNpcRect->Bottom <= npcRect->Top)
+        {
+            npc.y = elnpc.gety() - 33;
+        }
+        else if (npc.npcRect->Top <= npcRect->Bottom && npc.prevNpcRect->Top >= npcRect->Bottom) {
+            npc.y = elnpc.gety() + 33;
+        }
+        else if (npc.npcRect->Right >= npcRect->Left && npc.prevNpcRect->Right <= npcRect->Left) {
+            npc.x = elnpc.getx() - 33;
+        }
+        else if (npc.npcRect->Left <= npcRect->Right && npc.prevNpcRect->Left >= npcRect->Right) {
+            npc.x = elnpc.getx() + 33;
+        }
+    }
+    return true;
 }
 
 bool inGame::cerca(float x, float y, float npc_x, float npc_y, float width, float height, float dir, float moveSpeed) {
@@ -239,7 +341,7 @@ bool inGame::miraHaciaIzquierda(jugador& jugador, InterfaceNPC& guardia) {
 void inGame::GAME(){
     
     const float FPS = 30;
-    const float frameFPS = 0.5;
+    const float frameFPS = 0.4;
 
     
 
@@ -248,8 +350,8 @@ void inGame::GAME(){
 
     //registramos los eventos de la wea
     ALLEGRO_TIMER* timer = al_create_timer(1.0 / FPS);
-    ALLEGRO_TIMER* frameTimer = al_create_timer(1.0 / FPS);
-    ALLEGRO_TIMER* npcTimer = al_create_timer(1.0 / FPS);
+    ALLEGRO_TIMER* frameTimer = al_create_timer(1.3 / FPS);
+    ALLEGRO_TIMER* npcTimer = al_create_timer(1.8 / FPS);
     ALLEGRO_TIMER* rondasTimer = al_create_timer(1.0 / FPS);
 
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
@@ -448,7 +550,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     bool a = false;
     bool draw = true, active = false;
     bool empezo = false;
-    jugador.setSpeed(3);
+    jugador.setSpeed(2.5);
     float sourceX = 32, sourceY = 0, dir = sourceY, dirA = sourceY;
     float sx = 0, sy = 0;
     int cont = 0, cont1=0;
@@ -546,20 +648,6 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                             }
 
 
-                            if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
-                                if (dir == 0) jugador.setmy(jugador.getSpeed());
-                                else if (dir == 1) jugador.setpx(jugador.getSpeed());
-                                else if (dir == 2) jugador.setmx(jugador.getSpeed());
-                                else if (dir == 3) jugador.setpy(jugador.getSpeed());
-                                //cout << guardia.getVida() << endl;
-                            }
-
-                            if (colision(obj->getx(), obj->gety(), posX, posY, 30, 46)) {
-
-                                obj->posiciona(obj->getx() - 1, obj->gety() - 1);
-
-                            }
-
                             if (!(obj->ha_muerto())) {
                                 if (cont == 8) cont = 0;
                                
@@ -571,7 +659,22 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 if (obj->getDir() == DOWN)obj->setDir(DOWN);
                                 if (obj->getDir() == UP)obj->setDir(UP);*/
                                 obj->update(npcTimer);
-                                
+                                if (!A.ha_muerto()) {
+                                    rect(jugador, A.npcRect, A);
+                                }
+                                if (!B.ha_muerto()) {
+                                    rect(jugador, B.npcRect, B);
+                                }
+                                if (!C.ha_muerto()) {
+                                    rect(jugador, C.npcRect, C);
+                                }
+                                guardRect(A, B.npcRect, B);
+                                guardRect(A, C.npcRect, C);
+                                guardRect(B, A.npcRect, A);
+                                guardRect(B, C.npcRect, C);
+                                guardRect(C, A.npcRect, A);
+                                guardRect(C, B.npcRect, B);
+
                                 obj->draw(sx, sy, cont);
                                 cont++;
                             }
@@ -614,29 +717,40 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 jugador.setEmpezarRonda(false);
                             }
 
-                            if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
-                                if (dir == 0) jugador.setmy(jugador.getSpeed());
-                                else if (dir == 1) jugador.setpx(jugador.getSpeed());
-                                else if (dir == 2) jugador.setmx(jugador.getSpeed());
-                                else if (dir == 3) jugador.setpy(jugador.getSpeed());
-                                //cout << guardia.getVida() << endl;
-                            }
-
-                            if (colision(obj->getx(), obj->gety(), posX, posY, 30, 46)) {
-
-                                obj->posiciona(obj->getx() - 1, obj->gety() - 1);
-
-                            }
-
-
-
 
                             if (!(obj->ha_muerto())) {
                                 if (cont == 8) cont = 0;
                                 obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
                                 obj->update(npcTimer);
-                                //pinta_npc(guardia, 0, 0);
-                                //cout << sy;
+                                
+                                if (!F.ha_muerto()) {
+                                    rect(jugador, F.npcRect, F);
+                                }
+                                if (!G.ha_muerto()) {
+                                    rect(jugador, G.npcRect, G);
+                                }
+                                if (!H.ha_muerto()) {
+                                    rect(jugador, H.npcRect, H);
+                                }
+                                if (!L.ha_muerto()) {
+                                    rect(jugador, L.npcRect, L);
+                                }
+                                guardRect(F, G.npcRect, G);
+                                guardRect(F, H.npcRect, H);
+                                guardRect(F, L.npcRect, L);
+
+                                guardRect(G, H.npcRect, H);
+                                guardRect(G, F.npcRect, F);
+                                guardRect(G, L.npcRect, L);
+
+                                guardRect(H, F.npcRect, F);
+                                guardRect(H, G.npcRect, G);
+                                guardRect(H, L.npcRect, L);
+
+                                esqueRect(L, G.npcRect, G);
+                                esqueRect(L, F.npcRect, F);
+                                esqueRect(L, H.npcRect, H);
+
                                 obj->draw(sx, sy, cont);
                                 cont++;
                             }
@@ -676,7 +790,7 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 jugador.setEmpezarRonda(false);
                             }
 
-                            if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
+                            /*if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
                                 if (dir == 0) jugador.setmy(jugador.getSpeed());
                                 else if (dir == 1) jugador.setpx(jugador.getSpeed());
                                 else if (dir == 2) jugador.setmx(jugador.getSpeed());
@@ -688,14 +802,54 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
 
                                 obj->posiciona(obj->getx() - 1, obj->gety() - 1);
 
-                            }
+                            }*/
 
                             if (!(obj->ha_muerto())) {
                                 if (cont == 8) cont = 0;
                                 obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
                                 obj->update(npcTimer);
-                                //pinta_npc(guardia, 0, 0);
-                                //cout << sy;
+
+                                if (!I.ha_muerto()) {
+                                    rect(jugador, I.npcRect, I);
+                                }
+                                if (!J.ha_muerto()) {
+                                    rect(jugador, J.npcRect, J);
+                                }
+                                if (!K.ha_muerto()) {
+                                    rect(jugador, K.npcRect, K);
+                                }
+                                if (!O.ha_muerto()) {
+                                    rect(jugador, O.npcRect, O);
+                                }
+                                if (!P.ha_muerto()) {
+                                    rect(jugador, P.npcRect, P);
+                                }
+
+                                guardRect(I, J.npcRect, J);
+                                guardRect(I, K.npcRect, K);
+                                guardRect(I, O.npcRect, O);
+                                guardRect(I, P.npcRect, P);
+
+                                guardRect(J, I.npcRect, I);
+                                guardRect(J, K.npcRect, K);
+                                guardRect(J, O.npcRect, O);
+                                guardRect(J, P.npcRect, P);
+
+                                guardRect(J, I.npcRect, I);
+                                guardRect(J, K.npcRect, K);
+                                guardRect(J, O.npcRect, O);
+                                guardRect(J, P.npcRect, P);
+
+                                centiRect(O, I.npcRect, I);
+                                centiRect(O, J.npcRect, J);
+                                centiRect(O, K.npcRect, K);
+                                centiRect(O, P.npcRect, P);
+
+                                centiRect(P, I.npcRect, I);
+                                centiRect(P, J.npcRect, J);
+                                centiRect(P, K.npcRect, K);
+                                centiRect(P, O.npcRect, O);
+
                                 obj->draw(sx, sy, cont);
                                 cont++;
                             }
@@ -735,11 +889,6 @@ void inGame::menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT event
         al_clear_to_color(vacio);
         al_draw_bitmap(opciones2, 0, 0, NULL);
         al_flip_display();
-        /* if (events.mouse.button & 1) {
-
-
-
-         }*/
     }
 
     else if (x > 320 && x < 750 &&
@@ -748,8 +897,6 @@ void inGame::menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT event
         al_draw_bitmap(opciones3, 0, 0, NULL);
         al_flip_display();
         if (events.mouse.button & 1) {
-
-
         }
     }
 
@@ -759,14 +906,8 @@ void inGame::menu_opciones(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT event
         al_draw_bitmap(opciones4, 0, 0, NULL);
         al_flip_display();
         if (events.mouse.button & 1) {
-
-
         }
-
-
     }
-
-
 }
 
 void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador, bool estanVivos, bool estanVivos2, bool estanVivos3)
@@ -794,7 +935,7 @@ void inGame::checkRondas(ALLEGRO_TIMER* timer, Rondas &rondita, jugador &jugador
         /*}
         else if (!(jugador.ha_muerto()) && rondita.getNumRonda() == 2) {
             //rondita.setComienza(daaale);
-            rondita.cmd(timer,  jugador, estanVivos, estanVivos2, estanVivos3, daaale);
+            rondita.cmd(timer,  jugador, estanVivos, estanVivos2, estanVivos3, daaale); 
         }
         else if (!(jugador.ha_muerto()) && rondita.getNumRonda() == 3) {
             //rondita.setComienza(daaale);

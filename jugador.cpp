@@ -17,41 +17,26 @@ void jugador::inicia()
     y = 362;
     empezarRonda = false;
     pausador = false;
+    rect = new FRect(x, y, 32, 32);
+    prevRect = new FRect(pX, pY, 32, 32);
+
 }
 void jugador::pinta(int sx, int sy) {
     al_convert_mask_to_alpha(p1, al_map_rgb(0, 0, 0));
     al_draw_bitmap_region(p1, sx, sy * 48, 32, 48, x, y, NULL);
     pintaVida();
     pintaEXP();
-
-    /*
-        //TODO: me falta hacer todo para que ataque
-
-        if ( ataca > 1 && ( direccion == 1 || direccion == 3 ) )
-        {
-               masked_blit(p1, buffer, 0, direccion*96, x-32, y-32, 96,96);
-        }
-
-        masked_blit(p1, buffer, animacion*32, direccion*32, x, y, 32,32);
-
-        if ( ataca > 1 && ( direccion == 0 || direccion == 2 ) )
-        {
-               masked_blit(p1, buffer, 0, direccion*96, x-32, y-32, 96,96);
-        }
-        if ( ataca > 1 || ataca < 0) ataca++;
-
-        al_draw_bitmap_region(p1,animacion * 32, direccion * 48, x, y, 32, 48,ALLEGRO_FLIP_HORIZONTAL );*/
 }
 
 void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events,
     bool done, float& sourceX, float& sourceY, float&dir, bool draw, bool active, int moveSpeed, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer) {
 
-    /// enum Direction { DOWN, LEFT, RIGHT, UP };
-    
-    //cout << efesita;
     al_wait_for_event(event_queue, &events);
     al_get_keyboard_state(&keyState);
-    
+
+    pY = y;
+    pX = x;
+
     if (events.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
         done = true;
     }
@@ -145,8 +130,6 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
                 pausador = true;
             }
 
-
-            //if (empezarRonda == true) {
                 if (al_key_down(&keyState, ALLEGRO_KEY_S)) {
                     this->y += moveSpeed;
                     dir = 0;
@@ -216,15 +199,19 @@ void jugador::teclado(/*Armas arma1,*/ ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_
         if (draw) {
             this->setx(x);
             this->sety(y);
+            
             /*if (ataca == 2 ) {
-
-
             }*/
             /*arma1.setx(this->getx());
             arma1.sety(this->gety());*/
+            
         }
     }
-        //return;
+    delete rect;
+    delete prevRect;
+
+    rect = new FRect(x, y, 32, 32);
+    prevRect = new FRect(pX, pY, 32, 32);
 }
 
 void jugador::setRevivir(bool revivio)
@@ -239,6 +226,7 @@ void jugador::setCurar()
 }
 
 void jugador::posiciona(float _x, float _y) {
+
     x = _x;
     y = _y;
 }
@@ -273,7 +261,6 @@ int aux=0;
     exp += 150;
     
     if (exp > 500) {
-        
         exp = 150-aux;
     }
 }
@@ -285,6 +272,7 @@ void jugador::pintaVida() {
     al_draw_text(lavida, al_map_rgb(255, 0, 0), 640, 650, ALLEGRO_ALIGN_CENTER, "Vida actual");
 
     al_draw_filled_rectangle(x,y,x+((vida*32)/vidaMax),y+4, al_map_rgb(0, 255, 0));
+
     al_draw_filled_rectangle(500,675, 425 + ((vida * 360) / vidaMax), 700, al_map_rgb(0, 255, 0));
 
     //al_destroy_font(lavida);
@@ -298,10 +286,10 @@ void jugador::pintaEXP() {
     al_draw_text(laexp, al_map_rgb(0, 170, 228), 5, 5, ALLEGRO_ALIGN_LEFT, "Experiencia");
 
     al_draw_filled_rectangle(5, 20, 5 + ((exp * 78) / expMax), 20 + 4, al_map_rgb(255, 255, 255));
+
     al_draw_filled_rectangle(5, 20, 5 + ((exp * 78) / expMax), 20 + 4, al_map_rgb(255, 255, 255));
+
     al_draw_rectangle(5.5, 20.5, 83.5, 24.5, al_map_rgb(0, 0, 0),1);
     
-
     //al_destroy_font(laexp);
-
 }

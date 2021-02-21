@@ -164,6 +164,7 @@
     <ClCompile Include="Armas.cpp" />
     <ClCompile Include="Centinela.cpp" />
     <ClCompile Include="Esqueleto.cpp" />
+    <ClCompile Include="FRect.cpp" />
     <ClCompile Include="Guardia.cpp" />
     <ClCompile Include="inGame.cpp" />
     <ClCompile Include="InterfaceNPC.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="Armas.h" />
     <ClInclude Include="Centinela.h" />
     <ClInclude Include="Esqueleto.h" />
+    <ClInclude Include="FRect.h" />
     <ClInclude Include="Guardia.h" />
     <ClInclude Include="InterfaceNPC.h" />
     <ClInclude Include="jugador.h" />
@@ -184,6 +186,7 @@
     <ClInclude Include="inGame.h" />
     <ClInclude Include="puntuacion.h" />
     <ClInclude Include="Rondas.h" />
+    <ClInclude Include="structPuntuacion.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

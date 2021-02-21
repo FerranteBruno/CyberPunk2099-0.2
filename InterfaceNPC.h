@@ -11,7 +11,7 @@ public:
 	virtual bool ha_muerto() = 0;
 	virtual float getx() = 0;
 	virtual float gety() = 0;
-	virtual void inicia() = 0;
+	virtual void inicia(int _x, int _y) = 0;
 	virtual bool atacando() = 0;
 	virtual int getAtaca() = 0;
 	virtual void setDir(float _x) = 0;
@@ -25,5 +25,9 @@ public:
 	virtual int getDmg() = 0;
 	virtual float getDir() = 0;
 	virtual void setReviveNPC(bool revivio) = 0;
+	//float x, y;
+	float pX, pY;
+	FRect *npcRect;
+	FRect *prevNpcRect;
 };
 

@@ -22,7 +22,11 @@ protected:
     int dmg;
     int ancho = 32;
     int alto = 64;
+    /*float x, y;
+    float pX, pY;*/
 public:
+    float x, y;
+    float pX, pY;
     Centinela(int _vida);
     void draw(int sx, int sy, int cont);
     void update(ALLEGRO_TIMER* npcTimer);
@@ -45,5 +49,7 @@ public:
     void nose() { murio++; }
     int getMuerte() { return murio; }
     int getDmg() { return dmg; }
+    FRect *npcRect;
+    FRect* prevNpcRect;
 };
 

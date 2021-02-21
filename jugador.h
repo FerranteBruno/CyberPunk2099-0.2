@@ -5,7 +5,7 @@
 #include "allegro5/allegro_primitives.h"
 #include "allegro5/allegro_font.h"
 #include "allegro5/allegro_ttf.h"
-#include "FloatRectColi.h"
+#include "FRect.h"
 //#include "Armas.h"
 
 
@@ -18,7 +18,7 @@ private:
     ALLEGRO_SAMPLE* camina2;
     ALLEGRO_FONT* lavida;
     ALLEGRO_FONT* laexp;
-    float x, y;
+    
     /*int direccion;
     int animacion;*/
     int ataca=0;
@@ -34,9 +34,11 @@ private:
     int exp, expMax;
     bool pausador;
 public:
-    //test colision
-    /*float x, y;
-    FloatRectColi* rect;*/
+/// posición personmaje  
+    float pX, pY;
+    float x, y;
+    FRect* rect;
+    FRect* prevRect;
 
     void inicia();
     void pinta(int, int);

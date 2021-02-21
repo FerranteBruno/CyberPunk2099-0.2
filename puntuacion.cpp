@@ -3,7 +3,7 @@
 
  puntuacion::puntuacion() {
  
-     puntos=0000;
+     puntos=0;
 }
 
 int puntuacion::acumular() {
@@ -30,6 +30,7 @@ void puntuacion :: mostrar() {
 
 
 };
+
 void puntuacion :: ver_podio() {
 //fread , for , 3 mejores 
 };

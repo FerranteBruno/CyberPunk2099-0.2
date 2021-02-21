@@ -5,6 +5,7 @@
 
 Centinela::Centinela(int _vida)
 {
+
     vida = _vida;
     vidaMax = _vida;
     vidaAct = vida;
@@ -38,12 +39,15 @@ void Centinela::cmd(jugador& jugador, bool cerca, bool start)
         direccion = ATACANDO;
     }*/
 
+    
+
 }
 
 
 void Centinela::update(ALLEGRO_TIMER* npcTimer)
 {
-
+    pY = y;
+    pX = x;
     switch (direccion) {
     case RIGHT:
         x += moveSpeed;
@@ -78,6 +82,11 @@ void Centinela::update(ALLEGRO_TIMER* npcTimer)
         }
         break;
     }
+    delete npcRect;
+    delete prevNpcRect;
+
+    npcRect = new FRect(x, y, 32, 32);
+    prevNpcRect = new FRect(pX, pY, 32, 32);
 }
 
 void Centinela::draw(int sx, int sy, int cont) {
@@ -107,13 +116,17 @@ void Centinela::inicia(int _x, int _y)
 
 
     posiciona(_x, _y);
+    
 
+    npcRect = new FRect(x, y, 32, 32);
+    prevNpcRect = new FRect(pX, pY, 32, 32);
 
 }
 
 void Centinela::posiciona(float _x, float _y) {
     x = _x;
     y = _y;
+    
 }
 
 

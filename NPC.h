@@ -10,7 +10,7 @@ class NPC : public InterfaceNPC {
 protected:
     ALLEGRO_BITMAP* npc;
     ESTADOS _estados;
-    float x, y;
+    
     int ataca;
     int vida;
     int vidaAct;
@@ -22,7 +22,11 @@ protected:
     int direccion;
     int dmg;
     int murio;
+    /*float x, y;
+    float pX, pY;*/
 public:
+    float x, y;
+    float pX, pY;
     ALLEGRO_SAMPLE* camina;
     ALLEGRO_SAMPLE* atak;
     float getDir() { return dir; };
@@ -31,7 +35,7 @@ public:
     virtual void update(ALLEGRO_TIMER* npcTimer);
     virtual void draw(int sx, int sy, int);
     NPC();
-    void inicia();
+    void inicia(int _x, int _y);
     void pinta2(float, float);
     int getVida() { return vida; };
     int getVidaAct() { return vidaAct; };
@@ -54,5 +58,7 @@ public:
     virtual bool ha_muerto() { return muerto; };
     virtual int getDmg() { return dmg; }
     //void IA(jugador &jugador);
+    FRect *npcRect;
+    FRect *prevNpcRect;
     ~NPC();
 };

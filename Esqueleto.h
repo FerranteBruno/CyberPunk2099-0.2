@@ -8,7 +8,6 @@ class Esqueleto :
 protected:
     ALLEGRO_BITMAP* esqueleto;
     ESTADOS _estados;
-    float x, y;
     int ataca;
     int vida;
     int vidaAct;
@@ -21,6 +20,8 @@ protected:
     int murio;
     int dmg;
 public:
+    float x, y;
+    float pX, pY;
     Esqueleto(int _vida);
     void draw(int sx, int sy, int cont);
     void update(ALLEGRO_TIMER* npcTimer);
@@ -43,5 +44,7 @@ public:
     void nose() { murio++; }
     int getMuerte() { return murio; }
     int getDmg() { return dmg; }
+    FRect *npcRect;
+    FRect* prevNpcRect;
 };
 

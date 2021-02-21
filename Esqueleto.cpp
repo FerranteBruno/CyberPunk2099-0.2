@@ -5,6 +5,7 @@
 
 Esqueleto::Esqueleto(int _vida)
 {
+
     vida = _vida;
     vidaMax = _vida;
     vidaAct = vida;
@@ -43,7 +44,8 @@ void Esqueleto::cmd(jugador& jugador, bool cerca, bool start)
 
 void Esqueleto::update(ALLEGRO_TIMER* npcTimer)
 {
-
+    pY = y;
+    pX = x;
     switch (direccion) {
     case RIGHT:
         x += moveSpeed;
@@ -78,6 +80,11 @@ void Esqueleto::update(ALLEGRO_TIMER* npcTimer)
         }
         break;
     }
+    delete npcRect;
+    delete prevNpcRect;
+
+    npcRect = new FRect(x, y, 32, 32);
+    prevNpcRect = new FRect(pX, pY, 32, 32);
 }
 
 void Esqueleto::draw(int sx, int sy, int cont) {
@@ -107,6 +114,8 @@ void Esqueleto::inicia(int _x, int _y)
     
 
     posiciona(_x, _y);
+    npcRect = new FRect(x, y, 32, 32);
+    prevNpcRect = new FRect(pX, pY, 32, 32);
 
     
 }
@@ -114,6 +123,7 @@ void Esqueleto::inicia(int _x, int _y)
 void Esqueleto::posiciona(float _x, float _y) {
     x = _x;
     y = _y;
+    
 }
 
 

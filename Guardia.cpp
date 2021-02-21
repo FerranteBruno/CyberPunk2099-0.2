@@ -2,6 +2,8 @@
 
 Guardia::Guardia(int _vida)
 {
+
+
     vida = _vida;
     vidaMax = _vida;
     vidaAct = vida;
@@ -41,7 +43,8 @@ void Guardia::cmd(jugador& jugador, bool cerca, bool start)
 
 void Guardia::update(ALLEGRO_TIMER* npcTimer)
 {
-
+    pY = y;
+    pX = x;
     switch (direccion) {
     case RIGHT:
         x += moveSpeed;
@@ -75,6 +78,12 @@ void Guardia::update(ALLEGRO_TIMER* npcTimer)
         }
         break;
     }
+
+    delete npcRect;
+    delete prevNpcRect;
+
+    npcRect = new FRect(x, y, 32, 32);
+    prevNpcRect = new FRect(pX, pY, 32, 32);
 }
 
 void Guardia::draw(int sx, int sy, int cont) {
@@ -117,11 +126,14 @@ void Guardia::inicia(int _x, int _y)
     //animacion = 0;
     /*this->x = 500;
     this->y = 500;*/
+    npcRect = new FRect(x, y, 32, 32);
+    prevNpcRect = new FRect(pX, pY, 32, 32);
 }
 
 void Guardia::posiciona(float _x, float _y) {
     x = _x;
     y = _y;
+    
 }
 
 

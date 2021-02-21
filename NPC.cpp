@@ -53,7 +53,9 @@ void NPC::cmd(jugador &jugador, bool cerca, bool start)
 
 void NPC::update(ALLEGRO_TIMER* npcTimer)
 {
-    
+    pX = x;
+    pY = y;
+
     switch (direccion) {
     case RIGHT:
         x+= moveSpeed;
@@ -87,6 +89,12 @@ void NPC::update(ALLEGRO_TIMER* npcTimer)
         }
         break;
     }
+
+    delete npcRect;
+    delete prevNpcRect;
+
+    npcRect = new FRect(x, y, 32, 32);
+    prevNpcRect = new FRect(pX, pY, 32, 32);
 }
 
 void NPC::draw(int sx, int sy, int cont) {
@@ -110,6 +118,7 @@ void NPC::draw(int sx, int sy, int cont) {
 
 NPC::NPC()
 {
+
     vida = 100;
     vidaMax = 100;
     vidaAct = 100;
@@ -118,20 +127,22 @@ NPC::NPC()
     //cout << "esta es la vida actual: " << vidaAct << endl;
 }
 
-void NPC::inicia()
+void NPC::inicia(int _x, int _y)
 {
     
 
     npc = al_load_bitmap("IMG/4083.bmp");
     camina = al_load_sample("IMG/10.wav");
     atak = al_load_sample("IMG/2.wav");
-    int rx=0, ry=0;
+    /*int rx=0, ry=0;
 
     rx = 1 + rand() % 1280;
     ry = 1 + rand() % 720;
 
-    posiciona(rx, ry);
-
+    posiciona(rx, ry);*/
+    posiciona(_x, _y);
+    npcRect = new FRect(x, y, 32, 32);
+    prevNpcRect = new FRect(pX, pY, 32, 32);
     // inicializar vbles
     //direccion = 0;
     //animacion = 0;

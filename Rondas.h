@@ -30,9 +30,13 @@ public:
 	void cmd(ALLEGRO_TIMER* timer, jugador jugador, bool& estanVivos, bool& estanVivos2, bool& estanVivos3, bool& daaale);
 	void update(ALLEGRO_TIMER* timer, jugador& jugador);
 	void draw(jugador &jugador , bool estanVivos);
+	//setters
 	void setComienza(bool _comienza) { comienza = _comienza; };
 	void setFinaliza(bool _finaliza) { finaliza = _finaliza; };
 	void setPausado(bool _pausado) { pausado = _pausado; };
+	//getters
+	int getMin() { return min; };
+	int getSec() { return sec; };
 	bool getComienza() { return comienza; };
 	bool getFinaliza() { return finaliza; };
 	bool getPausado() { return pausado; };

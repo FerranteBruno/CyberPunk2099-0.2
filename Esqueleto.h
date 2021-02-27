@@ -46,5 +46,7 @@ public:
     int getDmg() { return dmg; }
     FRect *npcRect;
     FRect* prevNpcRect;
+    //pnutajes
+    int getPuntaje() { return puntajeAEntregar; };
 };
 

@@ -338,12 +338,12 @@ bool inGame::miraHaciaIzquierda(jugador& jugador, InterfaceNPC& guardia) {
     else return false;
 }
 
-void inGame::GAME(){
-    
+void inGame::GAME() {
+
     const float FPS = 30;
     const float frameFPS = 0.4;
 
-    
+
 
     ///Creamos el objeto de eventos
     ALLEGRO_EVENT_QUEUE* event_queue = al_create_event_queue();
@@ -353,12 +353,13 @@ void inGame::GAME(){
     ALLEGRO_TIMER* frameTimer = al_create_timer(1.3 / FPS);
     ALLEGRO_TIMER* npcTimer = al_create_timer(1.8 / FPS);
     ALLEGRO_TIMER* rondasTimer = al_create_timer(1.0 / FPS);
+    ALLEGRO_TIMER* scoreTimer = al_create_timer(1.0 / FPS);
 
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
     al_register_event_source(event_queue, al_get_timer_event_source(frameTimer));
-    al_register_event_source(event_queue, al_get_mouse_event_source());
-    al_register_event_source(event_queue, al_get_keyboard_event_source());
     
+    al_register_event_source(event_queue, al_get_keyboard_event_source());
+
 
     /*jugador jugador;
     NPC guardia;
@@ -370,15 +371,16 @@ void inGame::GAME(){
     al_start_timer(timer);
     al_start_timer(frameTimer);
     al_start_timer(npcTimer);
-    
+
     int x = 0, y = 0;
 
     bool done = false;
-    
+    bool gamed = false;
+
     ALLEGRO_EVENT events;
     ALLEGRO_KEYBOARD_STATE keyState;
     while (!done) {
-        
+        al_register_event_source(event_queue, al_get_mouse_event_source());
         al_wait_for_event(event_queue, &events);
         al_get_keyboard_state(&keyState);
 
@@ -395,15 +397,32 @@ void inGame::GAME(){
             else if (events.mouse.button & 2);
         }
         //comienza el jueguin
-        menu_principal(event_queue, events, done, x, y);
+        if (!done && !gamed) {
+            menu_principal(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, gamed, x, y);
+        }
+        else if (gamed) {
+            //                gamed = false;
+            menu_top5(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, gamed, x, y);
+
+
+        }
+
+
+
+        if (done && !gamed) {
+            done = false;
+            gamed = true;
+
+            juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done);
+        }
     }
-    
-    juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer);
     al_destroy_event_queue(event_queue);
     //this->~inGame();
 }
 
-void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, bool& done, float x, float y) {
+
+
+void inGame::menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y) {
 
     if (x > 970 && x < 1120 &&
         y>360 && y < 420) {
@@ -423,7 +442,8 @@ void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT even
         if (events.mouse.button & 1) {
 
             //a = true;   //funcion jugar a desarrolar
-            done = true;
+            gamed = true;
+            menu_top5(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, gamed, x, y);
         }
     }
 
@@ -477,9 +497,42 @@ void inGame::menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT even
 
 }
 
-void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer) {
+void inGame::menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y) {
+  
+    al_register_event_source(event_queue, al_get_mouse_event_source());
+
+        if (x > 350 && x < 950 &&
+            y>625 && y < 675) {
+            al_clear_to_color(vacio);
+            al_draw_bitmap(top_vae, 0, 0, NULL);
+            al_flip_display();
+            if (events.mouse.button & 1) {
+                gamed = false;
+                juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done);
+            }
+        }
+
+        if (x > 1100 && x < 1280 &&
+            y>680 && y < 720) {
+            al_clear_to_color(vacio);
+            al_draw_bitmap(top_salir, 0, 0, NULL);
+            al_flip_display();
+            if (events.mouse.button & 1) {
+                done = true;
+            }
+        }
+
+        else {
+            al_clear_to_color(al_map_rgb(0, 0, 0));
+            al_draw_bitmap(top_normal, 0, 0, NULL);
+            al_flip_display();
+
+        }
+}
+
+void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done) {
     jugador jugador;
-    
+
     //NPC guardia;
     Guardia A(100);
     Guardia B(200);
@@ -505,7 +558,12 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     NPC* vecNPC2[] = { &F, &G, &H,&L };
     //NPC* vecEsq[] = {&L,&O,&P};
     //vector ronda 3
-    NPC* vecNPC3[] = { &I, &J, &K ,&O,&P};
+    NPC* vecNPC3[] = { &I, &J, &K ,&O,&P };
+
+    ///Vectores para analizar muertes y sumar puntajes
+    NPC* vecNPCPuntaje1[] = { &A, &B, &C, &D, &E, &F, &G, &H, &I, &J, &K };
+    NPC* vecNPCPuntaje2[] = { &L };
+    NPC* vecNPCPuntaje3[] = { &O, &P };
 
 
 
@@ -542,10 +600,11 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     I.inicia(350, 200);
     J.inicia(320, 200);
     K.inicia(280, 200);
-    L.inicia(500,250);
+    L.inicia(500, 250);
     O.inicia(250, 500);
-    P.inicia(400,550);
+    P.inicia(400, 550);
     Rondas rondita;
+    puntuacion Score;
 
     bool a = false;
     bool draw = true, active = false;
@@ -553,19 +612,23 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
     jugador.setSpeed(2.5);
     float sourceX = 32, sourceY = 0, dir = sourceY, dirA = sourceY;
     float sx = 0, sy = 0;
-    int cont = 0, cont1=0;
-    int posX=0, posY=0;
+    int cont = 0, cont1 = 0;
+    int posX = 0, posY = 0;
     while (!a) {
         actualiza_juego(jugador);
         al_clear_to_color(vacio);
         al_play_sample_instance(midi);
 
 
-        bool done = false;
+        ///bool done = true;
         bool estanVivos = true;
         bool estanVivos2 = true;
         bool estanVivos3 = true;
-        while (!done)
+
+
+        bool doned = true;
+
+        while (doned)
         {
             if (draw) {
                 //pruebita.dibujarMapa(pruebita.loadMap());
@@ -582,10 +645,10 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                     pinta_arma(arma1, sourceX, sourceY, jugador.getx(), jugador.gety());
 
                 }
-                else if (jugador.ha_muerto()){
-                    
+                else if (jugador.ha_muerto()) {
+
                     jugador.teclado(keyState, event_queue, events, done, sourceX, sourceY, dir, draw, active, jugador.getSpeed(), timer, frameTimer);
-                    if (rondita.getComienza() == true ) {
+                    if (rondita.getComienza() == true) {
                         jugador.setRevivir(true);
 
                         if (estanVivos == false) {
@@ -624,246 +687,266 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                     jugador.~jugador();
                     arma1.~Armas();
                 }*/
-              
-                    checkRondas(rondasTimer, rondita, jugador, estanVivos, estanVivos2, estanVivos3);
-                    updateRondas(rondasTimer, rondita, jugador);
-                    drawRondas(rondasTimer, rondita, jugador, estanVivos);
 
-                    
-                    
-                    if (rondita.getNumRonda() == 1 && rondita.getComienza() == true && rondita.getFinaliza() == false && !(jugador.ha_muerto())) {
-                        for (InterfaceNPC* obj : vecNPC1) {
+                checkRondas(rondasTimer, rondita, jugador, estanVivos, estanVivos2, estanVivos3);
+                updateRondas(rondasTimer, rondita, jugador);
+                drawRondas(rondasTimer, rondita, jugador, estanVivos);
+
+                Score.cmd(rondita, jugador);
+                Score.draw();
+                Score.update(rondita, scoreTimer);
+
+
+
+
+                if (rondita.getNumRonda() == 1 && rondita.getComienza() == true && rondita.getFinaliza() == false && !(jugador.ha_muerto())) {
+                    for (InterfaceNPC* obj : vecNPC1) {
                         //for (int i = 0; i < 3; i++ ) {
-                            InterfaceNPC& rA = *obj;
+                        InterfaceNPC& rA = *obj;
 
 
-                            if (!(jugador.ha_muerto())){
-                                dmg_jugador(jugador, rA);
-                                dmg_npc(jugador, rA);
-                            }
-                            else{
-                                rondita.setFinaliza(true);
-                                rondita.setComienza(false);
-                                jugador.setEmpezarRonda(false);
-                            }
-
-
-                            if (!(obj->ha_muerto())) {
-                                if (cont == 8) cont = 0;
-                               
-                                 
-                                    obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
-                                
-                                /*if (obj->getDir() == RIGHT)obj->setDir(RIGHT);
-                                if (obj->getDir() == LEFT)obj->setDir(LEFT);
-                                if (obj->getDir() == DOWN)obj->setDir(DOWN);
-                                if (obj->getDir() == UP)obj->setDir(UP);*/
-
-
-                                obj->update(npcTimer);
-
-                                //rect jugador
-                                rect(jugador, A.npcRect, A);
-                                rect(jugador, B.npcRect, B);
-                                rect(jugador, C.npcRect, C);
-
-                                ///rect npc
-                                guardRect(A, B.npcRect, B);
-                                guardRect(A, C.npcRect, C);
-                                guardRect(B, A.npcRect, A);
-                                guardRect(B, C.npcRect, C);
-                                guardRect(C, A.npcRect, A);
-                                guardRect(C, B.npcRect, B);
-
-                                obj->draw(sx, sy, cont);
-                                cont++;
-                            }
-                            else {
-                                obj->nose();
-                                if (obj->getMuerte() == 1) {
-                                    jugador.sumaEXP();
-                                    cont1++;
-                                }
-                                if (cont1 == 3) {
-                                    estanVivos=false;
-                                    
-                                    rondita.setFinaliza(!(estanVivos));
-                                    rondita.setComienza(estanVivos);
-
-                                    if (rondita.getComienza() == false && rondita.getFinaliza() == true) {
-                                        jugador.setEmpezarRonda(false);
-                                    }
-                                    
-                                    cont1 = 0;
-                            }
-                            }
-                            posX = obj->getx();
-                            posY = obj->gety();
+                        if (!(jugador.ha_muerto())) {
+                            dmg_jugador(jugador, rA);
+                            dmg_npc(jugador, rA);
                         }
-                    }
-
-                    else if (rondita.getNumRonda() == 2 && rondita.getComienza() == true && rondita.getFinaliza() == false && !(jugador.ha_muerto())) {
-                        for (InterfaceNPC* obj : vecNPC2) {
-
-                            InterfaceNPC& rA = *obj;
-                            //obj->inicia(500,320);
-                            if (!(jugador.ha_muerto())) {
-                                dmg_jugador(jugador, rA);
-                                dmg_npc(jugador, rA);
-                            }
-                            else {
-                                rondita.setFinaliza(true);
-                                rondita.setComienza(false);
-                                jugador.setEmpezarRonda(false);
-                            }
-
-
-                            if (!(obj->ha_muerto())) {
-                                if (cont == 8) cont = 0;
-                                obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
-                                obj->update(npcTimer);
-                                
-                                //rect jugador
-                                rect(jugador, F.npcRect, F);                                                              
-                                rect(jugador, G.npcRect, G);                             
-                                rect(jugador, H.npcRect, H);                
-                                rect(jugador, L.npcRect, L);
-                                
-
-                                ///rect npc
-                                guardRect(F, G.npcRect, G);
-                                guardRect(F, H.npcRect, H);
-                                guardRect(F, L.npcRect, L);
-
-                                guardRect(G, H.npcRect, H);
-                                guardRect(G, F.npcRect, F);
-                                guardRect(G, L.npcRect, L);
-
-                                guardRect(H, F.npcRect, F);
-                                guardRect(H, G.npcRect, G);
-                                guardRect(H, L.npcRect, L);
-
-                                esqueRect(L, G.npcRect, G);
-                                esqueRect(L, F.npcRect, F);
-                                esqueRect(L, H.npcRect, H);
-
-                                obj->draw(sx, sy, cont);
-                                cont++;
-                            }
-                            else {
-                                obj->nose();
-                                if (obj->getMuerte() == 1) {
-                                    cont1++;
-                                    jugador.sumaEXP();
-                                }
-                                if (cont1 == 4) {
-                                    estanVivos2 = false;
-                                    
-                                    rondita.setFinaliza(true);
-                                    rondita.setComienza(false);
-                                    if (rondita.getComienza() == false && rondita.getFinaliza() == true) {
-                                        jugador.setEmpezarRonda(false);
-                                    }
-                                    cont1 = 0;
-                                }
-                            }
-                            posX = obj->getx();
-                            posY = obj->gety();
+                        else {
+                            rondita.setFinaliza(true);
+                            rondita.setComienza(false);
+                            jugador.setEmpezarRonda(false);
                         }
-                    }
 
-                    else if (rondita.getNumRonda() == 3 && rondita.getComienza() == true && rondita.getFinaliza() == false && !(jugador.ha_muerto())) {
-                        for (InterfaceNPC* obj : vecNPC3) {
 
-                            InterfaceNPC& rA = *obj;
-                            if (!(jugador.ha_muerto())) {
-                                dmg_jugador(jugador, rA);
-                                dmg_npc(jugador, rA);
+                        if (!(obj->ha_muerto())) {
+                            if (cont == 8) cont = 0;
+
+
+                            obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
+
+                            /*if (obj->getDir() == RIGHT)obj->setDir(RIGHT);
+                            if (obj->getDir() == LEFT)obj->setDir(LEFT);
+                            if (obj->getDir() == DOWN)obj->setDir(DOWN);
+                            if (obj->getDir() == UP)obj->setDir(UP);*/
+
+
+                            obj->update(npcTimer);
+
+                            //rect jugador
+                            rect(jugador, A.npcRect, A);
+                            rect(jugador, B.npcRect, B);
+                            rect(jugador, C.npcRect, C);
+
+                            ///rect npc
+                            guardRect(A, B.npcRect, B);
+                            guardRect(A, C.npcRect, C);
+                            guardRect(B, A.npcRect, A);
+                            guardRect(B, C.npcRect, C);
+                            guardRect(C, A.npcRect, A);
+                            guardRect(C, B.npcRect, B);
+
+                            obj->draw(sx, sy, cont);
+                            cont++;
+                        }
+                        else {
+                            obj->nose();
+                            if (obj->getMuerte() == 1) {
+                                jugador.sumaEXP();
+                                Score.setPuntosPP(obj->getPuntaje());
+                                cont1++;
                             }
-                            else {
-                                rondita.setFinaliza(true);
-                                rondita.setComienza(false);
-                                jugador.setEmpezarRonda(false);
-                            }
+                            if (cont1 == 3) {
+                                estanVivos = false;
 
-                            /*if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
-                                if (dir == 0) jugador.setmy(jugador.getSpeed());
-                                else if (dir == 1) jugador.setpx(jugador.getSpeed());
-                                else if (dir == 2) jugador.setmx(jugador.getSpeed());
-                                else if (dir == 3) jugador.setpy(jugador.getSpeed());
-                                //cout << guardia.getVida() << endl;
-                            }
+                                rondita.setFinaliza(!(estanVivos));
+                                rondita.setComienza(estanVivos);
 
-                            if (colision(obj->getx(), obj->gety(), posX, posY, 30, 46)) {
-
-                                obj->posiciona(obj->getx() - 1, obj->gety() - 1);
-
-                            }*/
-
-                            if (!(obj->ha_muerto())) {
-                                if (cont == 8) cont = 0;
-                                obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
-                                obj->update(npcTimer);
-
-                                //rect jugador
-                                rect(jugador, I.npcRect, I);
-                                rect(jugador, J.npcRect, J);
-                                rect(jugador, K.npcRect, K);
-                                rect(jugador, O.npcRect, O);
-                                rect(jugador, P.npcRect, P);
-
-                                ///rect npc
-                                guardRect(I, J.npcRect, J);
-                                guardRect(I, K.npcRect, K);
-                                guardRect(I, O.npcRect, O);
-                                guardRect(I, P.npcRect, P);
-
-                                guardRect(J, I.npcRect, I);
-                                guardRect(J, K.npcRect, K);
-                                guardRect(J, O.npcRect, O);
-                                guardRect(J, P.npcRect, P);
-
-                                guardRect(J, I.npcRect, I);
-                                guardRect(J, K.npcRect, K);
-                                guardRect(J, O.npcRect, O);
-                                guardRect(J, P.npcRect, P);
-
-                                centiRect(O, I.npcRect, I);
-                                centiRect(O, J.npcRect, J);
-                                centiRect(O, K.npcRect, K);
-                                centiRect(O, P.npcRect, P);
-
-                                centiRect(P, I.npcRect, I);
-                                centiRect(P, J.npcRect, J);
-                                centiRect(P, K.npcRect, K);
-                                centiRect(P, O.npcRect, O);
-
-                                obj->draw(sx, sy, cont);
-                                cont++;
-                            }
-                            else {
-                                obj->nose();
-                                if (obj->getMuerte() == 1) {
-                                    cont1++;
-                                    jugador.sumaEXP();
-                                }
-                                if (cont1 == 5) {
-                                    estanVivos3 = false;
-                                    rondita.setFinaliza(true);
-                                    rondita.setComienza(false);
+                                if (rondita.getComienza() == false && rondita.getFinaliza() == true) {
                                     jugador.setEmpezarRonda(false);
-                                    
-                                    cont1 = 0;
+                                }
+
+                                cont1 = 0;
+                                
+                            }
+                        }
+                        posX = obj->getx();
+                        posY = obj->gety();
+                        // Score.cmd(rondita, jugador, cont1);
+
+                    }
+                }
+
+
+                else if (rondita.getNumRonda() == 2 && rondita.getComienza() == true && rondita.getFinaliza() == false && !(jugador.ha_muerto())) {
+                    for (InterfaceNPC* obj : vecNPC2) {
+
+                        InterfaceNPC& rA = *obj;
+                        //obj->inicia(500,320);
+                        if (!(jugador.ha_muerto())) {
+                            dmg_jugador(jugador, rA);
+                            dmg_npc(jugador, rA);
+                        }
+                        else {
+                            rondita.setFinaliza(true);
+                            rondita.setComienza(false);
+                            jugador.setEmpezarRonda(false);
+                        }
+
+
+                        if (!(obj->ha_muerto())) {
+                            if (cont == 8) cont = 0;
+                            obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
+                            obj->update(npcTimer);
+
+                            //rect jugador
+                            rect(jugador, F.npcRect, F);
+                            rect(jugador, G.npcRect, G);
+                            rect(jugador, H.npcRect, H);
+                            rect(jugador, L.npcRect, L);
+
+
+                            ///rect npc
+                            guardRect(F, G.npcRect, G);
+                            guardRect(F, H.npcRect, H);
+                            guardRect(F, L.npcRect, L);
+
+                            guardRect(G, H.npcRect, H);
+                            guardRect(G, F.npcRect, F);
+                            guardRect(G, L.npcRect, L);
+
+                            guardRect(H, F.npcRect, F);
+                            guardRect(H, G.npcRect, G);
+                            guardRect(H, L.npcRect, L);
+
+                            esqueRect(L, G.npcRect, G);
+                            esqueRect(L, F.npcRect, F);
+                            esqueRect(L, H.npcRect, H);
+
+                            obj->draw(sx, sy, cont);
+                            cont++;
+                        }
+                        else {
+                            obj->nose();
+                            if (obj->getMuerte() == 1) {
+                                cont1++;
+                                jugador.sumaEXP();
+                                Score.setPuntosPP(obj->getPuntaje());
+                            }
+                            if (cont1 == 4) {
+                                estanVivos2 = false;
+
+                                rondita.setFinaliza(true);
+                                rondita.setComienza(false);
+                                if (rondita.getComienza() == false && rondita.getFinaliza() == true) {
+                                    jugador.setEmpezarRonda(false);
+                                }
+                                cont1 = 0;
+                            }
+                        }
+                        posX = obj->getx();
+                        posY = obj->gety();
+                    }
+                }
+
+                else if (rondita.getNumRonda() == 3 && rondita.getComienza() == true && rondita.getFinaliza() == false && !(jugador.ha_muerto())) {
+                    for (InterfaceNPC* obj : vecNPC3) {
+
+                        InterfaceNPC& rA = *obj;
+                        if (!(jugador.ha_muerto())) {
+                            dmg_jugador(jugador, rA);
+                            dmg_npc(jugador, rA);
+                        }
+                        else {
+                            rondita.setFinaliza(true);
+                            rondita.setComienza(false);
+                            jugador.setEmpezarRonda(false);
+                        }
+
+                        /*if (colision(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46) && !(obj->ha_muerto())) {
+                            if (dir == 0) jugador.setmy(jugador.getSpeed());
+                            else if (dir == 1) jugador.setpx(jugador.getSpeed());
+                            else if (dir == 2) jugador.setmx(jugador.getSpeed());
+                            else if (dir == 3) jugador.setpy(jugador.getSpeed());
+                            //cout << guardia.getVida() << endl;
+                        }
+
+                        if (colision(obj->getx(), obj->gety(), posX, posY, 30, 46)) {
+
+                            obj->posiciona(obj->getx() - 1, obj->gety() - 1);
+
+                        }*/
+
+                        if (!(obj->ha_muerto())) {
+                            if (cont == 8) cont = 0;
+                            obj->cmd(jugador, cerca(jugador.getx(), jugador.gety(), obj->getx(), obj->gety(), 30, 46, dir, jugador.getSpeed()), jugador.getEmpezarRonda());
+                            obj->update(npcTimer);
+
+                            //rect jugador
+                            rect(jugador, I.npcRect, I);
+                            rect(jugador, J.npcRect, J);
+                            rect(jugador, K.npcRect, K);
+                            rect(jugador, O.npcRect, O);
+                            rect(jugador, P.npcRect, P);
+
+                            ///rect npc
+                            guardRect(I, J.npcRect, J);
+                            guardRect(I, K.npcRect, K);
+                            guardRect(I, O.npcRect, O);
+                            guardRect(I, P.npcRect, P);
+
+                            guardRect(J, I.npcRect, I);
+                            guardRect(J, K.npcRect, K);
+                            guardRect(J, O.npcRect, O);
+                            guardRect(J, P.npcRect, P);
+
+                            guardRect(J, I.npcRect, I);
+                            guardRect(J, K.npcRect, K);
+                            guardRect(J, O.npcRect, O);
+                            guardRect(J, P.npcRect, P);
+
+                            centiRect(O, I.npcRect, I);
+                            centiRect(O, J.npcRect, J);
+                            centiRect(O, K.npcRect, K);
+                            centiRect(O, P.npcRect, P);
+
+                            centiRect(P, I.npcRect, I);
+                            centiRect(P, J.npcRect, J);
+                            centiRect(P, K.npcRect, K);
+                            centiRect(P, O.npcRect, O);
+
+                            obj->draw(sx, sy, cont);
+                            cont++;
+                        }
+                        else {
+                            obj->nose();
+                            if (obj->getMuerte() == 1) {
+                                cont1++;
+                                jugador.sumaEXP();
+                                Score.setPuntosPP(obj->getPuntaje());
+                            }
+                            if (cont1 == 5) {
+                                estanVivos3 = false;
+                                rondita.setFinaliza(true);
+                                rondita.setComienza(false);
+                                jugador.setEmpezarRonda(false);
+
+                                cont1 = 0;
+                                if (rondita.getComienza() == false && rondita.getFinaliza() == true && jugador.getEmpezarRonda() == false && done == false) {
+                                    doned = false;
+                                    a = true;
+                                    draw = false;
                                 }
                             }
-                            posX = obj->getx();
-                            posY = obj->gety();
                         }
+                        posX = obj->getx();
+                        posY = obj->gety();
                     }
+                }
+               
                     al_flip_display();
                 }
             }
         }
+        rondita.setNumRonda(0);
+
     }
 
 inGame::~inGame() {

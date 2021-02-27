@@ -22,6 +22,7 @@ protected:
     int direccion;
     int dmg;
     int murio;
+    int puntajeAEntregar;
     /*float x, y;
     float pX, pY;*/
 public:
@@ -60,5 +61,7 @@ public:
     //void IA(jugador &jugador);
     FRect *npcRect;
     FRect *prevNpcRect;
+    //pnutajes
+    int getPuntaje() { return puntajeAEntregar; };
     ~NPC();
 };

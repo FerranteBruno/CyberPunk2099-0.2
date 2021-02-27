@@ -25,6 +25,8 @@ public:
 	virtual int getDmg() = 0;
 	virtual float getDir() = 0;
 	virtual void setReviveNPC(bool revivio) = 0;
+	//puntajes
+	virtual int getPuntaje() = 0;
 	//float x, y;
 	float pX, pY;
 	FRect *npcRect;

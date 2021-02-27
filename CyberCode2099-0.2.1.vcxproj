@@ -173,6 +173,7 @@
     <ClCompile Include="puntuacion.cpp" />
     <ClCompile Include="Rondas.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="structPuntuacion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armas.h" />

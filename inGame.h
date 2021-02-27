@@ -7,6 +7,7 @@
 #include "Guardia.h"
 #include "Rondas.h"
 #include"Centinela.h"
+#include "puntuacion.h"
 
 /*#ifndef INGAME_H_INCLUDED
 #define INGAME_H_INCLUDED*/
@@ -35,6 +36,9 @@ class inGame {
         ALLEGRO_BITMAP* opciones4 = al_load_bitmap("IMG/opciones4.bmp");
         ALLEGRO_BITMAP* controles1 = al_load_bitmap("IMG/controles1.bmp");
         ALLEGRO_BITMAP* controles2 = al_load_bitmap("IMG/controles.bmp");
+        ALLEGRO_BITMAP* top_normal = al_load_bitmap("IMG/top_normal.bmp");
+        ALLEGRO_BITMAP* top_salir = al_load_bitmap("IMG/top_salir.bmp");
+        ALLEGRO_BITMAP* top_vae = al_load_bitmap("IMG/top_VAE.bmp");
         ALLEGRO_COLOR vacio = al_map_rgb(0, 0, 0);
         ALLEGRO_SAMPLE* sufreDaño;
         ALLEGRO_SAMPLE* sufreDaño2;
@@ -52,8 +56,9 @@ class inGame {
         void pinta_arma(Armas arma1, float sourceX, float sourceY, float x, float y);
         //Metodos de gameplay
         void actualiza_juego(jugador jugador);
-        void juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer);
-        void menu_principal(ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, bool &done, float x, float y);
+        void juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool&done);
+        void menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y);
+        void menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y);
         bool colision(float x, float y, float npc_x, float npc_y, float width, float height);
         bool rect(jugador& jugador, FRect* npcRect, NPC& elnpc);
         bool guardRect(Guardia& npc, FRect* npcRect, NPC& elnpc);

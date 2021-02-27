@@ -1,7 +1,7 @@
 -puntiación:
 
 Ranking con archivos, clase para manejar el ranking.
-structura para el objeto ranking.
+estructura para el objeto ranking.
 
 •top 5 toptop
 •Iniciales

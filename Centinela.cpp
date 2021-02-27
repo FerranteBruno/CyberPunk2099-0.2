@@ -12,6 +12,7 @@ Centinela::Centinela(int _vida)
     moveSpeed = 2;
     murio = 0;
     dmg = 1;
+    puntajeAEntregar = 350;
 
 }
 

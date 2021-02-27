@@ -10,6 +10,7 @@ Guardia::Guardia(int _vida)
     moveSpeed = 1;
     murio = 0;
     dmg = 1;
+    puntajeAEntregar = 120;
     //cout << "esta es la vida: " << vida << endl;
     //cout << "esta es la vida actual: " << vidaAct << endl;
 }

@@ -13,6 +13,7 @@ Esqueleto::Esqueleto(int _vida)
     murio = 0;
     dmg = 1;
     muerto = false;
+    puntajeAEntregar = 210;
 }
 
 

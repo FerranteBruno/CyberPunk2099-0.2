@@ -1,7 +1,9 @@
 #pragma once
+#include <stdio.h>
+#include <string.h>
 
-struct puntiacion {
-	char SKN;
+struct structPuntuacion {
+	char SKN[3];
 	int secElapsed;
 	int minElapsed;
 	int puntos;

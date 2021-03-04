@@ -46,6 +46,8 @@ class inGame {
 
         //puntuaciones
         ALLEGRO_FONT* fTop5;
+        ALLEGRO_FONT* punt;
+        ALLEGRO_USTR* input = al_ustr_new("");
 
     public:
         void GAME();
@@ -60,9 +62,9 @@ class inGame {
         void pinta_arma(Armas arma1, float sourceX, float sourceY, float x, float y);
         //Metodos de gameplay
         void actualiza_juego(jugador jugador);
-        void juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool&done);
-        void menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y);
-        void menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y);
+        void juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool&done, puntuacion& Score);
+        void menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y, structPuntuacion* scr, char* s, char* s2, puntuacion &Score, bool & getting_username);
+        void menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y, structPuntuacion* scr, char* s, char* s2, puntuacion &Score, bool & getting_username);
         bool colision(float x, float y, float npc_x, float npc_y, float width, float height);
         bool rect(jugador& jugador, FRect* npcRect, NPC& elnpc);
         bool guardRect(Guardia& npc, FRect* npcRect, NPC& elnpc);

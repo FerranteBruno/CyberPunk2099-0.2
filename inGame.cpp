@@ -1,5 +1,6 @@
 #include "inGame.h"
 #include <iostream>
+#include <string.h>
 using namespace std;
 /*void inGame::carga_juego(, NPC guardia, Armas arma1)
 {
@@ -351,8 +352,16 @@ void inGame::GAME() {
 
     /// todo referente a puntuaciones
     //puntuacion _Score;
-    fTop5 = al_load_font("IMG/BROADW.ttf", 36, 0);
+    fTop5 = al_load_font("IMG/BROADW.ttf", 18, 0);
+    punt = al_load_font("IMG/BROADW.ttf", 36, 0);
+    structPuntuacion* scr;
+    char s[3] = { 'x','x','x' };
+    char s2[3] = { 'x','x','x' };
+    puntuacion Score;
+    bool getting_username = true;
 
+
+    scr = new structPuntuacion[5];
 
     /*jugador jugador;
     NPC guardia;
@@ -372,6 +381,9 @@ void inGame::GAME() {
 
     ALLEGRO_EVENT events;
     ALLEGRO_KEYBOARD_STATE keyState;
+
+    top5Score();
+
     while (!done) {
         al_register_event_source(event_queue, al_get_mouse_event_source());
         al_wait_for_event(event_queue, &events);
@@ -391,11 +403,11 @@ void inGame::GAME() {
         }
         //comienza el jueguin
         if (!done && !gamed) {
-            menu_principal(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, gamed, x, y);
+            menu_principal(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, gamed, x, y,scr,s,s2,Score, getting_username);
         }
         else if (gamed) {
             //                gamed = false;
-            menu_top5(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, gamed, x, y);
+            menu_top5(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, gamed, x, y,scr,s,s2, Score, getting_username);
 
 
         }
@@ -406,7 +418,7 @@ void inGame::GAME() {
             done = false;
             gamed = true;
 
-            juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done);
+            juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, Score);
         }
     }
     al_destroy_event_queue(event_queue);
@@ -415,12 +427,59 @@ void inGame::GAME() {
 
 
 
-void inGame::menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y) {
+void inGame::menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y, structPuntuacion* scr, char* s, char* s2, puntuacion& Score, bool &getting_username) {
+
+    
+
+    if (getting_username)
+    {
+        switch (events.keyboard.keycode)
+        {
+            /*case ALLEGRO_KEY_BACKSPACE:
+                  // take a character off the end
+                      if (Score.getSKN() == s);
+                  break;*/
+        case ALLEGRO_KEY_ENTER:
+
+            if (!(Score.getSKN() == s))
+            {
+                getting_username = false;
+                Score.setSKN(s2);
+            }
+            break;
+        default:
+
+            if ((events.keyboard.unichar <= 125) && (events.keyboard.unichar >= 32) && s2[0] == s[0]) {
+                s2[0] = events.keyboard.unichar;
+            }
+
+            else if ((events.keyboard.unichar <= 125) && (events.keyboard.unichar >= 32) && s2[1] == s[1] && s2[0] != s[0]) {
+                s2[1] = events.keyboard.unichar;
+            }
+
+            else if ((events.keyboard.unichar <= 125) && (events.keyboard.unichar >= 32) && s2[2] == s[2] && s2[0] != s[0] && s2[1] != s[1]) {
+                s2[2] = events.keyboard.unichar;
+            }
+
+            break;
+        }
+    }
 
     if (x > 970 && x < 1120 &&
         y>360 && y < 420) {
         al_clear_to_color(vacio);
         al_draw_bitmap(menu3, 0, 0, NULL);
+                
+        if (!getting_username) {
+            al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Nombre Ingresado!");
+            al_flip_display();
+        }
+        else
+        {
+            al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Ingrese su nombre y presione enter");
+        }
+        al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 150, ALLEGRO_ALIGN_CENTRE, s2);
+
         al_flip_display();
         if (events.mouse.button & 1) {
             done = true;
@@ -431,12 +490,23 @@ void inGame::menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE
         y>460 && y < 510) {
         al_clear_to_color(al_map_rgb(0, 0, 0));
         al_draw_bitmap(menu4, 0, 0, NULL);
+
+        if (!getting_username) {
+            al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Nombre Ingresado!");
+            al_flip_display();
+        }
+        else
+        {
+            al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Ingrese su nombre y presione enter");
+        }
+        al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 150, ALLEGRO_ALIGN_CENTRE, s2);
+
         al_flip_display();
         if (events.mouse.button & 1) {
 
             //a = true;   //funcion jugar a desarrolar
             gamed = true;
-            menu_top5(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, gamed, x, y);
+            menu_top5(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, gamed, x, y,scr,s,s2, Score, getting_username);
         }
     }
 
@@ -444,7 +514,18 @@ void inGame::menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE
         y>408 && y < 590) {
         al_clear_to_color(al_map_rgb(0, 0, 0));
         al_draw_bitmap(menu2, 0, 0, NULL);
-        al_flip_display();
+
+        if(!getting_username) {
+            al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Nombre Ingresado!");
+            al_flip_display();
+        }
+    else
+    {
+        al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Ingrese su nombre y presione enter");
+    }
+    al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 150, ALLEGRO_ALIGN_CENTRE, s2);
+
+    al_flip_display();
         if (events.mouse.button & 1) {
 
             //a = true;   //funcion jugar a desarrolar
@@ -456,6 +537,17 @@ void inGame::menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE
         y>531 && y < 594) {
         al_clear_to_color(al_map_rgb(0, 0, 0));
         al_draw_bitmap(menu5, 0, 0, NULL);
+
+        if (!getting_username) {
+            al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Nombre Ingresado!");
+            al_flip_display();
+        }
+        else
+        {
+            al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Ingrese su nombre y presione enter");
+        }
+        al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 150, ALLEGRO_ALIGN_CENTRE, s2);
+
         al_flip_display();
         if (events.mouse.button & 1) {
 
@@ -472,6 +564,17 @@ void inGame::menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE
             y>624 && y < 688) {
             al_clear_to_color(al_map_rgb(0, 0, 0));
             al_draw_bitmap(menu6, 0, 0, NULL);
+
+            if (!getting_username) {
+                al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Nombre Ingresado!");
+                al_flip_display();
+            }
+            else
+            {
+                al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTRE, "Ingrese su nombre y presione enter");
+            }
+            al_draw_text(fTop5, al_map_rgb(255, 255, 255), 400, 150, ALLEGRO_ALIGN_CENTRE, s2);
+
             al_flip_display();
             if (events.mouse.button & 1) {
 
@@ -481,23 +584,52 @@ void inGame::menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE
         }
 
         else {
-            al_clear_to_color(al_map_rgb(0, 0, 0));
-            al_draw_bitmap(menu1, 0, 0, NULL);
-            al_flip_display();
+            
         }
 
     }
 
 }
 
-void inGame::menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y) {
+void inGame::menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, bool& gamed, float x, float y, structPuntuacion *scr, char *s, char*s2, puntuacion& Score, bool &getting_username) {
   
-    puntuacion Score;
+   // puntuacion Score;
+    
+
+    int pos = 0;
+
+    for (int i = 0; i < 5; i++) {
+
+
+        scr[i] = leerDeDiscoOrdenado(pos++);
+
+        if (scr[i].puntos < 0 || scr[i].puntos > 4000) {
+            scr[i].puntos = 0;
+            scr[i].secElapsed = 0;
+            scr[i].minElapsed = 0;
+            for (int x = 0; x < 3; x++) {
+                scr[i].SKN[x] = 'E';
+            }
+        }
+    }
+    pos = 0;
+
+    /*nt vPuntos[5];
+
+
+    int vSec[5];
+
+
+    int vMin[5];
+
+
+    char vSKN[5][3];
+    */
 
 
 
     //top5Score();
-    top5Score();
+    
     al_register_event_source(event_queue, al_get_mouse_event_source());
 
     
@@ -507,14 +639,70 @@ void inGame::menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* eve
             al_clear_to_color(vacio);
             al_draw_bitmap(top_vae, 0, 0, NULL);
 
+            
 
-            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 640, 520, ALLEGRO_ALIGN_CENTER, "Puntos Actuales:");
-            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 560, ALLEGRO_ALIGN_CENTER, "%d", Score.getPuntos());
+            ///pos1
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 320, ALLEGRO_ALIGN_CENTER, "1°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 320, ALLEGRO_ALIGN_CENTER, "%d", scr[0].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 320, ALLEGRO_ALIGN_CENTER, "%d", scr[0].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 320, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 320, ALLEGRO_ALIGN_CENTER, "%d", scr[0].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 320, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 320, ALLEGRO_ALIGN_CENTER, "%c", scr[0].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 320, ALLEGRO_ALIGN_CENTER, "%c", scr[0].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 320, ALLEGRO_ALIGN_CENTER, "%c", scr[0].SKN[2]);
+
+            ///pos2
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 360, ALLEGRO_ALIGN_CENTER, "2°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 360, ALLEGRO_ALIGN_CENTER, "%d", scr[1].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 360, ALLEGRO_ALIGN_CENTER, "%d", scr[1].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 360, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 360, ALLEGRO_ALIGN_CENTER, "%d", scr[1].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 360, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 360, ALLEGRO_ALIGN_CENTER, "%c", scr[1].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 360, ALLEGRO_ALIGN_CENTER, "%c", scr[1].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 360, ALLEGRO_ALIGN_CENTER, "%c", scr[1].SKN[2]);
+
+            ///pos3
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 400, ALLEGRO_ALIGN_CENTER, "3°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 400, ALLEGRO_ALIGN_CENTER, "%d", scr[2].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 400, ALLEGRO_ALIGN_CENTER, "%d", scr[2].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 400, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 400, ALLEGRO_ALIGN_CENTER, "%d", scr[2].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 400, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 400, ALLEGRO_ALIGN_CENTER, "%c", scr[2].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 400, ALLEGRO_ALIGN_CENTER, "%c", scr[2].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 400, ALLEGRO_ALIGN_CENTER, "%c", scr[2].SKN[2]);
+
+            ///pos4
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 440, ALLEGRO_ALIGN_CENTER, "4°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 440, ALLEGRO_ALIGN_CENTER, "%d", scr[3].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 440, ALLEGRO_ALIGN_CENTER, "%d", scr[3].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 440, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 440, ALLEGRO_ALIGN_CENTER, "%d", scr[3].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 440, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 440, ALLEGRO_ALIGN_CENTER, "%c", scr[3].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 440, ALLEGRO_ALIGN_CENTER, "%c", scr[3].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 440, ALLEGRO_ALIGN_CENTER, "%c", scr[3].SKN[2]);
+
+            ///pos5
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 480, ALLEGRO_ALIGN_CENTER, "5°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 480, ALLEGRO_ALIGN_CENTER, "%d", scr[4].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 480, ALLEGRO_ALIGN_CENTER, "%d", scr[4].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 480, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 480, ALLEGRO_ALIGN_CENTER, "%d", scr[4].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 480, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 480, ALLEGRO_ALIGN_CENTER, "%c", scr[4].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 480, ALLEGRO_ALIGN_CENTER, "%c", scr[4].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 480, ALLEGRO_ALIGN_CENTER, "%c", scr[4].SKN[2]);
+
+            al_draw_text(punt, al_map_rgb(640, 540, 0), 640, 520, ALLEGRO_ALIGN_CENTER, "Puntos Actuales:");
+            al_draw_textf(punt, al_map_rgb(640, 540, 0), 640, 560, ALLEGRO_ALIGN_CENTER, "%d", Score.getPuntos());
 
             al_flip_display();
             if (events.mouse.button & 1) {
                 gamed = false;
-                juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done);
+                juego_inicia(keyState, event_queue, events, timer, frameTimer, npcTimer, rondasTimer, scoreTimer, done, Score);
             }
         }
 
@@ -523,8 +711,63 @@ void inGame::menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* eve
             al_clear_to_color(vacio);
             al_draw_bitmap(top_salir, 0, 0, NULL);
 
-            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 640, 520, ALLEGRO_ALIGN_CENTER, "Puntos Actuales:");
-            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 560, ALLEGRO_ALIGN_CENTER, "%d", Score.getPuntos());
+            ///pos1
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 320, ALLEGRO_ALIGN_CENTER, "1°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 320, ALLEGRO_ALIGN_CENTER, "%d", scr[0].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 320, ALLEGRO_ALIGN_CENTER, "%d", scr[0].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 320, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 320, ALLEGRO_ALIGN_CENTER, "%d", scr[0].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 320, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 320, ALLEGRO_ALIGN_CENTER, "%c", scr[0].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 320, ALLEGRO_ALIGN_CENTER, "%c", scr[0].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 320, ALLEGRO_ALIGN_CENTER, "%c", scr[0].SKN[2]);
+
+            ///pos2
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 360, ALLEGRO_ALIGN_CENTER, "2°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 360, ALLEGRO_ALIGN_CENTER, "%d", scr[1].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 360, ALLEGRO_ALIGN_CENTER, "%d", scr[1].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 360, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 360, ALLEGRO_ALIGN_CENTER, "%d", scr[1].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 360, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 360, ALLEGRO_ALIGN_CENTER, "%c", scr[1].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 360, ALLEGRO_ALIGN_CENTER, "%c", scr[1].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 360, ALLEGRO_ALIGN_CENTER, "%c", scr[1].SKN[2]);
+
+            ///pos3
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 400, ALLEGRO_ALIGN_CENTER, "3°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 400, ALLEGRO_ALIGN_CENTER, "%d", scr[2].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 400, ALLEGRO_ALIGN_CENTER, "%d", scr[2].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 400, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 400, ALLEGRO_ALIGN_CENTER, "%d", scr[2].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 400, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 400, ALLEGRO_ALIGN_CENTER, "%c", scr[2].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 400, ALLEGRO_ALIGN_CENTER, "%c", scr[2].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 400, ALLEGRO_ALIGN_CENTER, "%c", scr[2].SKN[2]);
+
+            ///pos4
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 440, ALLEGRO_ALIGN_CENTER, "4°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 440, ALLEGRO_ALIGN_CENTER, "%d", scr[3].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 440, ALLEGRO_ALIGN_CENTER, "%d", scr[3].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 440, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 440, ALLEGRO_ALIGN_CENTER, "%d", scr[3].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 440, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 440, ALLEGRO_ALIGN_CENTER, "%c", scr[3].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 440, ALLEGRO_ALIGN_CENTER, "%c", scr[3].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 440, ALLEGRO_ALIGN_CENTER, "%c", scr[3].SKN[2]);
+
+            ///pos5
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 480, ALLEGRO_ALIGN_CENTER, "5°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 480, ALLEGRO_ALIGN_CENTER, "%d", scr[4].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 480, ALLEGRO_ALIGN_CENTER, "%d", scr[4].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 480, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 480, ALLEGRO_ALIGN_CENTER, "%d", scr[4].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 480, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 480, ALLEGRO_ALIGN_CENTER, "%c", scr[4].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 480, ALLEGRO_ALIGN_CENTER, "%c", scr[4].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 480, ALLEGRO_ALIGN_CENTER, "%c", scr[4].SKN[2]);
+
+            al_draw_text(punt, al_map_rgb(640, 540, 0), 640, 520, ALLEGRO_ALIGN_CENTER, "Puntos Actuales:");
+            al_draw_textf(punt, al_map_rgb(640, 540, 0), 640, 560, ALLEGRO_ALIGN_CENTER, "%d", Score.getPuntos());
 
 
             al_flip_display();
@@ -537,8 +780,63 @@ void inGame::menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* eve
             al_clear_to_color(al_map_rgb(0, 0, 0));
             al_draw_bitmap(top_normal, 0, 0, NULL);
 
-            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 640, 520, ALLEGRO_ALIGN_CENTER, "Puntos Actuales:");
-            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 560, ALLEGRO_ALIGN_CENTER, "%d", Score.getPuntos());
+            ///pos1
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 320, ALLEGRO_ALIGN_CENTER, "1°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 320, ALLEGRO_ALIGN_CENTER, "%d", scr[0].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 320, ALLEGRO_ALIGN_CENTER, "%d", scr[0].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 320, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 320, ALLEGRO_ALIGN_CENTER, "%d", scr[0].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 320, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 320, ALLEGRO_ALIGN_CENTER, "%c", scr[0].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 320, ALLEGRO_ALIGN_CENTER, "%c", scr[0].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 320, ALLEGRO_ALIGN_CENTER, "%c", scr[0].SKN[2]);
+
+            ///pos2
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 360, ALLEGRO_ALIGN_CENTER, "2°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 360, ALLEGRO_ALIGN_CENTER, "%d", scr[1].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 360, ALLEGRO_ALIGN_CENTER, "%d", scr[1].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 360, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 360, ALLEGRO_ALIGN_CENTER, "%d", scr[1].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 360, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 360, ALLEGRO_ALIGN_CENTER, "%c", scr[1].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 360, ALLEGRO_ALIGN_CENTER, "%c", scr[1].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 360, ALLEGRO_ALIGN_CENTER, "%c", scr[1].SKN[2]);
+
+            ///pos3
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 400, ALLEGRO_ALIGN_CENTER, "3°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 400, ALLEGRO_ALIGN_CENTER, "%d", scr[2].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 400, ALLEGRO_ALIGN_CENTER, "%d", scr[2].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 400, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 400, ALLEGRO_ALIGN_CENTER, "%d", scr[2].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 400, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 400, ALLEGRO_ALIGN_CENTER, "%c", scr[2].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 400, ALLEGRO_ALIGN_CENTER, "%c", scr[2].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 400, ALLEGRO_ALIGN_CENTER, "%c", scr[2].SKN[2]);
+
+            ///pos4
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 440, ALLEGRO_ALIGN_CENTER, "4°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 440, ALLEGRO_ALIGN_CENTER, "%d", scr[3].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 440, ALLEGRO_ALIGN_CENTER, "%d", scr[3].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 440, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 440, ALLEGRO_ALIGN_CENTER, "%d", scr[3].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 440, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 440, ALLEGRO_ALIGN_CENTER, "%c", scr[3].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 440, ALLEGRO_ALIGN_CENTER, "%c", scr[3].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 440, ALLEGRO_ALIGN_CENTER, "%c", scr[3].SKN[2]);
+
+            ///pos5
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 364, 480, ALLEGRO_ALIGN_CENTER, "5°");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 440, 480, ALLEGRO_ALIGN_CENTER, "%d", scr[4].puntos);
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 540, 480, ALLEGRO_ALIGN_CENTER, "%d", scr[4].minElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 590, 480, ALLEGRO_ALIGN_RIGHT, "min");
+            al_draw_textf(fTop5, al_map_rgb(640, 540, 0), 640, 480, ALLEGRO_ALIGN_CENTER, "%d", scr[4].secElapsed);
+            al_draw_text(fTop5, al_map_rgb(640, 540, 0), 690, 480, ALLEGRO_ALIGN_RIGHT, "sec");
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 740, 480, ALLEGRO_ALIGN_CENTER, "%c", scr[4].SKN[0]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 840, 480, ALLEGRO_ALIGN_CENTER, "%c", scr[4].SKN[1]);
+            al_draw_textf(fTop5, al_map_rgb(240, 540, 0), 940, 480, ALLEGRO_ALIGN_CENTER, "%c", scr[4].SKN[2]);
+
+            al_draw_text(punt, al_map_rgb(640, 540, 0), 640, 520, ALLEGRO_ALIGN_CENTER, "Puntos Actuales:");
+            al_draw_textf(punt, al_map_rgb(640, 540, 0), 640, 560, ALLEGRO_ALIGN_CENTER, "%d", Score.getPuntos());
 
 
             al_flip_display();
@@ -546,9 +844,9 @@ void inGame::menu_top5(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* eve
         }
 }
 
-void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done) {
+void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* event_queue, ALLEGRO_EVENT events, ALLEGRO_TIMER* timer, ALLEGRO_TIMER* frameTimer, ALLEGRO_TIMER* npcTimer, ALLEGRO_TIMER* rondasTimer, ALLEGRO_TIMER* scoreTimer, bool& done, puntuacion& Score) {
     jugador jugador;
-    puntuacion Score;
+    ///puntuacion Score;
     structPuntuacion scr;
     char _SKN[3] = { 'x', 'x', 'x' };
 
@@ -947,8 +1245,9 @@ void inGame::juego_inicia(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE* 
                                 jugador.setEmpezarRonda(false);
                                 
 
-                                scr = prasePuntuacion(_SKN, Score.getPuntos(), Score.getSecElapsed(), Score.getMinElapsed());
+                                scr = prasePuntuacion(Score.getSKN(), Score.getPuntos(), Score.getSecElapsed(), Score.getMinElapsed());
                                 grabarPuntuacion(scr);
+                                top5Score;
                                 
 
                                 cont1 = 0;

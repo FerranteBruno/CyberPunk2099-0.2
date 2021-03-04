@@ -1,6 +1,13 @@
 #pragma once
-#include"inGame.h"
-
+//#include"inGame.h"
+#include "allegro5/allegro.h"
+#include "allegro5/allegro_audio.h"
+#include "allegro5/allegro_acodec.h"
+#include "allegro5/allegro_primitives.h"
+#include "allegro5/allegro_font.h"
+#include "allegro5/allegro_ttf.h"
+#include "jugador.h"
+#include "Rondas.h"
 enum ESTADOSPUNTUACION { AUMENTAR, DISMINUIR, PAUSADO };
 
 class puntuacion
@@ -29,7 +36,7 @@ public:
 	int getSecElapsed() { return secElapsed; };
 	int getMinElapsed() { return minElapsed; };
 	//setters
-	void setSKN(char* _skn) { strcpy_s(SKN, _skn); };
+	void setSKN(char* _skn);
 	void setPuntos(int _puntos) { puntos = _puntos; };
 	void setSecElapsed(int _secElapsed) { secElapsed = _secElapsed; };
 	void setMinElapsed(int _minElapsed) { minElapsed = _minElapsed; };

@@ -9,10 +9,12 @@ struct structPuntuacion {
 	int puntos;
 };
 
-structPuntuacion prasePuntuacion(char* _SKN, int _puntos, int _secElapsed, int _minElapsed);
+structPuntuacion prasePuntuacion(char _SKN[3], int _puntos, int _secElapsed, int _minElapsed);
 bool leerDeDisco(int pos, bool& leyo);
 structPuntuacion leerDeDisco(int pos);
 int cantidadDePuntuaciones();
 void grabarPuntuacion(structPuntuacion score);
+structPuntuacion leerTop5(int pos);
+structPuntuacion leerDeDiscoOrdenado(int pos);
 void top5Score(/*char* _SKN[3], int _puntos, int _secElapsed, int _minElapsed*/);
 //void top52();

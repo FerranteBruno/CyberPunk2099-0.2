@@ -84,15 +84,23 @@ void puntuacion::draw()
     al_draw_textf(score, al_map_rgb(640, 540, 0), 640, 540, ALLEGRO_ALIGN_CENTER, "%d", puntos);
 }
 
+void puntuacion::setSKN(char* _skn)
+{
+    SKN[0] = _skn[0];
+    SKN[1] = _skn[1];
+    SKN[2] = _skn[2];
+}
+
 puntuacion::puntuacion() {
 
     //seleccionamos la fuente
     score = al_load_font("IMG/BROADW.ttf", 36, 0);
 
     for (int i = 0; i < 3; i++) {
-        SKN[i] = x;
+        SKN[i] = 'x';
     }
 
+   
     ///SKN[3] = { 'x', 'x', 'x' };
 
     secElapsed = 0;

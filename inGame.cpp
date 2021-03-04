@@ -435,10 +435,14 @@ void inGame::menu_principal(ALLEGRO_KEYBOARD_STATE keyState, ALLEGRO_EVENT_QUEUE
     {
         switch (events.keyboard.keycode)
         {
-            /*case ALLEGRO_KEY_BACKSPACE:
+            case ALLEGRO_KEY_BACKSPACE:
                   // take a character off the end
-                      if (Score.getSKN() == s);
-                  break;*/
+                  //    if (Score.getSKN() == s);
+                s2[2] = 'x';
+                s2[1] = 'x';
+                s2[0] = 'x';
+
+                  break;
         case ALLEGRO_KEY_ENTER:
 
             if (!(Score.getSKN() == s))

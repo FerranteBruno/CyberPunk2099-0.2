@@ -16,7 +16,7 @@ public:
 	virtual int getAtaca() = 0;
 	virtual void setDir(float _x) = 0;
 	virtual bool getMuerto() = 0;
-	virtual void sufre_daño(int dmg, InterfaceNPC& guardia) = 0;
+	virtual void sufre_dano(int dmg, InterfaceNPC& guardia) = 0;
 	virtual void posiciona(float _x, float _y) = 0;
 	virtual void setEstado(int dire) = 0;
 	virtual void nose() = 0;

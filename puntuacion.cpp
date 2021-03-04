@@ -90,8 +90,11 @@ puntuacion::puntuacion() {
     score = al_load_font("IMG/BROADW.ttf", 36, 0);
 
     for (int i = 0; i < 3; i++) {
-        *SKN[i] = x;
+        SKN[i] = x;
     }
+
+    ///SKN[3] = { 'x', 'x', 'x' };
+
     secElapsed = 0;
     minElapsed = 0;
     puntos=1000;

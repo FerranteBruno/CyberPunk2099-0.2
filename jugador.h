@@ -73,8 +73,8 @@ public:
     ALLEGRO_BITMAP* getBitmap() { return p1; };
     void posiciona(float _x, float _y);
     bool atacando() { return ataca > 1; };
-    void sufre_daño(int dmg, jugador& jugador);
-    bool ha_muerto() { if (muerto)return true; };
+    void sufre_dano(int dmg, jugador& jugador);
+    bool ha_muerto() { if (muerto)return true; else return false; };
     jugador();
     ~jugador();
     //void no_ataca() { ataca = -3; };

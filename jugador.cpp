@@ -231,7 +231,7 @@ void jugador::posiciona(float _x, float _y) {
     y = _y;
 }
 
-void jugador::sufre_daño(int dmg, jugador& jugador) {
+void jugador::sufre_dano(int dmg, jugador& jugador) {
 
     if (!muerto)
     {

@@ -1,5 +1,8 @@
 ﻿  structPuntuacion.cpp
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(9,20): error C2107: índice no válido, direccionamiento indirecto no permitido
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(21,6): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(31,6): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(66,7): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(40,16): warning C4551: la llamada a la función no tiene lista de argumentos
+  LINK : hay 0 módulos nuevos y 1 (de 59) módulos modificados desde la vinculación anterior
+  Iniciando el paso 2
+       structPuntuacion.obj
+       MSVCRTD.lib(loadcfg.obj)
+  Paso 2 finalizado
+  CyberCode2099-0.2.1.vcxproj -> C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe

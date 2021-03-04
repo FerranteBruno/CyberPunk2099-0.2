@@ -1,46 +1,19 @@
-﻿  Source.cpp
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(14,5): error C2065: 'ALLLEGRO_DISPLAY': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(14,23): error C2065: 'window': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(19,5): error C2146: error de sintaxis: falta ';' delante del identificador 'buffer'
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(87,21): error C2065: 'mouse': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(87,38): error C2065: 'mouse': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(88,21): error C2065: 'mouse': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(88,36): error C2065: 'mouse': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(89,91): error C2660: 'al_draw_bitmap_region': la función no acepta 7 argumentos
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\packages\Allegro.5.2.6\build\native\include\allegro5\bitmap_draw.h(19,1): message : vea la declaración de 'al_draw_bitmap_region'
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(90,25): error C2065: 'mouse': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(95,73): error C2039: "mouse_x": no es un miembro de "ALLEGRO_EVENT"
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\packages\Allegro.5.2.6\build\native\include\allegro5\events.h(204): message : vea la declaración de 'ALLEGRO_EVENT'
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(95,25): error C2065: 'mouse_x': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(97,91): error C2660: 'al_draw_bitmap_region': la función no acepta 7 argumentos
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\packages\Allegro.5.2.6\build\native\include\allegro5\bitmap_draw.h(19,1): message : vea la declaración de 'al_draw_bitmap_region'
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(98,25): error C2065: 'mouse_b': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(103,26): error C2065: 'mouse_x': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(103,43): error C2065: 'mouse_x': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(104,21): error C2065: 'mouse_y': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(104,36): error C2065: 'mouse_y': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(105,91): error C2660: 'al_draw_bitmap_region': la función no acepta 7 argumentos
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\packages\Allegro.5.2.6\build\native\include\allegro5\bitmap_draw.h(19,1): message : vea la declaración de 'al_draw_bitmap_region'
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(106,25): error C2065: 'mouse_b': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(111,26): error C2065: 'mouse_x': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(111,43): error C2065: 'mouse_x': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(112,21): error C2065: 'mouse_y': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(112,36): error C2065: 'mouse_y': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(113,91): error C2660: 'al_draw_bitmap_region': la función no acepta 7 argumentos
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\packages\Allegro.5.2.6\build\native\include\allegro5\bitmap_draw.h(19,1): message : vea la declaración de 'al_draw_bitmap_region'
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(114,25): error C2065: 'mouse_b': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(119,26): error C2065: 'mouse_x': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(119,43): error C2065: 'mouse_x': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(120,21): error C2065: 'mouse_y': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(120,36): error C2065: 'mouse_y': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(122,91): error C2660: 'al_draw_bitmap_region': la función no acepta 7 argumentos
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\packages\Allegro.5.2.6\build\native\include\allegro5\bitmap_draw.h(19,1): message : vea la declaración de 'al_draw_bitmap_region'
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(123,25): error C2065: 'mouse_b': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(128,93): error C2660: 'al_draw_bitmap_region': la función no acepta 7 argumentos
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\packages\Allegro.5.2.6\build\native\include\allegro5\bitmap_draw.h(19,1): message : vea la declaración de 'al_draw_bitmap_region'
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(130,53): error C2065: 'mouse_x': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(130,62): error C2065: 'mouse_y': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(131,88): error C2660: 'al_draw_bitmap_region': la función no acepta 7 argumentos
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\packages\Allegro.5.2.6\build\native\include\allegro5\bitmap_draw.h(19,1): message : vea la declaración de 'al_draw_bitmap_region'
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(134,21): error C2065: 'key': identificador no declarado
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\CyberCode2099-0.2.1\Source.cpp(134,25): error C2065: 'KEY_R': identificador no declarado
+﻿  Armas.cpp
+  Centinela.cpp
+  Esqueleto.cpp
+  FRect.cpp
+  Guardia.cpp
+  inGame.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(386,46): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+  InterfaceNPC.cpp
+  jugador.cpp
+  NPC.cpp
+  puntuacion.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\puntuacion.cpp(84,42): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\puntuacion.cpp(84,37): warning C4309: 'argumento': truncamiento de valor constante
+  Rondas.cpp
+  Source.cpp
+  structPuntuacion.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(23,6): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(32,12): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(46,6): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.

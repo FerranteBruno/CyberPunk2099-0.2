@@ -53,7 +53,7 @@ public:
     void posiciona(float _x, float _y);
     bool atacando() ;
     void no_ataca() { ataca = -3; };
-    void sufre_daño(int dmg, NPC &guardia);
+    void sufre_dano(int dmg, NPC &guardia);
     void setReviveNPC(bool revivio);
     void setNose0() { murio = 0; };
     virtual bool ha_muerto() { return muerto; };

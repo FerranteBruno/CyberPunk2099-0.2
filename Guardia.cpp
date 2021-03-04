@@ -150,7 +150,7 @@ void Guardia::pintaVida() {
 
 }
 
-void Guardia::sufre_daño(int dmg, InterfaceNPC& guardia)
+void Guardia::sufre_dano(int dmg, InterfaceNPC& guardia)
 {
     //muerto = false;
 

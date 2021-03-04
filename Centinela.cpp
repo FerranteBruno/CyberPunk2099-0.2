@@ -143,7 +143,7 @@ void Centinela::pintaVida() {
 
 }
 
-void Centinela::sufre_daño(int dmg, InterfaceNPC& guardia)
+void Centinela::sufre_dano(int dmg, InterfaceNPC& guardia)
 {
 
     if (!muerto)

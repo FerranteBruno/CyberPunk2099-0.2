@@ -36,7 +36,7 @@ public:
     void pinta2(float sx, float sy);
     void pintaVida();
     bool ha_muerto() { return muerto; };
-    void sufre_daño(int dmg, InterfaceNPC& guardia);
+    void sufre_dano(int dmg, InterfaceNPC& guardia);
     bool atacando();
     float getx() { return x; };
     float gety() { return y; };

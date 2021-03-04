@@ -1,0 +1,21 @@
+﻿  Armas.cpp
+  Centinela.cpp
+  Esqueleto.cpp
+  FRect.cpp
+  Guardia.cpp
+  inGame.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(386,46): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(659,41): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(669,41): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+  InterfaceNPC.cpp
+  jugador.cpp
+  NPC.cpp
+  puntuacion.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\puntuacion.cpp(84,42): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\puntuacion.cpp(84,37): warning C4309: 'argumento': truncamiento de valor constante
+  Rondas.cpp
+  Source.cpp
+  structPuntuacion.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(22,6): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(31,12): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(45,6): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.

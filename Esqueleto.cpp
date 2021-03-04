@@ -144,7 +144,7 @@ void Esqueleto::pintaVida() {
 
 }
 
-void Esqueleto::sufre_daño(int dmg, InterfaceNPC& guardia)
+void Esqueleto::sufre_dano(int dmg, InterfaceNPC& guardia)
 {
     
     if (!muerto)

@@ -8,7 +8,7 @@ void NPC::posiciona(float _x, float _y) {
     y = _y;
 }
 
-void NPC::sufre_daño(int dmg, NPC &guardia)
+void NPC::sufre_dano(int dmg, NPC &guardia)
 {
     //muerto = false;
 

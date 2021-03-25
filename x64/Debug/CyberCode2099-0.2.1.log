@@ -1,246 +1,1747 @@
-﻿  inGame.cpp
+﻿  Armas.cpp
+  Centinela.cpp
+  Esqueleto.cpp
+  FRect.cpp
+  Guardia.cpp
+  inGame.cpp
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(402,46): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(649,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(649,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(650,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(650,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(651,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(651,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(608,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(608,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(609,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(609,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(610,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(610,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(611,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(611,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(612,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(612,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(613,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(613,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(614,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(615,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(616,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(619,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(619,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(620,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(620,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(621,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(621,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(622,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(622,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(623,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(623,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(624,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(624,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(625,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(626,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(627,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(630,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(630,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(631,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(631,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(632,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(632,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(633,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(633,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(634,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(634,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(635,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(635,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(636,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(637,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(638,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(641,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(641,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(642,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(642,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(643,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(643,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(644,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(644,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(645,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(645,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(646,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(646,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(647,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(648,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(649,50): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(652,49): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(652,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(653,50): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(653,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(654,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(654,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(655,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(654,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(654,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(655,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(655,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(656,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(657,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(660,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(660,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(661,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(661,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(662,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(662,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(656,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(657,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(657,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(658,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(659,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(660,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(662,48): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(662,43): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(663,49): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(663,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(664,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(664,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(665,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(665,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(666,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(667,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(668,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(671,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(671,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(672,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(672,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(673,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(673,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(674,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(674,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(675,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(675,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(676,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(676,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(677,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(678,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(678,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(678,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(679,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(682,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(682,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(683,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(683,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(679,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(680,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(680,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(681,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(681,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(682,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(682,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(683,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(683,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(684,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(684,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(685,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(685,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(685,50): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(686,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(686,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(687,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(687,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(688,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(689,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(689,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(689,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(690,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(693,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(693,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(694,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(694,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(690,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(691,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(691,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(692,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(692,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(693,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(693,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(694,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(694,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(695,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(695,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(696,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(696,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(696,50): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(697,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(697,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(698,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(698,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(699,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(700,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(700,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(700,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(701,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(703,48): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(703,43): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(704,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(704,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(719,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(719,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(720,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(720,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(721,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(721,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(701,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(702,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(702,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(703,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(703,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(704,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(704,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(705,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(705,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(706,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(707,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(708,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(711,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(711,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(712,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(712,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(713,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(713,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(714,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(714,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(715,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(715,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(716,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(716,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(717,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(718,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(719,50): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(722,49): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(722,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(723,50): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(723,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(724,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(724,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(725,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(724,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(724,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(725,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(725,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(726,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(727,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(730,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(730,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(731,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(731,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(732,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(732,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(726,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(727,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(727,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(728,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(729,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(730,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(732,48): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(732,43): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(733,49): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(733,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(734,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(734,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(735,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(735,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(736,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(737,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(738,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(741,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(741,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(742,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(742,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(743,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(743,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(744,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(744,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(745,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(745,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(746,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(746,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(747,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(747,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(747,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(748,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(748,45): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(749,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(749,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(750,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(750,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(751,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(751,45): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(752,49): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(752,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(753,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(753,45): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(754,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(754,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(755,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(755,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(756,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(756,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(757,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(757,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(758,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(755,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(758,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(758,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(759,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(759,45): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(760,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(760,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(761,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(761,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(762,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(762,45): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(763,49): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(763,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(764,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(764,45): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(765,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(765,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(766,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(766,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(767,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(767,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(768,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(768,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(769,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(766,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(769,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(769,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(770,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(770,45): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(771,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(773,48): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(773,43): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(771,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(772,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(772,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(773,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(773,45): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(774,49): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(774,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(788,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(788,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(789,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(789,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(790,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(790,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(775,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(776,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(777,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(780,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(780,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(781,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(781,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(782,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(782,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(783,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(783,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(784,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(784,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(785,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(785,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(786,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(787,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(788,50): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(791,49): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(791,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(792,50): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(792,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(793,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(793,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(794,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(793,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(793,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(794,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(794,44): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(795,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(796,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(799,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(799,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(800,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(800,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(801,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(801,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(795,45): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(796,49): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(796,44): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(797,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(798,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(799,50): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(801,48): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(801,43): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(802,49): warning C4309: 'argumento': truncamiento de valor constante
 C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(802,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(803,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(803,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(804,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(804,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(805,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(806,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(807,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(810,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(810,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(811,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(811,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(812,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(812,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(813,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(813,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(814,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(814,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(815,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(815,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(816,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(817,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(818,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(821,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(821,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(822,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(822,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(823,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(823,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(824,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(824,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(825,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(825,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(826,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(826,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(827,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(828,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(829,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(832,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(832,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(833,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(833,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(834,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(834,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(835,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(835,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(836,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(836,45): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(837,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(837,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(838,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(839,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(840,50): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(842,48): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(842,43): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(843,49): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(843,44): warning C4309: 'argumento': truncamiento de valor constante
-C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(1254,33): warning C4551: la llamada a la función no tiene lista de argumentos
-  LINK : hay 0 módulos nuevos y 1 (de 60) módulos modificados desde la vinculación anterior
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\inGame.cpp(1213,33): warning C4551: la llamada a la función no tiene lista de argumentos
+  InterfaceNPC.cpp
+  jugador.cpp
+  NPC.cpp
+  puntuacion.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\puntuacion.cpp(84,42): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\puntuacion.cpp(84,37): warning C4309: 'argumento': truncamiento de valor constante
+  Rondas.cpp
+  Source.cpp
+  structPuntuacion.cpp
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(43,16): warning C4551: la llamada a la función no tiene lista de argumentos
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(57,16): warning C4551: la llamada a la función no tiene lista de argumentos
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\structPuntuacion.cpp(216,13): warning C4156: eliminación de expresión de matriz sin utilizar el formato de matriz de 'delete'; formato de matriz sustituido
+  Generando código...
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\NPC.cpp(164): warning C4715: 'NPC::atacando': no todas las rutas de acceso de control devuelven un valor
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\Guardia.cpp(173): warning C4715: 'Guardia::atacando': no todas las rutas de acceso de control devuelven un valor
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\Esqueleto.cpp(166): warning C4715: 'Esqueleto::atacando': no todas las rutas de acceso de control devuelven un valor
+C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\Centinela.cpp(165): warning C4715: 'Centinela::atacando': no todas las rutas de acceso de control devuelven un valor
+  LINK : este vinculador no ha generado el archivo ILK; ejecutando vínculo completo
+  Iniciando el paso 1
+  Se procesó /DEFAULTLIB:MSVCRTD
+  Se procesó /DEFAULTLIB:OLDNAMES
+  Se procesó /DEFAULTLIB:msvcprtd
+  Se procesó /DEFAULTLIB:uuid.lib
+  Buscando bibliotecas
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro.lib:
+        Se encontró __imp_al_map_rgb
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Source.obj
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Armas.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_convert_mask_to_alpha
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se hace referencia en Armas.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_draw_bitmap_region
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se hace referencia en Armas.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_load_bitmap
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se hace referencia en Source.obj
+          Se hace referencia en Armas.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_get_bitmap_width
+          Se hace referencia en NPC.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en jugador.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_get_bitmap_height
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en NPC.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_get_timer_count
+          Se hace referencia en NPC.obj
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en jugador.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_set_timer_count
+          Se hace referencia en NPC.obj
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en jugador.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_draw_bitmap
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_create_event_queue
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_destroy_event_queue
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_register_event_source
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_unregister_event_source
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_wait_for_event
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_flip_display
+          Se hace referencia en inGame.obj
+          Se hace referencia en puntuacion.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_clear_to_color
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_get_keyboard_state
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_get_keyboard_event_source
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_get_mouse_event_source
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_create_timer
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_start_timer
+          Se hace referencia en inGame.obj
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_get_timer_event_source
+          Se hace referencia en inGame.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_key_down
+          Se hace referencia en jugador.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_stop_timer
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_ustr_new
+          Se hace referencia en Source.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_create_display
+          Se hace referencia en Source.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_set_target_backbuffer
+          Se hace referencia en Source.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_install_keyboard
+          Se hace referencia en Source.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_install_mouse
+          Se hace referencia en Source.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __imp_al_install_system
+          Se hace referencia en Source.obj
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __IMPORT_DESCRIPTOR_allegro-5.2
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró __NULL_IMPORT_DESCRIPTOR
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se cargó allegro.lib(allegro-5.2.dll)
+        Se encontró allegro-5.2_NULL_THUNK_DATA
+          Se hace referencia en allegro.lib(allegro-5.2.dll)
+          Se cargó allegro.lib(allegro-5.2.dll)
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_main.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_image.lib:
+        Se encontró __imp_al_init_image_addon
+          Se hace referencia en Source.obj
+          Se cargó allegro_image.lib(allegro_image-5.2.dll)
+        Se encontró __IMPORT_DESCRIPTOR_allegro_image-5.2
+          Se hace referencia en allegro_image.lib(allegro_image-5.2.dll)
+          Se cargó allegro_image.lib(allegro_image-5.2.dll)
+        Se encontró allegro_image-5.2_NULL_THUNK_DATA
+          Se hace referencia en allegro_image.lib(allegro_image-5.2.dll)
+          Se cargó allegro_image.lib(allegro_image-5.2.dll)
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_color.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_memfile.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_font.lib:
+        Se encontró __imp_al_load_font
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se cargó allegro_font.lib(allegro_font-5.2.dll)
+        Se encontró __imp_al_draw_text
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se cargó allegro_font.lib(allegro_font-5.2.dll)
+        Se encontró __imp_al_draw_textf
+          Se hace referencia en inGame.obj
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se cargó allegro_font.lib(allegro_font-5.2.dll)
+        Se encontró __imp_al_destroy_font
+          Se hace referencia en puntuacion.obj
+          Se cargó allegro_font.lib(allegro_font-5.2.dll)
+        Se encontró __imp_al_init_font_addon
+          Se hace referencia en Source.obj
+          Se cargó allegro_font.lib(allegro_font-5.2.dll)
+        Se encontró __IMPORT_DESCRIPTOR_allegro_font-5.2
+          Se hace referencia en allegro_font.lib(allegro_font-5.2.dll)
+          Se hace referencia en allegro_font.lib(allegro_font-5.2.dll)
+          Se hace referencia en allegro_font.lib(allegro_font-5.2.dll)
+          Se hace referencia en allegro_font.lib(allegro_font-5.2.dll)
+          Se hace referencia en allegro_font.lib(allegro_font-5.2.dll)
+          Se cargó allegro_font.lib(allegro_font-5.2.dll)
+        Se encontró allegro_font-5.2_NULL_THUNK_DATA
+          Se hace referencia en allegro_font.lib(allegro_font-5.2.dll)
+          Se cargó allegro_font.lib(allegro_font-5.2.dll)
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_ttf.lib:
+        Se encontró __imp_al_init_ttf_addon
+          Se hace referencia en Source.obj
+          Se cargó allegro_ttf.lib(allegro_ttf-5.2.dll)
+        Se encontró __IMPORT_DESCRIPTOR_allegro_ttf-5.2
+          Se hace referencia en allegro_ttf.lib(allegro_ttf-5.2.dll)
+          Se cargó allegro_ttf.lib(allegro_ttf-5.2.dll)
+        Se encontró allegro_ttf-5.2_NULL_THUNK_DATA
+          Se hace referencia en allegro_ttf.lib(allegro_ttf-5.2.dll)
+          Se cargó allegro_ttf.lib(allegro_ttf-5.2.dll)
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_physfs.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_dialog.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_audio.lib:
+        Se encontró __imp_al_play_sample
+          Se hace referencia en Guardia.obj
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró __imp_al_load_sample
+          Se hace referencia en Guardia.obj
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró __imp_al_create_sample_instance
+          Se hace referencia en inGame.obj
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró __imp_al_set_sample_instance_playmode
+          Se hace referencia en inGame.obj
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró __imp_al_play_sample_instance
+          Se hace referencia en inGame.obj
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró __imp_al_attach_sample_instance_to_mixer
+          Se hace referencia en inGame.obj
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró __imp_al_get_default_mixer
+          Se hace referencia en inGame.obj
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró __imp_al_install_audio
+          Se hace referencia en Source.obj
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró __imp_al_reserve_samples
+          Se hace referencia en Source.obj
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró __IMPORT_DESCRIPTOR_allegro_audio-5.2
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+        Se encontró allegro_audio-5.2_NULL_THUNK_DATA
+          Se hace referencia en allegro_audio.lib(allegro_audio-5.2.dll)
+          Se cargó allegro_audio.lib(allegro_audio-5.2.dll)
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_acodec.lib:
+        Se encontró __imp_al_init_acodec_addon
+          Se hace referencia en Source.obj
+          Se cargó allegro_acodec.lib(allegro_acodec-5.2.dll)
+        Se encontró __IMPORT_DESCRIPTOR_allegro_acodec-5.2
+          Se hace referencia en allegro_acodec.lib(allegro_acodec-5.2.dll)
+          Se cargó allegro_acodec.lib(allegro_acodec-5.2.dll)
+        Se encontró allegro_acodec-5.2_NULL_THUNK_DATA
+          Se hace referencia en allegro_acodec.lib(allegro_acodec-5.2.dll)
+          Se cargó allegro_acodec.lib(allegro_acodec-5.2.dll)
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_primitives.lib:
+        Se encontró __imp_al_draw_filled_rectangle
+          Se hace referencia en NPC.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en jugador.obj
+          Se cargó allegro_primitives.lib(allegro_primitives-5.2.dll)
+        Se encontró __imp_al_draw_rectangle
+          Se hace referencia en jugador.obj
+          Se cargó allegro_primitives.lib(allegro_primitives-5.2.dll)
+        Se encontró __imp_al_init_primitives_addon
+          Se hace referencia en Source.obj
+          Se cargó allegro_primitives.lib(allegro_primitives-5.2.dll)
+        Se encontró __IMPORT_DESCRIPTOR_allegro_primitives-5.2
+          Se hace referencia en allegro_primitives.lib(allegro_primitives-5.2.dll)
+          Se hace referencia en allegro_primitives.lib(allegro_primitives-5.2.dll)
+          Se hace referencia en allegro_primitives.lib(allegro_primitives-5.2.dll)
+          Se cargó allegro_primitives.lib(allegro_primitives-5.2.dll)
+        Se encontró allegro_primitives-5.2_NULL_THUNK_DATA
+          Se hace referencia en allegro_primitives.lib(allegro_primitives-5.2.dll)
+          Se cargó allegro_primitives.lib(allegro_primitives-5.2.dll)
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_video.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\MSVCRTD.lib:
+        Se encontró _RTC_InitBase
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Source.obj
+          Se hace referencia en structPuntuacion.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se hace referencia en Armas.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en FRect.obj
+          Se cargó MSVCRTD.lib(init.obj)
+        Se encontró __CheckForDebuggerJustMyCode
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Source.obj
+          Se hace referencia en structPuntuacion.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se hace referencia en Armas.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en FRect.obj
+          Se cargó MSVCRTD.lib(debugger_jmc.obj)
+        Se encontró _fltused
+          Se hace referencia en puntuacion.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en inGame.obj
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se hace referencia en Armas.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en FRect.obj
+          Se cargó MSVCRTD.lib(fltused.obj)
+        Se encontró "void * __cdecl operator new(unsigned __int64)" (??2@YAPEAX_K@Z)
+          Se hace referencia en NPC.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en jugador.obj
+          Se cargó MSVCRTD.lib(new_scalar.obj)
+        Se encontró "void __cdecl operator delete(void *,unsigned __int64)" (??3@YAXPEAX_K@Z)
+          Se hace referencia en NPC.obj
+          Se hace referencia en Source.obj
+          Se hace referencia en structPuntuacion.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en jugador.obj
+          Se cargó MSVCRTD.lib(delete_scalar_size.obj)
+        Se encontró "const type_info::`vftable'" (??_7type_info@@6B@)
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en NPC.obj
+          Se cargó MSVCRTD.lib(std_type_info_static.obj)
+        Se encontró "void * __cdecl operator new[](unsigned __int64)" (??_U@YAPEAX_K@Z)
+          Se hace referencia en inGame.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó MSVCRTD.lib(new_array.obj)
+        Se encontró _RTC_CheckStackVars
+          Se hace referencia en inGame.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Source.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó MSVCRTD.lib(stack.obj)
+        Se encontró __GSHandlerCheck
+          Se hace referencia en inGame.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó MSVCRTD.lib(gshandler.obj)
+        Se encontró __GSHandlerCheck_EH4
+          Se hace referencia en inGame.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Source.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó MSVCRTD.lib(gshandlereh4.obj)
+        Se encontró __chkstk
+          Se hace referencia en inGame.obj
+          Se cargó MSVCRTD.lib(chkstk.obj)
+        Se encontró __security_check_cookie
+          Se hace referencia en MSVCRTD.lib(gshandler.obj)
+          Se hace referencia en inGame.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Source.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó MSVCRTD.lib(amdsecgs.obj)
+        Se encontró __security_cookie
+          Se hace referencia en MSVCRTD.lib(amdsecgs.obj)
+          Se hace referencia en inGame.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en Source.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó MSVCRTD.lib(gs_cookie.obj)
+        Se encontró atexit
+          Se hace referencia en Source.obj
+          Se cargó MSVCRTD.lib(utility.obj)
+        Se encontró "void __cdecl operator delete[](void *)" (??_V@YAXPEAX@Z)
+          Se hace referencia en structPuntuacion.obj
+          Se cargó MSVCRTD.lib(delete_array.obj)
+        Se encontró _RTC_UninitUse
+          Se hace referencia en structPuntuacion.obj
+          Se cargó MSVCRTD.lib(error.obj)
+        Se encontró mainCRTStartup
+          Se cargó MSVCRTD.lib(exe_main.obj)
+        Se encontró _RTC_SetErrorFuncW
+          Se hace referencia en MSVCRTD.lib(init.obj)
+          Se cargó MSVCRTD.lib(userapi.obj)
+        Se encontró "void __cdecl __scrt_throw_std_bad_alloc(void)" (?__scrt_throw_std_bad_alloc@@YAXXZ)
+          Se hace referencia en MSVCRTD.lib(new_scalar.obj)
+          Se cargó MSVCRTD.lib(throw_bad_alloc.obj)
+        Se encontró "void __cdecl operator delete(void *)" (??3@YAXPEAX@Z)
+          Se hace referencia en MSVCRTD.lib(delete_scalar_size.obj)
+          Se hace referencia en MSVCRTD.lib(delete_array.obj)
+          Se cargó MSVCRTD.lib(delete_scalar.obj)
+        Se encontró __report_gsfailure
+          Se hace referencia en MSVCRTD.lib(amdsecgs.obj)
+          Se cargó MSVCRTD.lib(gs_report.obj)
+        Se encontró __isa_available_init
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se cargó MSVCRTD.lib(cpu_disp.obj)
+        Se encontró _get_startup_argv_mode
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(argv_mode.obj)
+        Se encontró __scrt_is_ucrt_dll_in_use
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se cargó MSVCRTD.lib(ucrt_detection.obj)
+        Se encontró __scrt_fastfail
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(utility_desktop.obj)
+        Se encontró __guard_dispatch_icall_fptr
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(guard_support.obj)
+        Se encontró "int __cdecl _RTC_GetSrcLine(unsigned char *,wchar_t *,unsigned long,int *,wchar_t *,unsigned long)" (?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z)
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se cargó MSVCRTD.lib(pdblkup.obj)
+        Se encontró __security_init_cookie
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(gs_support.obj)
+        Se encontró _matherr
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(matherr.obj)
+        Se encontró _get_startup_commit_mode
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(commit_mode.obj)
+        Se encontró _get_startup_file_mode
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(file_mode.obj)
+        Se encontró _get_startup_new_mode
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(new_mode.obj)
+        Se encontró _get_startup_thread_locale_mode
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(thread_locale.obj)
+        Se encontró "void __cdecl __scrt_initialize_type_info(void)" (?__scrt_initialize_type_info@@YAXXZ)
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(tncleanup.obj)
+        Se encontró _should_initialize_environment
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(env_mode.obj)
+        Se encontró _initialize_invalid_parameter_handler
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(invalid_parameter_handler.obj)
+        Se encontró _initialize_denormal_control
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(denormal_control.obj)
+        Se encontró __scrt_initialize_default_local_stdio_options
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(default_local_stdio_options.obj)
+        Se encontró __scrt_is_user_matherr_present
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(matherr_detection.obj)
+        Se encontró __scrt_get_dyn_tls_init_callback
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(dyn_tls_init.obj)
+        Se encontró __scrt_get_dyn_tls_dtor_callback
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(dyn_tls_dtor.obj)
+        Se encontró _RTC_Initialize
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(initsect.obj)
+        Se encontró __xi_a
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó MSVCRTD.lib(initializers.obj)
+  Se procesó /DEFAULTLIB:kernel32.lib
+   Se procesó /DISALLOWLIB:msvcrt.lib
+   Se procesó /DISALLOWLIB:libcmt.lib
+   Se procesó /DISALLOWLIB:libcmtd.lib
+   Se procesó /DISALLOWLIB:vcruntime.lib
+  Se procesó /DEFAULTLIB:vcruntimed.lib
+   Se procesó /DISALLOWLIB:libvcruntime.lib
+   Se procesó /DISALLOWLIB:libvcruntimed.lib
+   Se procesó /DISALLOWLIB:ucrt.lib
+  Se procesó /DEFAULTLIB:ucrtd.lib
+   Se procesó /DISALLOWLIB:libucrt.lib
+   Se procesó /DISALLOWLIB:libucrtd.lib
+        Se encontró _guard_dispatch_icall_nop
+          Se hace referencia en MSVCRTD.lib(guard_support.obj)
+          Se cargó MSVCRTD.lib(guard_dispatch.obj)
+        Se encontró _guard_xfg_dispatch_icall_nop
+          Se hace referencia en MSVCRTD.lib(guard_support.obj)
+          Se cargó MSVCRTD.lib(guard_xfg_dispatch.obj)
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\OLDNAMES.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\msvcprtd.lib:
+        Se encontró "bool __cdecl std::uncaught_exception(void)" (?uncaught_exception@std@@YA_NXZ)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: bool __cdecl std::ios_base::good(void)const " (__imp_?good@ios_base@std@@QEBA_NXZ)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: int __cdecl std::ios_base::flags(void)const " (__imp_?flags@ios_base@std@@QEBAHXZ)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: __int64 __cdecl std::ios_base::width(void)const " (__imp_?width@ios_base@std@@QEBA_JXZ)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: __int64 __cdecl std::ios_base::width(__int64)" (__imp_?width@ios_base@std@@QEAA_J_J@Z)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: int __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputc(char)" (__imp_?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: __int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputn(char const *,__int64)" (__imp_?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: void __cdecl std::basic_ios<char,struct std::char_traits<char> >::setstate(int,bool)" (__imp_?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > * __cdecl std::basic_ios<char,struct std::char_traits<char> >::tie(void)const " (__imp_?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: class std::basic_streambuf<char,struct std::char_traits<char> > * __cdecl std::basic_ios<char,struct std::char_traits<char> >::rdbuf(void)const " (__imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: char __cdecl std::basic_ios<char,struct std::char_traits<char> >::fill(void)const " (__imp_?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADXZ)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: void __cdecl std::basic_ostream<char,struct std::char_traits<char> >::_Osfx(void)" (__imp_?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::flush(void)" (__imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) class std::basic_ostream<char,struct std::char_traits<char> > std::cout" (__imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A)
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: char __cdecl std::basic_ios<char,struct std::char_traits<char> >::widen(char)const " (__imp_?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z)
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::operator<<(class std::basic_ostream<char,struct std::char_traits<char> > & (__cdecl*)(class std::basic_ostream<char,struct std::char_traits<char> > &))" (__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z)
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::put(char)" (__imp_?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z)
+          Se hace referencia en structPuntuacion.obj
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró __IMPORT_DESCRIPTOR_MSVCP140D
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+        Se encontró MSVCP140D_NULL_THUNK_DATA
+          Se hace referencia en msvcprtd.lib(MSVCP140D.dll)
+          Se cargó msvcprtd.lib(MSVCP140D.dll)
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\vcruntimed.lib:
+        Se encontró __CxxFrameHandler4
+          Se hace referencia en MSVCRTD.lib(gshandlereh4.obj)
+          Se hace referencia en jugador.obj
+          Se hace referencia en NPC.obj
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se hace referencia en Centinela.obj
+          Se hace referencia en Esqueleto.obj
+          Se hace referencia en Guardia.obj
+          Se hace referencia en inGame.obj
+          Se cargó vcruntimed.lib(VCRUNTIME140_1D.dll)
+        Se encontró _purecall
+          Se hace referencia en NPC.obj
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __C_specific_handler
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __C_specific_handler_noexcept
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __std_exception_copy
+          Se hace referencia en MSVCRTD.lib(throw_bad_alloc.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __std_exception_destroy
+          Se hace referencia en MSVCRTD.lib(throw_bad_alloc.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró _CxxThrowException
+          Se hace referencia en MSVCRTD.lib(throw_bad_alloc.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __current_exception
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __current_exception_context
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __vcrt_GetModuleFileNameW
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __vcrt_GetModuleHandleW
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __vcrt_LoadLibraryExW
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __std_type_info_destroy_list
+          Se hace referencia en MSVCRTD.lib(tncleanup.obj)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró __IMPORT_DESCRIPTOR_VCRUNTIME140_1D
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140_1D.dll)
+          Se cargó vcruntimed.lib(VCRUNTIME140_1D.dll)
+        Se encontró __IMPORT_DESCRIPTOR_VCRUNTIME140D
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+        Se encontró VCRUNTIME140_1D_NULL_THUNK_DATA
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140_1D.dll)
+          Se cargó vcruntimed.lib(VCRUNTIME140_1D.dll)
+        Se encontró VCRUNTIME140D_NULL_THUNK_DATA
+          Se hace referencia en vcruntimed.lib(VCRUNTIME140D.dll)
+          Se cargó vcruntimed.lib(VCRUNTIME140D.dll)
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64\ucrtd.lib:
+        Se encontró __imp_rand
+          Se hace referencia en inGame.obj
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró strlen
+          Se hace referencia en Rondas.obj
+          Se hace referencia en structPuntuacion.obj
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __imp_fopen_s
+          Se hace referencia en structPuntuacion.obj
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __imp_fclose
+          Se hace referencia en structPuntuacion.obj
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __imp_fread
+          Se hace referencia en structPuntuacion.obj
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __imp_fseek
+          Se hace referencia en structPuntuacion.obj
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __imp_ftell
+          Se hace referencia en structPuntuacion.obj
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __imp_fwrite
+          Se hace referencia en structPuntuacion.obj
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __imp_remove
+          Se hace referencia en structPuntuacion.obj
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _CrtDbgReport
+          Se hace referencia en MSVCRTD.lib(init.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _CrtDbgReportW
+          Se hace referencia en MSVCRTD.lib(init.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _callnewh
+          Se hace referencia en MSVCRTD.lib(new_scalar.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró malloc
+          Se hace referencia en MSVCRTD.lib(new_scalar.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _seh_filter_dll
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _configure_narrow_argv
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _initialize_narrow_environment
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _initialize_onexit_table
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _register_onexit_function
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _execute_onexit_table
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _crt_atexit
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _crt_at_quick_exit
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _cexit
+          Se hace referencia en MSVCRTD.lib(utility.obj)
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró strcpy_s
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró strcat_s
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __stdio_common_vsprintf_s
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _seh_filter_exe
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _set_app_type
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __setusermatherr
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _get_initial_narrow_environment
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _initterm
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _initterm_e
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró exit
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _exit
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _set_fmode
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __p___argc
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __p___argv
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _c_exit
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _register_thread_local_exe_atexit_callback
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _configthreadlocale
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _set_new_mode
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __p__commode
+          Se hace referencia en MSVCRTD.lib(exe_main.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _free_dbg
+          Se hace referencia en MSVCRTD.lib(delete_scalar.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró terminate
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _wmakepath_s
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró _wsplitpath_s
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró wcscpy_s
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró __IMPORT_DESCRIPTOR_ucrtbased
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+        Se encontró ucrtbased_NULL_THUNK_DATA
+          Se hace referencia en ucrtd.lib(ucrtbased.dll)
+          Se cargó ucrtd.lib(ucrtbased.dll)
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_main.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_image.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_color.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_memfile.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_font.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_ttf.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_physfs.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_dialog.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_audio.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_acodec.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_primitives.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_video.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+        Se encontró __imp_GetCurrentThreadId
+          Se hace referencia en MSVCRTD.lib(debugger_jmc.obj)
+          Se hace referencia en MSVCRTD.lib(gs_support.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_IsDebuggerPresent
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_RaiseException
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_MultiByteToWideChar
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_WideCharToMultiByte
+          Se hace referencia en MSVCRTD.lib(error.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_RtlCaptureContext
+          Se hace referencia en MSVCRTD.lib(gs_report.obj)
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_RtlLookupFunctionEntry
+          Se hace referencia en MSVCRTD.lib(gs_report.obj)
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_RtlVirtualUnwind
+          Se hace referencia en MSVCRTD.lib(gs_report.obj)
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_UnhandledExceptionFilter
+          Se hace referencia en MSVCRTD.lib(gs_report.obj)
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_SetUnhandledExceptionFilter
+          Se hace referencia en MSVCRTD.lib(gs_report.obj)
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_GetCurrentProcess
+          Se hace referencia en MSVCRTD.lib(gs_report.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_TerminateProcess
+          Se hace referencia en MSVCRTD.lib(gs_report.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_IsProcessorFeaturePresent
+          Se hace referencia en MSVCRTD.lib(gs_report.obj)
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_GetStartupInfoW
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_GetModuleHandleW
+          Se hace referencia en MSVCRTD.lib(utility_desktop.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_GetLastError
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_HeapAlloc
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_HeapFree
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_GetProcessHeap
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_VirtualQuery
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_FreeLibrary
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_GetProcAddress
+          Se hace referencia en MSVCRTD.lib(pdblkup.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_QueryPerformanceCounter
+          Se hace referencia en MSVCRTD.lib(gs_support.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_GetCurrentProcessId
+          Se hace referencia en MSVCRTD.lib(gs_support.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_GetSystemTimeAsFileTime
+          Se hace referencia en MSVCRTD.lib(gs_support.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __imp_InitializeSListHead
+          Se hace referencia en MSVCRTD.lib(tncleanup.obj)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró __IMPORT_DESCRIPTOR_KERNEL32
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se cargó kernel32.lib(KERNEL32.dll)
+        Se encontró KERNEL32_NULL_THUNK_DATA
+          Se hace referencia en kernel32.lib(KERNEL32.dll)
+          Se cargó kernel32.lib(KERNEL32.dll)
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\MSVCRTD.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\OLDNAMES.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\msvcprtd.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\vcruntimed.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64\ucrtd.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_main.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_image.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_color.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_memfile.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_font.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_ttf.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_physfs.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_dialog.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_audio.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_acodec.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_primitives.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_video.lib:
+  Búsqueda de bibliotecas finalizada
+  Buscando bibliotecas
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_main.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_image.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_color.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_memfile.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_font.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_ttf.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_physfs.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_dialog.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_audio.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_acodec.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_primitives.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_video.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\MSVCRTD.lib:
+        Se encontró __scrt_stub_for_acrt_initialize
+          Se cargó MSVCRTD.lib(ucrt_stubs.obj)
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\OLDNAMES.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\msvcprtd.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\vcruntimed.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64\ucrtd.lib:
+  Búsqueda de bibliotecas finalizada
+  Buscando bibliotecas
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_main.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_image.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_color.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_memfile.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_font.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_ttf.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_physfs.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_dialog.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_audio.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_acodec.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_primitives.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_video.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\MSVCRTD.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\OLDNAMES.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\msvcprtd.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\vcruntimed.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64\ucrtd.lib:
+  Búsqueda de bibliotecas finalizada
+  Buscando bibliotecas
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_main.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_image.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_color.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_memfile.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_font.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_ttf.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_physfs.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_dialog.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_audio.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_acodec.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_primitives.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_video.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\MSVCRTD.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\OLDNAMES.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\msvcprtd.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\vcruntimed.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64\ucrtd.lib:
+  Búsqueda de bibliotecas finalizada
+  Paso 1 finalizado
+  Buscando bibliotecas
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_main.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_image.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_color.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_memfile.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_font.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_ttf.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_physfs.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_dialog.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_audio.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_acodec.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_primitives.lib:
+      Buscando C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_video.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\kernel32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib:
+      Buscando C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib:
+      Buscando D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\MSVCRTD.lib:
+        Se encontró _load_config_used
+          Se cargó MSVCRTD.lib(loadcfg.obj)
+  Búsqueda de bibliotecas finalizada
+  Invocando rc.exe:
+   /v
+   /x
+   /fo
+   "C:\Users\darkz\AppData\Local\Temp\lnk{0F1381D1-5ABE-4BDF-A030-DEE46DAAD3BD}.tmp"
+   "C:\Users\darkz\AppData\Local\Temp\lnk{30C27FCF-0B5E-4A08-B53C-93F55D9366E2}.tmp"
+  Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+  
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  
+  Creating C:\Users\darkz\AppData\Local\Temp\lnk{0F1381D1-5ABE-4BDF-A030-DEE46DAAD3BD}.tmp
+  
+  Using codepage 1252 as default
+  
+  C:\Users\darkz\AppData\Local\Temp\lnk{30C27FCF-0B5E-4A08-B53C-93F55D9366E2}.tmp.
+  Writing 24:1,	lang:0x409,	size 381
+  Invocando cvtres.exe:
+   /machine:amd64
+   /verbose
+   /out:"C:\Users\darkz\AppData\Local\Temp\lnk{AFAAA2E0-7B33-4010-BA0E-B9729F5EBC84}.tmp"
+   /readonly
+   "C:\Users\darkz\AppData\Local\Temp\lnk{0F1381D1-5ABE-4BDF-A030-DEE46DAAD3BD}.tmp"
+  Recurso para el convertidor de objetos de Microsoft (R) Windows, versi¾n 14.28.29913.0
+  (C) Microsoft Corporation. Reservados todos los derechos.
+  
+  agregando recurso. Tipo:MANIFEST, nombre:1, idioma:0x0409, marcas: 0x30, tama±o: 381
+  Bibliotecas sin usar:
+    C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_main.lib
+    C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_color.lib
+    C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_memfile.lib
+    C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_physfs.lib
+    C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_dialog.lib
+    C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\packages\Allegro.5.2.6\build\native\v142\x64\lib\allegro_video.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\user32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\gdi32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\winspool.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\comdlg32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\advapi32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\shell32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\ole32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\oleaut32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\uuid.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbc32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64\odbccp32.lib
+    D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\lib\x64\OLDNAMES.lib
   Iniciando el paso 2
+       * linker generated manifest res *
+       structPuntuacion.obj
+       Source.obj
+       Rondas.obj
+       puntuacion.obj
+       NPC.obj
+       jugador.obj
+       InterfaceNPC.obj
        inGame.obj
+       Guardia.obj
+       FRect.obj
+       Esqueleto.obj
+       Centinela.obj
+       Armas.obj
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro.lib(allegro-5.2.dll)
+       allegro_image.lib(allegro_image-5.2.dll)
+       allegro_image.lib(allegro_image-5.2.dll)
+       allegro_image.lib(allegro_image-5.2.dll)
+       allegro_font.lib(allegro_font-5.2.dll)
+       allegro_font.lib(allegro_font-5.2.dll)
+       allegro_font.lib(allegro_font-5.2.dll)
+       allegro_font.lib(allegro_font-5.2.dll)
+       allegro_font.lib(allegro_font-5.2.dll)
+       allegro_font.lib(allegro_font-5.2.dll)
+       allegro_font.lib(allegro_font-5.2.dll)
+       allegro_ttf.lib(allegro_ttf-5.2.dll)
+       allegro_ttf.lib(allegro_ttf-5.2.dll)
+       allegro_ttf.lib(allegro_ttf-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_audio.lib(allegro_audio-5.2.dll)
+       allegro_acodec.lib(allegro_acodec-5.2.dll)
+       allegro_acodec.lib(allegro_acodec-5.2.dll)
+       allegro_acodec.lib(allegro_acodec-5.2.dll)
+       allegro_primitives.lib(allegro_primitives-5.2.dll)
+       allegro_primitives.lib(allegro_primitives-5.2.dll)
+       allegro_primitives.lib(allegro_primitives-5.2.dll)
+       allegro_primitives.lib(allegro_primitives-5.2.dll)
+       allegro_primitives.lib(allegro_primitives-5.2.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       MSVCRTD.lib(amdsecgs.obj)
+       MSVCRTD.lib(chkstk.obj)
+       MSVCRTD.lib(guard_dispatch.obj)
+       MSVCRTD.lib(guard_xfg_dispatch.obj)
+       MSVCRTD.lib(gs_cookie.obj)
+       MSVCRTD.lib(gs_report.obj)
+       MSVCRTD.lib(gs_support.obj)
+       MSVCRTD.lib(debugger_jmc.obj)
+       MSVCRTD.lib(guard_support.obj)
        MSVCRTD.lib(loadcfg.obj)
+       MSVCRTD.lib(dyn_tls_dtor.obj)
+       MSVCRTD.lib(dyn_tls_init.obj)
+       MSVCRTD.lib(matherr_detection.obj)
+       MSVCRTD.lib(ucrt_detection.obj)
+       MSVCRTD.lib(cpu_disp.obj)
+       MSVCRTD.lib(argv_mode.obj)
+       MSVCRTD.lib(commit_mode.obj)
+       MSVCRTD.lib(default_local_stdio_options.obj)
+       MSVCRTD.lib(denormal_control.obj)
+       MSVCRTD.lib(env_mode.obj)
+       MSVCRTD.lib(file_mode.obj)
+       MSVCRTD.lib(fltused.obj)
+       MSVCRTD.lib(invalid_parameter_handler.obj)
+       MSVCRTD.lib(matherr.obj)
+       MSVCRTD.lib(new_mode.obj)
+       MSVCRTD.lib(thread_locale.obj)
+       MSVCRTD.lib(std_type_info_static.obj)
+       MSVCRTD.lib(tncleanup.obj)
+       MSVCRTD.lib(delete_array.obj)
+       MSVCRTD.lib(delete_scalar.obj)
+       MSVCRTD.lib(delete_scalar_size.obj)
+       MSVCRTD.lib(new_array.obj)
+       MSVCRTD.lib(new_scalar.obj)
+       MSVCRTD.lib(throw_bad_alloc.obj)
+       MSVCRTD.lib(exe_main.obj)
+       MSVCRTD.lib(initializers.obj)
+       MSVCRTD.lib(utility.obj)
+       MSVCRTD.lib(ucrt_stubs.obj)
+       MSVCRTD.lib(utility_desktop.obj)
+       MSVCRTD.lib(error.obj)
+       MSVCRTD.lib(init.obj)
+       MSVCRTD.lib(initsect.obj)
+       MSVCRTD.lib(pdblkup.obj)
+       MSVCRTD.lib(stack.obj)
+       MSVCRTD.lib(userapi.obj)
+       MSVCRTD.lib(gshandler.obj)
+       MSVCRTD.lib(gshandlereh4.obj)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       vcruntimed.lib(VCRUNTIME140_1D.dll)
+       vcruntimed.lib(VCRUNTIME140_1D.dll)
+       vcruntimed.lib(VCRUNTIME140_1D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
   Paso 2 finalizado
+  Failed to connect to VCTIP: 'CreateFile' failed with 2
+  Not launching VCTIP: it is flagged as unstable
+  Telemetry event upload failed: 'Failed to open connection to VCTIP'
   CyberCode2099-0.2.1.vcxproj -> C:\Users\darkz\OneDrive\Escritorio\utn\progra 2\clase 3\ej1\CyberCode2099-0.2.1\test\CyberPunk2099-0.2\x64\Debug\CyberCode2099-0.2.1.exe
